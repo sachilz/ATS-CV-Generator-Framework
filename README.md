@@ -59,27 +59,24 @@ GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Au
 
 Technologies: AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible, Jenkins, Docker, Nginx, Gitleaks, SonarQube, Trivy, Hadolint, Checkov, Bash
 
-- Provisioned a custom AWS VPC (10.0.0.0/16) with a public subnet, Internet Gateway, route tables, and a least-privilege IAM user using Terraform declarative IaC, deploying an Ubuntu 24.04 LTS EC2 instance with encrypted root storage.
-- Automated EC2 server configuration using Ansible roles (Docker engine installation, Nginx setup, asset syncing, and container lifecycle management) over SSH without stored credentials.
-- Built a 14-stage Jenkins CI/CD declarative pipeline integrating secret scanning (Gitleaks), static code analysis (SonarQube), IaC compliance (Checkov), Dockerfile linting (Hadolint), container vulnerability scanning (Trivy), and automated container testing prior to deployment.
+- Provisioned custom AWS networking (VPC, public subnet, IGW) and encrypted Ubuntu EC2 instances via Terraform IaC, automating host configuration, Docker engine, and Nginx reverse proxy using Ansible roles over SSH.
+- Built a 14-stage Jenkins declarative CI/CD pipeline integrating comprehensive DevSecOps gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated container testing prior to deployment.
 
 ### 4.2 Cloud-Native Authentication Application Deployment on Kubernetes
 GitHub: https://github.com/sachilz/Cloud-Native-Authentication-Application-Deployment-on-Kubernetes
 
 Technologies: Docker (multi-stage builds), Kubernetes (Minikube), Helm 3, React 18, Node.js 20, Express, PostgreSQL 16, Nginx
 
-- Containerized a full-stack multi-tier authentication application (React 18 frontend, Node.js/Express REST API, PostgreSQL 16) using Docker multi-stage builds, and migrated the workload from Docker Compose to a local Minikube Kubernetes cluster.
-- Authored declarative Kubernetes manifests including Deployments, NodePort/ClusterIP Services, ConfigMaps, Secrets, Liveness/Readiness health probes, a database migration Job, and PersistentVolumeClaims (PVCs) for stateful PostgreSQL storage.
-- Packaged the entire application stack as a Helm 3 chart with a parameterized values.yaml, enabling repeatable and environment-agnostic deployments across the devops-tracker namespace.
+- Containerized a full-stack multi-tier application (React 18, Node.js/Express, PostgreSQL 16) with Docker multi-stage builds, authoring declarative Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets, health probes, and PVCs).
+- Packaged the complete stack into a parameterized Helm 3 chart with database migration Jobs, enabling repeatable, environment-agnostic deployments across Kubernetes namespaces.
 
 ### 4.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
 GitHub: https://github.com/sachilz/career-advisor-agentic-ai
 
 Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transformers (all-MiniLM-L6-v2), Groq (LLaMA-3.1), OpenRouter (GPT-4o-mini), Streamlit, Docker
 
-- Built an autonomous 4-stage multi-agent pipeline using LangGraph (Intent Analysis, Career Research, Skills Gap, Recommendation) that converts unstructured student profiles into personalized technical career roadmaps.
-- Implemented a ChromaDB RAG engine with sentence-transformers semantic embeddings over curated job descriptions, certification guides, and domain roadmaps, with dynamic hybrid LLM routing between Groq (sub-300ms inference) and OpenRouter high-reasoning models.
-- Containerized with a Docker multi-stage build using a CPU-only PyTorch index (saving ~2.2 GB image size), deployed as a live Streamlit web application with an interactive skill readiness tracker and 1-click Markdown export.
+- Developed an autonomous 4-stage LangGraph multi-agent pipeline backed by a ChromaDB RAG engine with hybrid LLM routing (Groq and OpenRouter) to generate personalized career roadmaps from student profiles.
+- Containerized the solution with Docker multi-stage builds using a CPU-only PyTorch index (saving ~2.2 GB image size) and deployed an interactive Streamlit application with a skill readiness tracker.
 
 ---
 
