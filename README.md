@@ -1,4 +1,4 @@
-# Candidate Profile: Sachintha Dilshan Madhushankha
+﻿# Candidate Profile: Sachintha Dilshan Madhushankha
 
 This file contains the information you have shared for building CVs. Treat it as the single source of truth and keep it up to date.
 
@@ -25,7 +25,7 @@ This file contains the information you have shared for building CVs. Treat it as
 ## 2. Education
 
 **BSc (Hons) in Information Technology**, Horizon Campus, Faculty of Computing
-- Dates on CV: Jan 2024 – Apr 2028 (expected). Do not show the year or semester of study.
+- Dates on CV: Jan 2024 â€“ Apr 2028 (expected). Do not show the year or semester of study.
 - GPA: 3.52 / 4.0
 - Relevant coursework: Computer Networks, Operating Systems, Cloud Computing (AWS)
 
@@ -37,11 +37,11 @@ This file contains the information you have shared for building CVs. Treat it as
 
 | Category | Skills |
 |---|---|
-| Programming languages | Python, JavaScript, Bash |
-| Front-end | React 18, HTML, CSS |
-| Back-end and APIs | Node.js 20, Express, REST APIs |
+| Programming languages | Python, Java, JavaScript, Bash |
+| Front-end | React 18, React 19, HTML, CSS |
+| Back-end and APIs | Node.js 20, Express, Spring Boot 3.3, Spring Cloud Gateway, REST APIs, Keycloak (OAuth2/OIDC) |
 | AI and ML | LangGraph, LangChain, ChromaDB, RAG, sentence-transformers, LLM APIs (Groq, OpenRouter) |
-| Databases | PostgreSQL 16, ChromaDB (vector store) |
+| Databases | PostgreSQL 16, MongoDB 7.0, Redis, ChromaDB (vector store) |
 | CI/CD and version control | Jenkins, Git, GitHub |
 | Containers and orchestration | Docker (multi-stage builds), Docker Compose, Kubernetes (Minikube), Helm 3, Nginx (reverse proxy) |
 | Cloud and infrastructure as code | AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible |
@@ -78,6 +78,15 @@ Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transfo
 - Developed an autonomous 4-stage LangGraph multi-agent pipeline backed by a ChromaDB RAG engine with hybrid LLM routing (Groq and OpenRouter) to generate personalized career roadmaps from student profiles.
 - Containerized the solution with Docker multi-stage builds using a CPU-only PyTorch index (saving ~2.2 GB image size) and deployed an interactive Streamlit application with a skill readiness tracker.
 
+### 4.4 IntelliLearn: Microservices E-Learning Platform with Spring Cloud and RAG
+GitHub: https://github.com/sachilz/intellitutor-platform
+
+Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, Vite, Keycloak 22 (OAuth2/OIDC), Redis, MongoDB 7.0, Docker Compose, Node.js 20
+
+- Architected a 6-service microservices platform (API Gateway, User, Course, Quiz, Progress, AI Tutor) using Spring Boot 3.3, with each service connected to an isolated MongoDB namespace enforcing strict domain boundaries.
+- Configured Spring Cloud Gateway (port 8088) with Keycloak OAuth2/OIDC JWT verification and Redis-backed rate limiting as the single entry point for all client traffic, implementing role-based routing for Student and Instructor workflows.
+- Integrated an AI Tutor service using Retrieval-Augmented Generation (RAG) and OpenRouter LLMs, accessible through an in-app AI Command Terminal built with React 19 and Vite, deployed across all services with Docker Compose.
+
 ---
 
 ## 5. GitHub Activity
@@ -92,10 +101,10 @@ You have no work or internship experience, so CVs lead with projects.
 
 | Role | Organization | Dates | What you do |
 |---|---|---|---|
-| Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 – Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
-| Content Creator (NextOps) | YouTube, self-employed | Mar 2026 – Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
-| Technical Writer | Medium | May 2024 – Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
-| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Regular, active member (not a committee member). LinkedIn currently lists "Committee Member" and should be changed to "Member". |
+| Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 â€“ Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
+| Content Creator (NextOps) | YouTube, self-employed | Mar 2026 â€“ Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
+| Technical Writer | Medium | May 2024 â€“ Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
+| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 â€“ Present | Regular, active member (not a committee member). LinkedIn currently lists "Committee Member" and should be changed to "Member". |
 
 ---
 
@@ -136,7 +145,7 @@ You have no work or internship experience, so CVs lead with projects.
 2. **Certificates:** include only the certificates relevant to the target role and leave out the rest.
 3. **Projects:** always include the AWS Infrastructure Provisioning and Deployment Automation project, and choose your strongest projects for the role. Do not list every project.
 4. **Honesty:** use only facts from this file. Keep Azure and Grafana under "Currently Learning". Kubernetes is now backed by a project, so list it as "Kubernetes (Minikube)" in skills.
-5. **Date format:** show the degree as "Jan 2024 – Apr 2028 (expected)", with no year or semester of study.
+5. **Date format:** show the degree as "Jan 2024 â€“ Apr 2028 (expected)", with no year or semester of study.
 6. **Length:** one page for role-specific CVs. The two-page master CV is for your portfolio.
 7. **Removed on your instruction:** the "65% image size reduction" claim.
 8. **Source of truth:** always read `info.md` before building or updating any CV. All facts, technologies, bullet points, and project descriptions must come from this file only. Do not invent or assume any detail not written here.
