@@ -1,4 +1,4 @@
-﻿# Candidate Profile: Sachintha Dilshan Madhushankha
+# Candidate Profile: Sachintha Dilshan Madhushankha
 
 This file contains the information you have shared for building CVs. Treat it as the single source of truth and keep it up to date.
 
@@ -25,7 +25,7 @@ This file contains the information you have shared for building CVs. Treat it as
 ## 2. Education
 
 **BSc (Hons) in Information Technology**, Horizon Campus, Faculty of Computing
-- Dates on CV: Jan 2024 â€“ Apr 2028 (expected). Do not show the year or semester of study.
+- Dates on CV: Jan 2024 – Apr 2028 (expected). Do not show the year or semester of study.
 - GPA: 3.52 / 4.0
 - Relevant coursework: Computer Networks, Operating Systems, Cloud Computing (AWS)
 
@@ -92,10 +92,10 @@ You have no work or internship experience, so CVs lead with projects.
 
 | Role | Organization | Dates | What you do |
 |---|---|---|---|
-| Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 â€“ Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
-| Content Creator (NextOps) | YouTube, self-employed | Mar 2026 â€“ Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
-| Technical Writer | Medium | May 2024 â€“ Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
-| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 â€“ Present | Regular, active member (not a committee member). LinkedIn currently lists "Committee Member" and should be changed to "Member". |
+| Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 – Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
+| Content Creator (NextOps) | YouTube, self-employed | Mar 2026 – Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
+| Technical Writer | Medium | May 2024 – Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
+| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Regular, active member (not a committee member). LinkedIn currently lists "Committee Member" and should be changed to "Member". |
 
 ---
 
@@ -133,12 +133,12 @@ You have no work or internship experience, so CVs lead with projects.
 ## 8. Your Standing Rules for Every CV
 
 1. **Font:** use Latin Modern (`\usepackage{lmodern}`) in all CVs.
-2. **Certificates:** include only the certificates relevant to the target role and leave out the rest.
+2. **Certificates:** label this section as "Certifications and Training" and include only the certificates and courses relevant to the target role (for DevOps roles, mainly KodeKloud courses such as Linux, AWS, Terraform, Kubernetes, Docker, Jenkins, Git, and Microsoft Foundry). Never present course completion certificates as proctored industry certifications.
 3. **Projects:** always include the AWS Infrastructure Provisioning and Deployment Automation project, and choose your strongest projects for the role. Do not list every project.
 4. **Honesty:** use only facts from this file. Keep Azure and Grafana under "Currently Learning". Kubernetes is now backed by a project, so list it as "Kubernetes (Minikube)" in skills.
-5. **Date format:** show the degree as "Jan 2024 â€“ Apr 2028 (expected)", with no year or semester of study.
+5. **Date format:** show the degree as "Jan 2024 – Apr 2028 (expected)", with no year or semester of study.
 6. **Length:** one page for role-specific CVs. The two-page master CV is for your portfolio.
 7. **Removed on your instruction:** the "65% image size reduction" claim.
-8. **Source of truth:** always read `info.md` before building or updating any CV. All facts, technologies, bullet points, and project descriptions must come from this file only. Do not invent or assume any detail not written here.
+8. **Source of truth:** always read `README.md` before building or updating any CV. All facts, technologies, bullet points, and project descriptions must come from this file only. Do not invent or assume any detail not written here.
 9. **Full-page layout:** every CV must fill the entire page with no large blank space at the bottom. Adjust section spacing, line spacing, or bullet point density so the content reaches the bottom margin cleanly.
 
