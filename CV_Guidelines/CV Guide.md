@@ -111,7 +111,15 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
-**Project spacing.** After each project's "Technologies:" line, add `\vspace{5pt}` before the next project title, so the projects are clearly separated.
+**Project spacing.** After each project's `Technologies:` line, you **must** add `\vspace{5pt}` on the very next line before the next project title. This is required for projects 1, 2, and 3. Do **not** add `\vspace{5pt}` after the last project (project 4). The pattern is always:
+
+```
+Technologies: \textcolor{techblue}{...}
+\vspace{5pt}
+\textbf{Next Project Title}...
+```
+
+Never skip this `\vspace{5pt}`. Without it, projects run together with no visible gap.
 
 **Professional summary.** Copy the summary exactly from your profile file. Do not rewrite it for each job.
 
@@ -253,20 +261,35 @@ Copy your professional summary exactly from your profile file.
 
 \section{Projects}
 {\small
+% ── PROJECT 1 ──────────────────────────────────────────────────────────
 \textbf{Project Name One} \hfill \ghlink{https://github.com/you/project-one}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
-% 1 key point per project, so no second item
+% EXACTLY 1 bullet per project. Never add a second \item.
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
-
-\vspace{5pt}  % PROJECT GAP KNOB
+\vspace{5pt}  % PROJECT GAP — required after EVERY Technologies line except the last project.
+% ── PROJECT 2 ──────────────────────────────────────────────────────────
 \textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
-% 1 key point per project, so no second item
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
+\vspace{5pt}  % PROJECT GAP
+% ── PROJECT 3 ──────────────────────────────────────────────────────────
+\textbf{Project Name Three} \hfill \ghlink{https://github.com/you/project-three}
+\begin{itemize}
+\item Action verb + what you built + tools + specific result.
+\end{itemize}
+Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
+\vspace{5pt}  % PROJECT GAP
+% ── PROJECT 4 ──────────────────────────────────────────────────────────
+\textbf{Project Name Four} \hfill \ghlink{https://github.com/you/project-four}
+\begin{itemize}
+\item Action verb + what you built + tools + specific result.
+\end{itemize}
+Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
+% NO \vspace after the last project.
 }
 
 \section{Education}
