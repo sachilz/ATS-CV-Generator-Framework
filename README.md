@@ -22,7 +22,13 @@ This file contains the information you have shared for building CVs. Treat it as
 
 ---
 
-## 2. Education
+## 2. Professional Summary
+
+> IT undergraduate and Microsoft Student Ambassador specializing in DevOps and Software Engineering across Cloud, AI, and Infrastructure. Hands-on experience provisioning automated AWS environments with Terraform and Ansible, deploying containerized microservices to Kubernetes, and building CI/CD pipelines with integrated DevSecOps gates. Proven ability to integrate AI workloads using RAG and multi-agent frameworks, driven to deliver resilient, scalable, and automated production systems.
+
+---
+
+## 3. Education
 
 **BSc (Hons) in Information Technology**, Horizon Campus, Faculty of Computing
 - Dates on CV: Jan 2024 – Apr 2028 (expected). Do not show the year or semester of study.
@@ -33,7 +39,7 @@ This file contains the information you have shared for building CVs. Treat it as
 
 ---
 
-## 3. Technical Skills
+## 4. Technical Skills
 
 | Category | Skills |
 |---|---|
@@ -52,30 +58,30 @@ This file contains the information you have shared for building CVs. Treat it as
 
 ---
 
-## 4. Projects
+## 5. Projects
 
-### 4.1 AWS Infrastructure Provisioning and Deployment Automation
+### 5.1 AWS Infrastructure Provisioning and Deployment Automation
 GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Automation
 
 Technologies: AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible, Jenkins, Docker, Nginx, Gitleaks, SonarQube, Trivy, Hadolint, Checkov, Bash
 
 - Provisioned AWS VPC networking and EC2 instances via Terraform IaC and Ansible automation, implementing a 14-stage Jenkins declarative CI/CD pipeline integrated with DevSecOps quality gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated containerized testing.
 
-### 4.2 Cloud-Native Authentication Application Deployment on Kubernetes
+### 5.2 Cloud-Native Authentication Application Deployment on Kubernetes
 GitHub: https://github.com/sachilz/Cloud-Native-Authentication-Application-Deployment-on-Kubernetes
 
 Technologies: Docker (multi-stage builds), Kubernetes (Minikube), Helm 3, React 18, Node.js 20, Express, PostgreSQL 16, Nginx
 
 - Containerized a full-stack multi-tier application using Docker multi-stage builds and authored production-ready Kubernetes manifests and Helm 3 charts featuring automated database migration Jobs, health probes, and persistent volume claims.
 
-### 4.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
+### 5.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
 GitHub: https://github.com/sachilz/career-advisor-agentic-ai
 
 Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transformers (all-MiniLM-L6-v2), Groq (LLaMA-3.1), OpenRouter (GPT-4o-mini), Streamlit, Docker
 
 - Developed an autonomous 4-stage LangGraph multi-agent career roadmap system backed by a ChromaDB RAG engine with hybrid LLM routing (Groq, OpenRouter), containerized via CPU-optimized Docker builds and deployed with Streamlit.
 
-### 4.4 IntelliLearn: AI-Powered Microservices Learning Platform
+### 5.4 IntelliLearn: AI-Powered Microservices Learning Platform
 GitHub: https://github.com/sachilz/intellitutor-platform
 
 Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 7, Redis 7, Keycloak (OAuth2 / OIDC SSO), Docker (multi-stage builds), Docker Compose, Nginx, Swagger / OpenAPI, OpenRouter LLM (RAG)
@@ -84,13 +90,13 @@ Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 
 
 ---
 
-## 5. GitHub Activity
+## 6. GitHub Activity
 
 - 800+ annual contributions across 50+ repositories (github.com/sachilz).
 
 ---
 
-## 6. Experience and Community
+## 7. Experience and Community
 
 You have no work or internship experience, so CVs lead with projects.
 
@@ -103,7 +109,7 @@ You have no work or internship experience, so CVs lead with projects.
 
 ---
 
-## 7. Certifications and Training
+## 8. Certifications and Training
 
 **Course certificates, not proctored industry certifications.** Label them as "Certifications and Training" and name the course and issuer.
 
