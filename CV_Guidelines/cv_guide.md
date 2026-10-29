@@ -186,7 +186,7 @@ Each project has 1 key point in your profile file, and the CV copies it exactly 
 - Weak: "Worked on a cloud project using many tools."
 - Never: invented numbers such as "improved speed by 80%" unless you can prove them.
 
-For each project add one "Technologies:" line in plain black text listing the tools used. Choose the 4 projects that best match the job requirements. For DevOps, those are infrastructure, CI/CD and container deployment projects. For software engineering, they are full-stack and API projects.
+For each project add one "Technologies:" line in plain black text with tags colored in techblue. Strictly ONE line only: stretch the tags across the page towards the right margin (aligning under the GitHub link), but NEVER allow it to wrap onto a second line. Typically 6 to 8 core tags fit this width. For DevOps, those are infrastructure, CI/CD and container deployment projects. For software engineering, they are full-stack and API projects.
 
 ## 9. Step 8: Final checks before you send
 

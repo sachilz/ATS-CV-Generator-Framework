@@ -237,7 +237,7 @@ Technology Stream. Passed with 3 C passes.
 
 ### If the CV overflows to a second page — fix in this exact order:
 
-1. **Trim Technologies tags first** — reduce each project's Technologies line to **6–8 tags**. Remove the least important ones. This is the fastest fix and the most common cause of overflow.
+1. **Trim Technologies tags first** — ensure each project's Technologies line fits on **strictly ONE line** (typically 6–8 tags). If any line wrapped to a 2nd line, drop tools until it fits on exactly 1 line.
 2. **Reduce section spacing** — lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt`, then `5pt`.
 3. **Reduce project gap** — change `\vspace{5pt}` to `\vspace{3pt}`.
 4. **Reduce bullet spacing** — change `itemsep=0.5pt` to `itemsep=0pt`.
@@ -262,7 +262,7 @@ Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until 
 - [ ] Only **2–3 certificates**, chosen for JD relevance.
 - [ ] No invented facts, metrics, or credentials.
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.
-- [ ] Each Technologies line has **6–8 tags max** and wraps to no more than 2 lines.
+- [ ] Each Technologies line fits on **strictly ONE single line** (never wraps to a 2nd line, extends up to the GitHub text margin).
 - [ ] `\vspace{5pt}` present **immediately** after Technologies lines for projects 1, 2, and 3 — no blank lines between them and the next project title.
 - [ ] Credly badge link on the same line as the Microsoft Student Ambassador description.
 - [ ] All dates use `--` (en dash) in LaTeX.

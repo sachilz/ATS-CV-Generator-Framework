@@ -112,7 +112,7 @@ Claude will output:
 | **Page Length** | Strictly 1 A4 Page | Eliminates weak spillover pages |
 | **Colors** | `linkblue` (links) & `techblue` (tool tags) | Subtle professional contrast without breaking ATS |
 | **Projects** | Exactly 4 projects, 1 bullet each | High-impact focus for 10–20 second scans |
-| **Tech Tags** | 6–8 tags per project max | Prevents line wrapping that causes 2-page overflow |
+| **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
 | **Project Gap** | `\vspace{5pt}` after each project | Visual breathing room between experience blocks |
 | **Header** | Name, target role, contact & social links | Single-line compact layout |
 
@@ -122,7 +122,7 @@ Claude will output:
 
 If a CV ever renders across two pages on Overleaf, apply adjustments in this exact priority order:
 
-1. **Trim Technology Tags**: Reduce each project's tags to 6–7 core tools.
+1. **Trim Technology Tags**: Ensure each Technologies line fits on strictly 1 line (drop tags if it wraps to line 2).
 2. **Adjust Section Spacing**: Lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt` or `5pt`.
 3. **Adjust Project Gap**: Change `\vspace{5pt}` to `\vspace{3pt}`.
 4. **Adjust Bullet Spacing**: Change `itemsep=0.5pt` to `itemsep=0pt`.
