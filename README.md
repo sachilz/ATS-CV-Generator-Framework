@@ -105,7 +105,7 @@ You have no work or internship experience, so CVs lead with projects.
 | Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 – Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
 | Content Creator (NextOps) | YouTube, self-employed | Mar 2026 – Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
 | Technical Writer | Medium | May 2024 – Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
-| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Regular member; actively engage with club events and activities and workshops |
+| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Actively participate in technical cybersecurity workshops, awareness sessions, and community initiatives. |
 
 ---
 
