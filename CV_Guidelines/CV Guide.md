@@ -105,7 +105,7 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 **CV content rules.** Every CV must follow these:
 
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
-- **Skills follow the projects.** Keep the Technical Skills section simple and easy to read, with a few short category lines (about 5 to 7). Include the languages and the most important tools used in the 4 projects on the CV, and always include every skill the job description asks for that your projects demonstrate. Leave out minor tools and small details so the section does not become crowded. Update the skills whenever the 4 projects change.
+- **Skills follow the projects.** Keep the Technical Skills section simple and easy to read, with a few short category lines (about 5 to 7). Include the languages and the most important tools used in the 4 projects on the CV, and always include every skill the job description asks for that your projects demonstrate. Leave out minor tools and small details so the section does not become crowded. Update the skills whenever the 4 projects change. **Every skill category must be its own `\item` on its own line — never combine two categories into one bullet. "Currently Learning" and "Spoken Languages" must always be the last two separate `\item` entries. If a category line wraps onto a second line in the PDF, shorten it by removing the least important tools until it fits on one line.**
 - **2 or 3 certificates only.** Show only the 2 or 3 strongest certificates that relate to the job description. Never more than 3.
 - **Experience line.** Under Experience, put the Credly link on the same line as the description, aligned to the right edge of the page. Also add every club and society from the profile file to the Experience section, with the role, dates and description exactly as written there.
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
@@ -153,6 +153,11 @@ If the CV runs onto a second page, trim in this order:
 3. Merge two skill lines, but never remove a skill used in the 4 projects.
 4. Remove the least relevant certificate line.
 5. Never drop a project: the CV must keep exactly 4 projects. Reduce spacing or shorten the summary instead.
+
+**Skills line-length rule.** After generating the CV, check every bullet in the Technical Skills section:
+
+- Each `\item` must fit on **one line** in the compiled PDF. If any category line wraps onto a second line, remove the least important tools from that category until it fits on one line.
+- **"Currently Learning" and "Spoken Languages" must always appear as their own separate `\item` entries on their own lines.** Never let them share a line with another category or with each other. If the page is too tight, shorten a different category instead — never merge these two items.
 
 If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
 
@@ -233,8 +238,14 @@ Copy your professional summary exactly from your profile file.
 \section{Technical Skills}
 {\small
 \begin{itemize}
+% RULE: Each category is ONE \item on its own line.
+% Keep each line short enough to fit on one line in the PDF.
+% If a line wraps, remove the least important tools from that category.
+% "Currently Learning" and "Spoken Languages" must ALWAYS be
+% the last two separate \item entries — never merge them with anything.
 \item \textbf{Category 1:} Skill, Skill, Skill
 \item \textbf{Category 2:} Skill, Skill, Skill
+\item \textbf{Category 3:} Skill, Skill, Skill
 \item \textbf{Currently Learning:} Skill, Skill
 \item \textbf{Spoken Languages:} Language (Level), Language (Level)
 \end{itemize}
