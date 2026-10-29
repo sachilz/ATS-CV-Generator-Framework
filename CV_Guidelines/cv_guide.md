@@ -48,7 +48,7 @@ Put these rules at the bottom of your profile file so the AI applies them to eve
 7. Project descriptions: copy each project's description exactly as written in the profile file (1 key point per project). Do not rewrite it or add bullets.
 8. Technology tags: no italics. Color only the tags with \\textcolor{techblue}{...}. The color techblue is defined at the very top of the file.
 9. Header: always show all social links from the profile file (LinkedIn, GitHub, Portfolio, Medium, YouTube), none missing. Links are blue; GitHub and Credly links have no underline.
-10. Full-page layout: no large blank space at the bottom of the page.
+10. Full-page layout: no large blank space at the bottom of the page. LaTeX code: always deliver it as a file or canvas, never pasted inside the chat message.
 
 ## 4. Step 3: Start the chat with a master prompt
 
@@ -81,8 +81,14 @@ Strict rules:
 - The CV must fit on exactly ONE page. Never produce a second page.
 - The header must always include ALL my social links from the profile
   file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never skip any.
+- Keep a clear gap above every section title: at least 8pt of space
+  before each heading. Never squeeze the headings against the text above.
+- Use the LaTeX template from this guide exactly as given: do not change
+  the preamble or the section formatting, only the content.
 - Read the job requirements first, then check them against my profile
   file, and only then build the CV.
+- Give me the LaTeX code as a file or canvas that I can open and
+  download, never pasted inside the chat message.
 ```
 
 ## 5. Step 4: Give the target
@@ -105,21 +111,28 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 **CV content rules.** Every CV must follow these:
 
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
-- **Skills follow the projects.** Keep the Technical Skills section simple and easy to read, with a few short category lines (about 5 to 7). Include the languages and the most important tools used in the 4 projects on the CV, and always include every skill the job description asks for that your projects demonstrate. Leave out minor tools and small details so the section does not become crowded. Update the skills whenever the 4 projects change. **Every skill category must be its own `\item` on its own line — never combine two categories into one bullet. "Currently Learning" and "Spoken Languages" must always be the last two separate `\item` entries. If a category line wraps onto a second line in the PDF, shorten it by removing the least important tools until it fits on one line.**
+- **Skills follow the projects.** Keep the Technical Skills section simple and easy to read, with a few short category lines (about 5 to 7). Include the languages and the most important tools used in the 4 projects on the CV, and always include every skill the job description asks for that your projects demonstrate. Leave out minor tools and small details so the section does not become crowded. Update the skills whenever the 4 projects change.
 - **2 or 3 certificates only.** Show only the 2 or 3 strongest certificates that relate to the job description. Never more than 3.
 - **Experience line.** Under Experience, put the Credly link on the same line as the description, aligned to the right edge of the page. Also add every club and society from the profile file to the Experience section, with the role, dates and description exactly as written there.
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
-**Project spacing.** After each project's `Technologies:` line, you **must** add `\vspace{5pt}` on the very next line before the next project title. This is required for projects 1, 2, and 3. Do **not** add `\vspace{5pt}` after the last project (project 4). The pattern is always:
+**Project spacing.** After each project's "Technologies:" line, add `\vspace{5pt}` before the next project title, so the projects are clearly separated.
 
-```
-Technologies: \textcolor{techblue}{...}
+**Project spacing is mandatory.** Put the `\vspace{5pt}` line between every two projects, directly after the "Technologies:" line of the first project and before the next project title, exactly like this. Never skip it, and never remove it when fitting the page:
+
+```latex
+Technologies: \textcolor{techblue}{Tool, Tool, Tool}
+
 \vspace{5pt}
-\textbf{Next Project Title}...
+\textbf{Next Project Title} \hfill \ghlink{https://github.com/you/next-project}
 ```
 
-Never skip this `\vspace{5pt}`. Without it, projects run together with no visible gap.
+**Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
+
+**Section title spacing is mandatory.** Keep a clear gap above every section title (Professional Summary, Technical Skills, Projects and so on). Use `\titlespacing*{\section}{0pt}{8pt}{3pt}` and never set the first number below 8pt, even when fitting the page. If the CV does not fit, shorten the content instead of squeezing the section titles against the text above.
+
+**Use the template exactly as given.** Build every CV from the LaTeX template at the end of this guide. Do not change the preamble (packages, font, colors) or the `\titleformat` line. The `\titlespacing` line may only be raised, never set below 8pt before the section title. Only change the content. When fitting the page, use only these controls: the gaps between bullets, the 5pt project gap, and shortening the text. This keeps the section titles clearly spaced in every CV, so you never have to fix the LaTeX by hand.
 
 **Professional summary.** Copy the summary exactly from your profile file. Do not rewrite it for each job.
 
@@ -130,78 +143,39 @@ Never skip this `\vspace{5pt}`. Without it, projects run together with no visibl
 \definecolor{techblue}{RGB}{55,85,150}
 ```
 
-## 6. Step 5: Output format rules (read carefully)
+## 6. Step 5: Ask for the right output
 
-**The only accepted output is a LaTeX `.tex` code artifact. Nothing else.**
+Use one of these requests:
 
-Rules for how to deliver the CV:
+- "Create the CV as a PDF only." You get the finished file to send.
+- "Create the CV as a PDF and also the Overleaf LaTeX code separately." You get a PDF plus a `.tex` file you can edit later.
 
-1. **LaTeX code only.** Produce the complete `.tex` source code for the CV. Do not produce a PDF, do not attempt to render or compile the file.
-2. **Deliver via artifact (canvas).** Output the LaTeX code as a **Claude artifact** — displayed in the side canvas panel, not pasted as a code block inside the chat. Use an artifact of type `text/plain` or `application/x-latex` with the filename `CV_SachinthaDilshan.tex`.
-3. **Do not paste the code inline in the chat.** The chat response must only contain the recruiter assessment **(a)**, ATS keyword review **(c)**, and verification checklist **(d)**. The LaTeX code **(b)** goes into the artifact/canvas only.
-4. **No PDF output.** Do not say "here is your PDF" or attempt to generate one. The user will compile the `.tex` file themselves using Overleaf.
+Always ask for the LaTeX code as a file or canvas that you can open and download, never pasted inside the chat message. If your AI cannot create files, ask for the LaTeX code in a canvas and compile it yourself:
 
-To compile the LaTeX code yourself:
-
-1. Go to [overleaf.com](https://overleaf.com) and create a free account.
-2. Choose **New Project → Blank Project**.
+1. Go to overleaf.com and create a free account.
+2. Choose New Project, then Blank Project.
 3. Paste the LaTeX code over the default file.
-4. Press **Recompile** and download the PDF.
+4. Press Recompile and download the PDF.
 
 The LaTeX template at the end of this guide produces the same clean look.
 
 ## 7. Step 6: Make it fill exactly one page
 
-**The CV must fit on exactly ONE page. This is the most important rule. A second page is a failure.**
+The CV must be strictly one page: never a second page, and no big empty space at the bottom. It should end close to the bottom margin. These are the controls:
 
-### Spacing knobs
+- **Section spacing:** the number in `\titlespacing*{\section}{0pt}{8pt}{3pt}`. Raise 8pt to spread sections out. Never go below 8pt, because section titles must stay clearly separated from the content above them.
+- **Project gap:** the `\vspace{5pt}` between projects.
+- **Bullet spacing:** `itemsep` inside `\setlist[itemize]`.
 
-| Knob | Location in LaTeX | Default | Tighten to |
-|---|---|---|---|
-| Section spacing | `\titlespacing*{\section}{0pt}{8pt}{3pt}` | 8pt | 5pt–6pt |
-| Project gap | `\vspace{5pt}` between projects | 5pt | 3pt |
-| Bullet spacing | `itemsep=0.5pt` in `\setlist[itemize]` | 0.5pt | 0pt |
+If the CV runs onto a second page, trim in this order:
 
-### Technologies line length rule (most common cause of overflow)
+1. Reduce the small gaps between bullets, but never reduce the space above section titles below 8pt.
+2. Shorten the summary by a sentence.
+3. Merge two skill lines, but never remove a skill used in the 4 projects.
+4. Remove the least relevant certificate line.
+5. Never drop a project: the CV must keep exactly 4 projects. Shorten the summary or the skills lines instead.
 
-The `Technologies:` line for each project **must not wrap onto more than 2 lines** in the compiled PDF. Long tag lists are the #1 cause of the CV overflowing to a second page.
-
-**Fix:** Remove the least important tags from the Technologies line until it wraps to at most 2 lines. Keep only the tags directly relevant to the JD. The full tag list is in the profile file — you do not need to show all of them. Typical tag count that fits: **6 to 8 tags per project**. Never list more than 10 tags on one Technologies line.
-
-### Project description length rule
-
-Each project description (the single `\item` bullet) should wrap to **no more than 3 lines** in the compiled PDF. If it wraps to 4 or more lines, the CV will overflow. In that case, trim the Technologies line first — never change the project description text itself.
-
-### `\vspace{5pt}` between projects — mandatory
-
-After every `Technologies:` line (projects 1, 2, and 3), the very next line of LaTeX code must be `\vspace{5pt}`. Place it like this with no blank lines in between:
-
-```latex
-Technologies: \textcolor{techblue}{Tag, Tag, Tag}
-\vspace{5pt}
-\textbf{Next Project Title}...
-```
-
-If `\vspace{5pt}` is missing, projects crash into each other with no gap. This is not optional.
-
-### If the CV overflows to a second page — fix in this exact order
-
-1. **Trim Technologies tags first.** Reduce each Technologies line to 6–8 tags. This is the fastest fix and never changes real content.
-2. **Reduce section spacing.** Lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt`, then `5pt`.
-3. **Reduce project gap.** Change `\vspace{5pt}` to `\vspace{3pt}`.
-4. **Reduce bullet spacing.** Change `itemsep=0.5pt` to `itemsep=0pt`.
-5. **Shorten the summary by one sentence** if still overflowing.
-6. **Remove the least relevant certificate** if still overflowing.
-7. **Never remove a project.** Always keep exactly 4 projects.
-
-### Skills line-length rule
-
-- Each `\item` in Technical Skills must fit on **one line** in the PDF. If any line wraps, remove the least important tools from that category.
-- **"Currently Learning" and "Spoken Languages" must always be the last two separate `\item` entries.** Never merge them with anything else.
-
-### If there is blank space at the bottom
-
-Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until the page is full.
+If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
 
 ## 8. Step 7: Write strong project bullets
 
@@ -216,7 +190,7 @@ For each project add one "Technologies:" line in plain black text listing the to
 
 ## 9. Step 8: Final checks before you send
 
-- Count the pages (it must be exactly 1) and check that the header shows all five social links: LinkedIn, GitHub, Portfolio, Medium and YouTube. Then open every link (GitHub, portfolio, LinkedIn, certificates) and make sure it works and is public.
+- Count the pages (it must be exactly 1) and check that the header shows all five social links: LinkedIn, GitHub, Portfolio, Medium and YouTube. Check that there is a clear gap above every section title, that every project is separated by the 5pt gap, and that Currently Learning and Spoken Languages are on separate lines. Then open every link (GitHub, portfolio, LinkedIn, certificates) and make sure it works and is public.
 - Check your email, phone number and all dates.
 - Make sure your LinkedIn matches the CV (roles and dates). Recruiters often cross-check.
 - Confirm every certificate and project claim is something you can explain in an interview.
@@ -280,14 +254,8 @@ Copy your professional summary exactly from your profile file.
 \section{Technical Skills}
 {\small
 \begin{itemize}
-% RULE: Each category is ONE \item on its own line.
-% Keep each line short enough to fit on one line in the PDF.
-% If a line wraps, remove the least important tools from that category.
-% "Currently Learning" and "Spoken Languages" must ALWAYS be
-% the last two separate \item entries — never merge them with anything.
 \item \textbf{Category 1:} Skill, Skill, Skill
 \item \textbf{Category 2:} Skill, Skill, Skill
-\item \textbf{Category 3:} Skill, Skill, Skill
 \item \textbf{Currently Learning:} Skill, Skill
 \item \textbf{Spoken Languages:} Language (Level), Language (Level)
 \end{itemize}
@@ -295,35 +263,20 @@ Copy your professional summary exactly from your profile file.
 
 \section{Projects}
 {\small
-% ── PROJECT 1 ──────────────────────────────────────────────────────────
 \textbf{Project Name One} \hfill \ghlink{https://github.com/you/project-one}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
-% EXACTLY 1 bullet per project. Never add a second \item.
+% 1 key point per project, so no second item
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
-\vspace{5pt}  % PROJECT GAP — required after EVERY Technologies line except the last project.
-% ── PROJECT 2 ──────────────────────────────────────────────────────────
+
+\vspace{5pt}  % PROJECT GAP KNOB
 \textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
+% 1 key point per project, so no second item
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
-\vspace{5pt}  % PROJECT GAP
-% ── PROJECT 3 ──────────────────────────────────────────────────────────
-\textbf{Project Name Three} \hfill \ghlink{https://github.com/you/project-three}
-\begin{itemize}
-\item Action verb + what you built + tools + specific result.
-\end{itemize}
-Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
-\vspace{5pt}  % PROJECT GAP
-% ── PROJECT 4 ──────────────────────────────────────────────────────────
-\textbf{Project Name Four} \hfill \ghlink{https://github.com/you/project-four}
-\begin{itemize}
-\item Action verb + what you built + tools + specific result.
-\end{itemize}
-Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
-% NO \vspace after the last project.
 }
 
 \section{Education}

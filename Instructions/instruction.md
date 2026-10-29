@@ -128,7 +128,7 @@ YouTube: \href{https://www.youtube.com/@NextOpz}{\textcolor{linkblue}{youtube.co
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-IT undergraduate and Microsoft Student Ambassador specialising in DevOps and Software Engineering across Cloud, AI, and Infrastructure. Hands-on experience provisioning automated AWS environments with Terraform and Ansible, deploying containerised microservices to Kubernetes, and building CI/CD pipelines with integrated DevSecOps gates. Proven ability to integrate AI workloads using RAG and multi-agent frameworks, driven to deliver resilient, scalable, and automated production systems.
+IT undergraduate and Microsoft Student Ambassador focused on DevOps, Software Engineering, AI, Cloud, and Infrastructure. Hands-on experience provisioning AWS infrastructure using Terraform and Ansible, deploying containerized microservices to Kubernetes, and building CI/CD pipelines with DevSecOps tools. Experienced in developing AI applications using RAG and multi-agent frameworks, with an interest in building scalable, secure, and automated systems.
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────
