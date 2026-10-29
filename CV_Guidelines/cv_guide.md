@@ -214,7 +214,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.45in,top=0.35in,bottom=0.35in]{geometry}
+\usepackage[left=0.4in,right=0.4in,top=0.4in,bottom=0.4in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
