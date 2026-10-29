@@ -66,12 +66,12 @@ Deliver in this exact way:
 5. **Degree dates**: format as `Mon YYYY -- Mon YYYY (expected)`. Do not show the year or semester of study.
 6. **Length**: strictly **one A4 page**. Never produce a second page.
 7. **Project descriptions**: copy each project's description **exactly** as written in `README.md` (1 key point per project). Do not rewrite or add bullets.
-8. **Technology tags**: no italics. Color only the tags with `\textcolor{techblue}{...}`.
+8. **Technology tags**: no italics. Color only the tags with `\textcolor{techblue}{...}`. Each Technologies line must use **6 to 8 tags only** — never more than 10. Remove the least important tags if the line wraps to more than 2 lines. Long Technologies lines are the #1 cause of overflow to a second page.
 9. **Header**: always show **all five social links** from `README.md` — LinkedIn, GitHub, Portfolio, Medium, and YouTube. Never omit any. Links are blue (`linkblue`); labels in front of links are black.
 10. **Full-page layout**: no large blank space at the bottom. Content must reach close to the bottom margin.
 11. **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Experience.
 12. **Professional Summary**: copy it **exactly** from `README.md`. Do not rewrite it for each job.
-13. **Project spacing**: after each project's `Technologies:` line, add `\vspace{5pt}` before the next project title.
+13. **Project spacing**: after each project's `Technologies:` line (projects 1, 2, and 3), the very next line of LaTeX **must** be `\vspace{5pt}` — no blank lines, no comments between them. Do NOT add `\vspace{5pt}` after the last project.
 14. **Experience section**: include the Credly badge link on the same line as the description, right-aligned. Include every community role and club from `README.md`.
 15. **Education**: show both the university degree and the G.C.E. Advanced Level details from `README.md`. Format A/L result professionally (e.g., "Technology Stream. Passed with 3 C passes.").
 16. **Skills section**: keep it simple — 5 to 7 short category lines. Include languages and the most important tools used in the 4 selected projects, plus every skill the JD requires that the projects demonstrate.
@@ -235,14 +235,21 @@ Technology Stream. Passed with 3 C passes.
 
 ## One-Page Fitting Controls
 
-If the CV runs onto a second page, fix in this order:
-1. Reduce `\titlespacing*{\section}{0pt}{8pt}{3pt}` — lower `8pt`.
-2. Reduce `\vspace{5pt}` between projects.
-3. Merge two skill category lines (never remove a skill used in the 4 selected projects).
-4. Remove the least relevant certificate.
-5. **Never drop a project** — the CV must always have exactly 4.
+**A second page is a failure. Fix it before delivering the LaTeX code.**
 
-If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
+### If the CV overflows to a second page — fix in this exact order:
+
+1. **Trim Technologies tags first** — reduce each project's Technologies line to **6–8 tags**. Remove the least important ones. This is the fastest fix and the most common cause of overflow.
+2. **Reduce section spacing** — lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt`, then `5pt`.
+3. **Reduce project gap** — change `\vspace{5pt}` to `\vspace{3pt}`.
+4. **Reduce bullet spacing** — change `itemsep=0.5pt` to `itemsep=0pt`.
+5. **Shorten the summary by one sentence** if still overflowing.
+6. **Remove the least relevant certificate** if still overflowing.
+7. **Never remove a project** — always keep exactly 4.
+
+### If there is blank space at the bottom:
+
+Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until the page is full.
 
 ---
 
@@ -255,6 +262,8 @@ If there is blank space at the bottom, raise the section spacing one point at a 
 - [ ] Only **2–3 certificates**, chosen for JD relevance.
 - [ ] No invented facts, metrics, or credentials.
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.
+- [ ] Each Technologies line has **6–8 tags max** and wraps to no more than 2 lines.
+- [ ] `\vspace{5pt}` present **immediately** after Technologies lines for projects 1, 2, and 3 — no blank lines between them and the next project title.
 - [ ] Credly badge link on the same line as the Microsoft Student Ambassador description.
 - [ ] All dates use `--` (en dash) in LaTeX.
 - [ ] CV fits **one page** — no overflow, no large blank space at the bottom.

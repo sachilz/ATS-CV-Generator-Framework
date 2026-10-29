@@ -152,26 +152,56 @@ The LaTeX template at the end of this guide produces the same clean look.
 
 ## 7. Step 6: Make it fill exactly one page
 
-The CV must be strictly one page: never a second page, and no big empty space at the bottom. It should end close to the bottom margin. These are the controls:
+**The CV must fit on exactly ONE page. This is the most important rule. A second page is a failure.**
 
-- **Section spacing:** the number in `\titlespacing*{\section}{0pt}{8pt}{3pt}`. Raise 8pt to spread sections out, lower it to tighten.
-- **Project gap:** the `\vspace{5pt}` between projects.
-- **Bullet spacing:** `itemsep` inside `\setlist[itemize]`.
+### Spacing knobs
 
-If the CV runs onto a second page, trim in this order:
+| Knob | Location in LaTeX | Default | Tighten to |
+|---|---|---|---|
+| Section spacing | `\titlespacing*{\section}{0pt}{8pt}{3pt}` | 8pt | 5pt–6pt |
+| Project gap | `\vspace{5pt}` between projects | 5pt | 3pt |
+| Bullet spacing | `itemsep=0.5pt` in `\setlist[itemize]` | 0.5pt | 0pt |
 
-1. Reduce spacing slightly.
-2. Shorten the summary by a sentence.
-3. Merge two skill lines, but never remove a skill used in the 4 projects.
-4. Remove the least relevant certificate line.
-5. Never drop a project: the CV must keep exactly 4 projects. Reduce spacing or shorten the summary instead.
+### Technologies line length rule (most common cause of overflow)
 
-**Skills line-length rule.** After generating the CV, check every bullet in the Technical Skills section:
+The `Technologies:` line for each project **must not wrap onto more than 2 lines** in the compiled PDF. Long tag lists are the #1 cause of the CV overflowing to a second page.
 
-- Each `\item` must fit on **one line** in the compiled PDF. If any category line wraps onto a second line, remove the least important tools from that category until it fits on one line.
-- **"Currently Learning" and "Spoken Languages" must always appear as their own separate `\item` entries on their own lines.** Never let them share a line with another category or with each other. If the page is too tight, shorten a different category instead — never merge these two items.
+**Fix:** Remove the least important tags from the Technologies line until it wraps to at most 2 lines. Keep only the tags directly relevant to the JD. The full tag list is in the profile file — you do not need to show all of them. Typical tag count that fits: **6 to 8 tags per project**. Never list more than 10 tags on one Technologies line.
 
-If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
+### Project description length rule
+
+Each project description (the single `\item` bullet) should wrap to **no more than 3 lines** in the compiled PDF. If it wraps to 4 or more lines, the CV will overflow. In that case, trim the Technologies line first — never change the project description text itself.
+
+### `\vspace{5pt}` between projects — mandatory
+
+After every `Technologies:` line (projects 1, 2, and 3), the very next line of LaTeX code must be `\vspace{5pt}`. Place it like this with no blank lines in between:
+
+```latex
+Technologies: \textcolor{techblue}{Tag, Tag, Tag}
+\vspace{5pt}
+\textbf{Next Project Title}...
+```
+
+If `\vspace{5pt}` is missing, projects crash into each other with no gap. This is not optional.
+
+### If the CV overflows to a second page — fix in this exact order
+
+1. **Trim Technologies tags first.** Reduce each Technologies line to 6–8 tags. This is the fastest fix and never changes real content.
+2. **Reduce section spacing.** Lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt`, then `5pt`.
+3. **Reduce project gap.** Change `\vspace{5pt}` to `\vspace{3pt}`.
+4. **Reduce bullet spacing.** Change `itemsep=0.5pt` to `itemsep=0pt`.
+5. **Shorten the summary by one sentence** if still overflowing.
+6. **Remove the least relevant certificate** if still overflowing.
+7. **Never remove a project.** Always keep exactly 4 projects.
+
+### Skills line-length rule
+
+- Each `\item` in Technical Skills must fit on **one line** in the PDF. If any line wraps, remove the least important tools from that category.
+- **"Currently Learning" and "Spoken Languages" must always be the last two separate `\item` entries.** Never merge them with anything else.
+
+### If there is blank space at the bottom
+
+Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until the page is full.
 
 ## 8. Step 7: Write strong project bullets
 
