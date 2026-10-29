@@ -106,6 +106,17 @@ Deliver exactly these two items:
 
 **A second page is a failure. Fix it before delivering the LaTeX code.**
 
+### Dynamic Spacing & Content Density Management (AUTOMATIC):
+Claude must evaluate the content volume before generating the LaTeX code:
+- **Margins**: Strictly equal on all 4 sides: `\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}` (or `\usepackage[margin=0.45in]{geometry}`).
+- **Elastic Rubber Spacing**: Use `\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}` and `\vspace{3.5pt plus 1pt minus 1pt}`. This allows the LaTeX engine to automatically expand when content is shorter and automatically compress when project descriptions are longer.
+- **If candidate has extra-long project descriptions (3+ lines each)**:
+  - Keep base section spacing compact: `\titlespacing*{\section}{0pt}{5.2pt plus 1pt minus 1pt}{2pt}`
+  - Keep project gap at `\vspace{3pt}`
+  - Ensure `Technologies:` lines are strictly 1 line (6-7 tags).
+- **If candidate has shorter project descriptions (1-2 lines)**:
+  - Base section spacing can be `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1.5pt}{2.5pt}` to fill down cleanly to the bottom margin.
+
 ### Precision 1-Page Tuning (MANDATORY):
 When the candidate has dense content (4 projects + 4 experience entries + multiple skills):
 - **Geometry**: `\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}`
@@ -148,9 +159,9 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6.5pt}{2.5pt} % SECTION SPACING (balanced for 1-page full fill)
+\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt} % ELASTIC SECTION SPACING (auto-adjusts to content length)
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=0.5pt plus 0.5pt minus 0.5pt,topsep=1pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 
@@ -193,7 +204,7 @@ YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{[YouTube Display]}}}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt}  % PROJECT GAP
+\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
 
 % ── PROJECT 2 ──
 \textbf{[Project Title 2]} \hfill \ghlink{[GitHub URL 2]}
@@ -201,7 +212,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt}  % PROJECT GAP
+\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
 
 % ── PROJECT 3 ──
 \textbf{[Project Title 3]} \hfill \ghlink{[GitHub URL 3]}
@@ -209,7 +220,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt}  % PROJECT GAP
+\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
 
 % ── PROJECT 4 ──
 \textbf{[Project Title 4]} \hfill \ghlink{[GitHub URL 4]}

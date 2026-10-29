@@ -129,7 +129,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
 
-**Section title spacing.** Keep a clean, readable gap above every section title. Use `\titlespacing*{\section}{0pt}{5.5pt}{2pt}`. This spacing is specifically calibrated so that all 4 projects, education, skills, and all 4 experience items fit strictly onto ONE page without spillage, while preserving clean visual hierarchy. Depending on content volume, you can fine-tune between 5pt and 6.5pt.
+**Elastic section title spacing.** Use `\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}`. The elastic rubber lengths (`plus 1.5pt minus 1.5pt`) allow LaTeX on Overleaf to automatically compress spacing if project descriptions are longer, and automatically expand spacing if project descriptions are shorter, ensuring the CV always fits strictly on ONE page and touches the bottom margin symmetrically.
 
 **Professional summary.** Copy the summary exactly from your profile file. Do not rewrite it for each job.
 
@@ -228,8 +228,8 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6.5pt}{2.5pt}   % SECTION SPACING KNOB (balanced for 1-page full fill)
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}   % ELASTIC SECTION SPACING (auto-adjusts to content length)
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.5pt plus 0.5pt minus 0.5pt,topsep=1pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}
@@ -268,7 +268,7 @@ Copy your professional summary exactly from your profile file.
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
 
-\vspace{3.5pt}  % PROJECT GAP KNOB
+\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP KNOB
 \textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
