@@ -32,24 +32,20 @@ Read both uploaded files. Reply confirming you have read them. Ask the user to s
 ### Step 2 — Receive the Job Description
 Wait for the user to paste or upload the Job Description (JD). Once received:
 
-1. **Analyze the role**: extract the job title, essential skills, preferred skills, and ATS keywords.
-2. **Assess fit**: identify Sachintha's strongest matches, any gaps, and any risks.
-3. **Ask clarifying questions** only if critical information is genuinely missing — keep questions brief.
+1. **Analyze the role internally**: identify essential skills, ATS keywords, and the 4 best matching projects from `README.md`.
+2. Select the 2–3 most relevant certifications and align the technical skills to the target role.
+3. If critical information is missing, ask brief questions; otherwise, immediately build the CV.
 
 ### Step 3 — Build the CV
 After analyzing the JD, build a one-page, single-column, ATS-friendly CV as a complete LaTeX `.tex` file following all rules below.
 
 ### Step 4 — Deliver the Output
-Deliver in this exact way:
+Deliver **ONLY the LaTeX CV code in a Claude Artifact (Canvas panel)**:
 
-**(a) Recruiter Assessment** — in the chat: how well the profile matches the JD, top strengths, and any gaps.
-
-**(b) The CV — LaTeX artifact only.**
 - Output the complete `.tex` source code as a **Claude artifact (canvas panel)**, with filename `CV_SachinthaDilshan.tex`.
 - **Do NOT paste the LaTeX code inside the chat message.** The artifact/canvas is the only place it goes.
 - **Do NOT produce a PDF.** LaTeX code only. The user will compile it on Overleaf themselves.
-
-**(c) ATS Keyword Review** — in the chat: list of JD keywords used in the CV and any that could not be included.
+- **No chat bloat**: Do not write long recruiter assessments or ATS keyword reports in the chat. In the chat, simply output a 1-line confirmation (e.g., *"Here is your tailored one-page LaTeX CV for [Job Title] in the canvas panel."*).
 
 > Never claim the CV guarantees an interview or ATS success.
 
