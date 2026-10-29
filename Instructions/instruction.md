@@ -70,13 +70,13 @@ Once the target Job Description (JD) is received:
    - **Projects (strictly 4)**:
      - Copy each project description **exactly** as written in `info.md` (1 key point bullet per project).
      - **Technologies line (STRICTLY ONE LINE ONLY)**: `Technologies: \textcolor{techblue}{...}` with **6 to 8 tags**. Must stretch across towards the right margin (under the GitHub link) but **MUST NEVER WRAP TO A SECOND LINE**.
-     - **Project spacing**: Add `\vspace{5pt}` immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add `\vspace{5pt}` after the last project.
+     - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
    - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Include A/L details from `info.md` in professional wording.
    - **Certifications and Training**: Include 2 or 3 strongest items relevant to the JD.
    - **Experience Section (MANDATORY: Include ALL roles)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
-     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{3pt}`.
+     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2.5pt}`.
    - **Header**: Include all available social links from `info.md` (LinkedIn, GitHub, Portfolio, Medium, YouTube) in `linkblue`.
    - **Colors**:
      ```latex
@@ -106,18 +106,23 @@ Deliver exactly these two items:
 
 **A second page is a failure. Fix it before delivering the LaTeX code.**
 
-If the CV runs onto a second page, trim in this exact order:
-1. **Trim Technologies tags first** — ensure each project's Technologies line fits on **strictly ONE line** (typically 6–8 tags). If any line wrapped to a 2nd line, drop tools until it fits on exactly 1 line.
-2. **Reduce section spacing** — lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt`, then `5pt`.
-3. **Reduce project gap** — change `\vspace{5pt}` to `\vspace{3pt}`.
-4. **Reduce bullet spacing** — change `itemsep=0.5pt` to `itemsep=0pt`.
-5. **Shorten the summary by one sentence** if still overflowing.
-6. **Remove the least relevant certificate** if still overflowing.
-7. **Never remove a project** — always keep exactly 4.
-8. **Never remove an experience entry** — keep all listed experiences from `info.md`.
+### Precision 1-Page Tuning (MANDATORY):
+When the candidate has dense content (4 projects + 4 experience entries + multiple skills):
+- **Geometry**: `\usepackage[margin=0.45in,top=0.35in,bottom=0.35in]{geometry}`
+- **Section Spacing**: `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` (adjust between 5pt and 6.5pt as needed to fill or tighten the page).
+- **Bullet Spacing**: `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
+- **Project Gap**: `\vspace{3.5pt}` between projects.
+- **Experience Gap**: `\vspace{2.5pt}` between experience roles.
+
+If the CV still touches a second page:
+1. Ensure all `Technologies:` lines are strictly 1 line (6-7 tags).
+2. Set `\titlespacing*{\section}{0pt}{5pt}{1.5pt}`.
+3. Show 2 certificates instead of 3.
+4. **NEVER remove a project (keep 4).**
+5. **NEVER remove an experience entry (keep all).**
 
 ### If there is blank space at the bottom:
-Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until the page is full.
+Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a time until the page is full.
 
 ---
 
@@ -128,7 +133,7 @@ Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.5in,top=0.4in,bottom=0.4in]{geometry}
+\usepackage[margin=0.45in,top=0.35in,bottom=0.35in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -143,9 +148,9 @@ Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until 
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{8pt}{3pt} % SECTION SPACING KNOB
+\titlespacing*{\section}{0pt}{5.5pt}{2pt} % SECTION SPACING (tuned for 1-page fit)
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 
@@ -188,7 +193,7 @@ YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{[YouTube Display]}}}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{5pt}  % PROJECT GAP
+\vspace{3.5pt}  % PROJECT GAP
 
 % ── PROJECT 2 ──
 \textbf{[Project Title 2]} \hfill \ghlink{[GitHub URL 2]}
@@ -196,7 +201,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{5pt}  % PROJECT GAP
+\vspace{3.5pt}  % PROJECT GAP
 
 % ── PROJECT 3 ──
 \textbf{[Project Title 3]} \hfill \ghlink{[GitHub URL 3]}
@@ -204,7 +209,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{5pt}  % PROJECT GAP
+\vspace{3.5pt}  % PROJECT GAP
 
 % ── PROJECT 4 ──
 \textbf{[Project Title 4]} \hfill \ghlink{[GitHub URL 4]}
@@ -243,19 +248,19 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
     \hfill \href{[Badge URL]}{\textcolor{linkblue}{[Badge Link]}}
 \end{itemize}
 
-\vspace{3pt}
+\vspace{2.5pt}
 \textbf{[Role / Title 2]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{3pt}
+\vspace{2.5pt}
 \textbf{[Role / Title 3]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{3pt}
+\vspace{2.5pt}
 \textbf{[Community Role / Club]}, [Organization] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of involvement and contributions]

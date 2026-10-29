@@ -123,9 +123,9 @@ Claude will output:
 If a CV ever renders across two pages on Overleaf, apply adjustments in this exact priority order:
 
 1. **Trim Technology Tags**: Ensure each Technologies line fits on strictly 1 line (drop tags if it wraps to line 2).
-2. **Adjust Section Spacing**: Lower `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` to `6pt` or `5pt`.
-3. **Adjust Project Gap**: Change `\vspace{5pt}` to `\vspace{3pt}`.
-4. **Adjust Bullet Spacing**: Change `itemsep=0.5pt` to `itemsep=0pt`.
+2. **Adjust Section Spacing**: Tuned default is `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` (adjust between 5pt and 6.5pt).
+3. **Adjust Project Gap**: Default project gap is `\vspace{3.5pt}` (adjust to 3pt if needed).
+4. **Adjust Bullet Spacing**: Default itemize is `itemsep=0pt,topsep=0.5pt`.
 5. **Shorten Summary**: Trim one sentence from the professional summary.
 6. **Trim Certifications**: Keep the 2 strongest certifications.
 
