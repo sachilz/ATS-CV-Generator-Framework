@@ -70,7 +70,7 @@ Deliver exactly these two items:
 11. **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Experience.
 12. **Professional Summary**: copy it **exactly** from `README.md`. Do not rewrite it for each job.
 13. **Project spacing**: after each project's `Technologies:` line (projects 1, 2, and 3), the very next line of LaTeX **must** be `\vspace{5pt}` — no blank lines, no comments between them. Do NOT add `\vspace{5pt}` after the last project.
-14. **Experience section**: include the Credly badge link on the same line as the description, right-aligned. Include every community role and club from `README.md`.
+14. **Experience section (MANDATORY: Include ALL roles)**: Because undergraduates and interns do not have extensive full-time corporate history, **EVERY SINGLE EXPERIENCE ENTRY** listed in the candidate profile's Experience and Community section MUST be included in the CV (e.g., Student Ambassador, Content Creator, Technical Writer, Club/Society memberships). **NEVER omit, filter, or drop any experience entry.** Each role has its bold title, organization, right-aligned dates, and exactly 1 bullet point. Right-align Credly badge links on the same line if available. Separate entries with `\vspace{3pt}`.
 15. **Education**: show both the university degree and the G.C.E. Advanced Level details from `README.md`. Format A/L result professionally (e.g., "Technology Stream. Passed with 3 C passes.").
 16. **Skills section**: keep it simple — 5 to 7 short category lines. **Cross-reference both the JD and the projects**: Prioritize and include every skill requested in the Job Description (JD) that exists in `README.md`, along with the core languages and tools from the 4 selected projects. Leave out minor, unrelated tools from `README.md` that the JD does not care about. Each category must fit on one line in the PDF.
 17. **Colors**: define both colors at the very top of the file, right after the packages:
@@ -244,6 +244,7 @@ Technology Stream. Passed with 3 C passes.
 5. **Shorten the summary by one sentence** if still overflowing.
 6. **Remove the least relevant certificate** if still overflowing.
 7. **Never remove a project** — always keep exactly 4.
+8. **Never remove an experience entry** — keep all listed experiences from the candidate profile.
 
 ### If there is blank space at the bottom:
 
@@ -254,6 +255,7 @@ Raise `8pt` in `\titlespacing*{\section}{0pt}{8pt}{3pt}` by 1pt at a time until 
 ## Final Self-Check Before Delivering the LaTeX Code
 
 - [ ] Exactly **4 projects** included.
+- [ ] ALL **experience entries and community roles** from the profile are included (100% of them, none omitted).
 - [ ] All **5 social links** in the header (LinkedIn, GitHub, Portfolio, Medium, YouTube).
 - [ ] Professional Summary copied **word-for-word** from `README.md`.
 - [ ] Project descriptions copied **exactly** from `README.md` (no rewrites).

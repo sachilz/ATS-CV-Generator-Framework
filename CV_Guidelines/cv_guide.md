@@ -112,7 +112,7 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
 - **2 or 3 certificates only.** Show only the 2 or 3 strongest certificates that relate to the job description. Never more than 3.
-- **Experience line.** Under Experience, put the Credly link on the same line as the description, aligned to the right edge of the page. Also add every club and society from the profile file to the Experience section, with the role, dates and description exactly as written there.
+- **Experience: Include ALL roles without exception.** Undergraduates do not have full-time industry jobs yet, so every listed role (Student Ambassador, content creation, technical writing, clubs, community memberships) is essential proof of technical leadership and initiative. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section. NEVER omit, filter, or drop any role. If a Credly badge exists, include it on the same line as the description, right-aligned. Use `\vspace{3pt}` between experience entries.
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
@@ -173,6 +173,7 @@ If the CV runs onto a second page, trim in this order:
 3. Merge two skill lines, but never remove a skill used in the 4 projects.
 4. Remove the least relevant certificate line.
 5. Never drop a project: the CV must keep exactly 4 projects. Shorten the summary or the skills lines instead.
+6. Never drop an experience entry: all listed roles and community activities must remain in the CV.
 
 If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
 
@@ -295,15 +296,26 @@ Your Stream. Passed with X passes.
 
 \section{Experience}
 {\small
-\textbf{Role}, Organization \hfill \textbf{Mon YYYY -- Present}
+% RULE: Include EVERY role and community activity from the profile file.
+% Never omit or drop any experience entry.
+\textbf{Role / Title 1}, Organization \hfill \textbf{Mon YYYY -- Present}
 \begin{itemize}
 \item One line on what you do. \hfill \href{https://credly.com/badges/your-badge}{\textcolor{linkblue}{Credly Link}}
-% Credly link stays on the same line as the text, right-aligned
 \end{itemize}
 \vspace{3pt}
-\textbf{Club Name, Your Role} \hfill \textbf{Mon YYYY -- Present}
+\textbf{Role / Title 2}, Organization \hfill \textbf{Mon YYYY -- Present}
 \begin{itemize}
-\item Club description copied from your profile file.
+\item One line on what you do.
+\end{itemize}
+\vspace{3pt}
+\textbf{Role / Title 3}, Organization \hfill \textbf{Mon YYYY -- Present}
+\begin{itemize}
+\item One line on what you do.
+\end{itemize}
+\vspace{3pt}
+\textbf{Club / Community Name, Your Role} \hfill \textbf{Mon YYYY -- Present}
+\begin{itemize}
+\item Role description copied from your profile file.
 \end{itemize}
 }
 \end{document}
@@ -312,6 +324,7 @@ Your Stream. Passed with X passes.
 Tips for using the template:
 
 - Add more `\textbf{Project...}` blocks until you have exactly 4 projects, each with 1 key point copied from your profile file.
+- Under Experience, include **EVERY** role, content creation, writing, or club from the profile file. Never drop any role.
 - Delete the Credly line if you have no badge to link. Keep every social link you own in the header (LinkedIn, GitHub, Portfolio, Medium, YouTube) and remove only the ones you do not have.
 - Use `--` for an en dash in date ranges and `\&` for an ampersand in LaTeX.
 - Never put tables, images or columns in the CV, because they can break ATS parsing.
