@@ -72,7 +72,7 @@ Deliver exactly these two items:
 13. **Project spacing**: after each project's `Technologies:` line (projects 1, 2, and 3), the very next line of LaTeX **must** be `\vspace{5pt}` — no blank lines, no comments between them. Do NOT add `\vspace{5pt}` after the last project.
 14. **Experience section**: include the Credly badge link on the same line as the description, right-aligned. Include every community role and club from `README.md`.
 15. **Education**: show both the university degree and the G.C.E. Advanced Level details from `README.md`. Format A/L result professionally (e.g., "Technology Stream. Passed with 3 C passes.").
-16. **Skills section**: keep it simple — 5 to 7 short category lines. Include languages and the most important tools used in the 4 selected projects, plus every skill the JD requires that the projects demonstrate.
+16. **Skills section**: keep it simple — 5 to 7 short category lines. **Cross-reference both the JD and the projects**: Prioritize and include every skill requested in the Job Description (JD) that exists in `README.md`, along with the core languages and tools from the 4 selected projects. Leave out minor, unrelated tools from `README.md` that the JD does not care about. Each category must fit on one line in the PDF.
 17. **Colors**: define both colors at the very top of the file, right after the packages:
     ```latex
     \definecolor{linkblue}{RGB}{0,85,190}
