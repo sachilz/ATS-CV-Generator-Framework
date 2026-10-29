@@ -65,28 +65,28 @@ GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Au
 
 Technologies: AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible, Jenkins, Docker, Nginx, Gitleaks, SonarQube, Trivy, Hadolint, Checkov, Bash
 
-- Provisioned AWS VPC networking and EC2 instances via Terraform IaC and Ansible automation, implementing a 14-stage Jenkins declarative CI/CD pipeline integrated with DevSecOps quality gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated containerized testing.
+- Provisioned AWS VPC networking and EC2 instances via Terraform IaC and Ansible automation, implementing a 14-stage Jenkins declarative CI/CD pipeline with 5 integrated DevSecOps quality gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated containerized testing across the full deployment lifecycle.
 
 ### 5.2 Cloud-Native Authentication Application Deployment on Kubernetes
 GitHub: https://github.com/sachilz/Cloud-Native-Authentication-Application-Deployment-on-Kubernetes
 
 Technologies: Docker (multi-stage builds), Kubernetes (Minikube), Helm 3, React 18, Node.js 20, Express, PostgreSQL 16, Nginx
 
-- Containerized a full-stack multi-tier application using Docker multi-stage builds and authored production-ready Kubernetes manifests and Helm 3 charts featuring automated database migration Jobs, health probes, and persistent volume claims.
+- Containerized a full-stack 3-tier application (frontend, backend, database) using Docker multi-stage builds and authored production-ready Kubernetes manifests and Helm 3 charts featuring automated database migration Jobs, liveness/readiness health probes, and persistent volume claims for zero-downtime deployments.
 
 ### 5.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
 GitHub: https://github.com/sachilz/career-advisor-agentic-ai
 
 Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transformers (all-MiniLM-L6-v2), Groq (LLaMA-3.1), OpenRouter (GPT-4o-mini), Streamlit, Docker
 
-- Developed an autonomous 4-stage LangGraph multi-agent career roadmap system backed by a ChromaDB RAG engine with hybrid LLM routing (Groq, OpenRouter), containerized via CPU-optimized Docker builds and deployed with Streamlit.
+- Developed an autonomous 4-stage LangGraph multi-agent career roadmap system backed by a ChromaDB RAG engine with hybrid LLM routing across 2 providers (Groq LLaMA-3.1, OpenRouter GPT-4o-mini), containerized via CPU-optimized Docker builds and deployed with a Streamlit web interface.
 
 ### 5.4 IntelliLearn: AI-Powered Microservices Learning Platform
 GitHub: https://github.com/sachilz/intellitutor-platform
 
 Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 7, Redis 7, Keycloak (OAuth2 / OIDC SSO), Docker (multi-stage builds), Docker Compose, Nginx, Swagger / OpenAPI, OpenRouter LLM (RAG)
 
-- Architected and containerized a 10-service learning platform with Docker Compose and Spring Cloud Gateway, integrating Keycloak OAuth2/OIDC SSO, Redis rate-limiting, domain-isolated MongoDB databases, and an AI tutor powered by RAG and OpenRouter LLMs.
+- Architected and containerized a 10-service microservices learning platform with Docker Compose and Spring Cloud Gateway, integrating Keycloak OAuth2/OIDC SSO, Redis rate-limiting, 3 domain-isolated MongoDB databases, and an AI tutor powered by RAG and OpenRouter LLMs.
 
 ---
 
