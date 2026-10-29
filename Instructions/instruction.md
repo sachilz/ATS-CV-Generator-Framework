@@ -108,7 +108,7 @@ Deliver exactly these two items:
 
 ### Precision 1-Page Tuning (MANDATORY):
 When the candidate has dense content (4 projects + 4 experience entries + multiple skills):
-- **Geometry**: `\usepackage[left=0.4in,right=0.4in,top=0.4in,bottom=0.4in]{geometry}`
+- **Geometry**: `\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}`
 - **Section Spacing**: `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` (adjust between 5pt and 6.5pt as needed to fill or tighten the page).
 - **Bullet Spacing**: `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
 - **Project Gap**: `\vspace{3.5pt}` between projects.
@@ -133,7 +133,7 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[left=0.4in,right=0.4in,top=0.4in,bottom=0.4in]{geometry}
+\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -148,9 +148,9 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{5.5pt}{2pt} % SECTION SPACING (tuned for 1-page fit)
+\titlespacing*{\section}{0pt}{6.5pt}{2.5pt} % SECTION SPACING (balanced for 1-page full fill)
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 

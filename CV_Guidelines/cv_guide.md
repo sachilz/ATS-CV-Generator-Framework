@@ -214,7 +214,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[left=0.4in,right=0.4in,top=0.4in,bottom=0.4in]{geometry}
+\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -228,8 +228,8 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{5.5pt}{2pt}   % SECTION SPACING KNOB (tuned for 1-page fit)
-\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\section}{0pt}{6.5pt}{2.5pt}   % SECTION SPACING KNOB (balanced for 1-page full fill)
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}

@@ -110,7 +110,7 @@ Claude will output:
 |---|---|---|
 | **Font** | Latin Modern (`lmodern`, 10pt body) | Timeless, clean, academic readability |
 | **Page Length** | Strictly 1 A4 Page | Eliminates weak spillover pages |
-| **Margins** | Symmetric (Left = Right = 0.4in, Top = Bottom = 0.4in) | Perfectly balanced borders on all 4 sides |
+| **Margins** | Symmetric (Left = Right = 0.45in, Top = Bottom = 0.45in) | Perfectly equal borders on all 4 sides |
 | **Colors** | `linkblue` (links) & `techblue` (tool tags) | Subtle professional contrast without breaking ATS |
 | **Projects** | Exactly 4 projects, 1 bullet each | High-impact focus for 10–20 second scans |
 | **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
