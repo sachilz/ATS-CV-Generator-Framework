@@ -51,8 +51,6 @@ Deliver in this exact way:
 
 **(c) ATS Keyword Review** — in the chat: list of JD keywords used in the CV and any that could not be included.
 
-**(d) Verification Checklist** — in the chat: items Sachintha must check himself (links, dates, certificate names, etc.).
-
 > Never claim the CV guarantees an interview or ATS success.
 
 ---

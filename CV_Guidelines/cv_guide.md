@@ -73,8 +73,8 @@ a career fair"), do this in order:
 5. Run a quality check: every claim supported, keywords natural, no
    spelling or date errors, no placeholders.
 
-Deliver, separately: (a) recruiter assessment, (b) the CV, (c) ATS
-keyword review, (d) a checklist of details I must verify myself.
+Deliver, separately: (a) recruiter assessment, (b) the CV (via LaTeX artifact/canvas only), (c) ATS
+keyword review.
 Never claim the CV guarantees an interview or ATS success.
 
 Strict rules:
