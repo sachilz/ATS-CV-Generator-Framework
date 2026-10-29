@@ -73,7 +73,7 @@ a career fair"), do this in order:
 5. Run a quality check: every claim supported, keywords natural, no
    spelling or date errors, no placeholders.
 
-Deliver: The CV (via LaTeX artifact/canvas only). Do not output long assessments or keyword reports in the chat.
+Deliver: (a) The CV via LaTeX artifact/canvas only, and (b) an ATS Keyword Review in the chat listing Matched Keywords included and Missing Keywords from the JD (so the user can review and manually adjust if needed).
 Never claim the CV guarantees an interview or ATS success.
 
 Strict rules:

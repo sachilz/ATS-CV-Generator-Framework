@@ -40,14 +40,18 @@ Wait for the user to paste or upload the Job Description (JD). Once received:
 After analyzing the JD, build a one-page, single-column, ATS-friendly CV as a complete LaTeX `.tex` file following all rules below.
 
 ### Step 4 — Deliver the Output
-Deliver **ONLY the LaTeX CV code in a Claude Artifact (Canvas panel)**:
+Deliver exactly these two items:
 
-- Output the complete `.tex` source code as a **Claude artifact (canvas panel)**, with filename `CV_SachinthaDilshan.tex`.
-- **Do NOT paste the LaTeX code inside the chat message.** The artifact/canvas is the only place it goes.
-- **Do NOT produce a PDF.** LaTeX code only. The user will compile it on Overleaf themselves.
-- **No chat bloat**: Do not write long recruiter assessments or ATS keyword reports in the chat. In the chat, simply output a 1-line confirmation (e.g., *"Here is your tailored one-page LaTeX CV for [Job Title] in the canvas panel."*).
+1. **The CV — LaTeX artifact only:**
+   - Output the complete `.tex` source code as a **Claude artifact (canvas panel)**, with filename `CV_SachinthaDilshan.tex`.
+   - **Do NOT paste the LaTeX code inside the chat message.** The artifact/canvas is the only place it goes.
+   - **Do NOT produce a PDF.** LaTeX code only. The user will compile it on Overleaf themselves.
 
-> Never claim the CV guarantees an interview or ATS success.
+2. **ATS Keyword Review — in the chat:**
+   - **Matched Keywords:** Skills and requirements from the JD that are present in `README.md` and included in this CV.
+   - **Missing Keywords:** Skills, tools, or requirements from the JD that were **not** in `README.md` (so the user can review them and decide whether to manually add them to the LaTeX code).
+
+> Keep the chat response concise — only the ATS Keyword Review and a brief link/pointer to the canvas panel. Do not include long recruiter essays or verification checklists. Never claim the CV guarantees an interview or ATS success.
 
 ---
 
