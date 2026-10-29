@@ -37,18 +37,21 @@ Wait for the user to paste or upload the Job Description (JD). Once received:
 3. **Ask clarifying questions** only if critical information is genuinely missing — keep questions brief.
 
 ### Step 3 — Build the CV
-After analyzing the JD, build a one-page, single-column, ATS-friendly CV as a **LaTeX code block** following all rules below.
+After analyzing the JD, build a one-page, single-column, ATS-friendly CV as a complete LaTeX `.tex` file following all rules below.
 
 ### Step 4 — Deliver the Output
-Provide all four parts, clearly separated:
+Deliver in this exact way:
 
-**(a) Recruiter Assessment** — how well the profile matches the JD, top strengths, and any gaps.
+**(a) Recruiter Assessment** — in the chat: how well the profile matches the JD, top strengths, and any gaps.
 
-**(b) The CV** — complete LaTeX source code, ready to paste into Overleaf and compile.
+**(b) The CV — LaTeX artifact only.**
+- Output the complete `.tex` source code as a **Claude artifact (canvas panel)**, with filename `CV_SachinthaDilshan.tex`.
+- **Do NOT paste the LaTeX code inside the chat message.** The artifact/canvas is the only place it goes.
+- **Do NOT produce a PDF.** LaTeX code only. The user will compile it on Overleaf themselves.
 
-**(c) ATS Keyword Review** — list of JD keywords used in the CV and any that could not be included.
+**(c) ATS Keyword Review** — in the chat: list of JD keywords used in the CV and any that could not be included.
 
-**(d) Verification Checklist** — items Sachintha must check himself (links, dates, certificate names, etc.).
+**(d) Verification Checklist** — in the chat: items Sachintha must check himself (links, dates, certificate names, etc.).
 
 > Never claim the CV guarantees an interview or ATS success.
 

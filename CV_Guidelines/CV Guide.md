@@ -130,19 +130,23 @@ Never skip this `\vspace{5pt}`. Without it, projects run together with no visibl
 \definecolor{techblue}{RGB}{55,85,150}
 ```
 
-## 6. Step 5: Ask for the right output
+## 6. Step 5: Output format rules (read carefully)
 
-Use one of these requests:
+**The only accepted output is a LaTeX `.tex` code artifact. Nothing else.**
 
-- "Create the CV as a PDF only." You get the finished file to send.
-- "Create the CV as a PDF and also the Overleaf LaTeX code separately." You get a PDF plus a `.tex` file you can edit later.
+Rules for how to deliver the CV:
 
-If your AI cannot create files, ask for the LaTeX code and compile it yourself:
+1. **LaTeX code only.** Produce the complete `.tex` source code for the CV. Do not produce a PDF, do not attempt to render or compile the file.
+2. **Deliver via artifact (canvas).** Output the LaTeX code as a **Claude artifact** — displayed in the side canvas panel, not pasted as a code block inside the chat. Use an artifact of type `text/plain` or `application/x-latex` with the filename `CV_SachinthaDilshan.tex`.
+3. **Do not paste the code inline in the chat.** The chat response must only contain the recruiter assessment **(a)**, ATS keyword review **(c)**, and verification checklist **(d)**. The LaTeX code **(b)** goes into the artifact/canvas only.
+4. **No PDF output.** Do not say "here is your PDF" or attempt to generate one. The user will compile the `.tex` file themselves using Overleaf.
 
-1. Go to overleaf.com and create a free account.
-2. Choose New Project, then Blank Project.
+To compile the LaTeX code yourself:
+
+1. Go to [overleaf.com](https://overleaf.com) and create a free account.
+2. Choose **New Project → Blank Project**.
 3. Paste the LaTeX code over the default file.
-4. Press Recompile and download the PDF.
+4. Press **Recompile** and download the PDF.
 
 The LaTeX template at the end of this guide produces the same clean look.
 
