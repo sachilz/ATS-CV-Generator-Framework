@@ -27,7 +27,7 @@ Sachintha-CV-Profile/
 ├── README.md                      # Root documentation (this file)
 │
 ├── Personal_Info/                 # Candidate data directory
-│   └── README.md                  # Single source of truth containing candidate's facts,
+│   └── info.md                    # Single source of truth containing candidate's facts,
 │                                  # skills, projects, certifications, and experience
 │
 ├── CV_Guidelines/                 # Layout and design specification
@@ -45,7 +45,7 @@ Sachintha-CV-Profile/
 
 ```mermaid
 flowchart TD
-    A["Candidate Profile\n(Personal_Info/README.md)"] --> D["Claude 3.5 / 3.7\nwith instruction.md & cv_guide.md"]
+    A["Candidate Profile\n(Personal_Info/info.md)"] --> D["Claude 3.5 / 3.7\nwith instruction.md & cv_guide.md"]
     B["CV Guidelines\n(CV_Guidelines/cv_guide.md)"] --> D
     C["Instructions\n(Instructions/instruction.md)"] --> D
     
@@ -67,7 +67,7 @@ flowchart TD
 ## 🚀 Quick Start Guide
 
 ### Step 1: Update Your Candidate Profile
-Navigate to [`Personal_Info/README.md`](Personal_Info/README.md) (or create your own profile markdown file) and ensure your facts are updated:
+Navigate to [`Personal_Info/info.md`](Personal_Info/info.md) (or create your own profile markdown file) and ensure your facts are updated:
 - Contact information and social profile links
 - Concise professional summary (3–4 lines)
 - Grouped technical skills and tools
@@ -80,7 +80,7 @@ Navigate to [`Personal_Info/README.md`](Personal_Info/README.md) (or create your
 Open Claude and attach the following **3 files** in your initial prompt:
 1. `Instructions/instruction.md`
 2. `CV_Guidelines/cv_guide.md`
-3. Your Profile file (e.g., `Personal_Info/README.md`)
+3. Your Profile file (e.g., `Personal_Info/info.md`)
 
 > **Initial Prompt to Claude:**
 > *"Read the attached instructions, guidelines, and candidate profile. Please confirm once you are ready for the Job Description."*
