@@ -37,22 +37,22 @@ This file contains the information you have shared for building CVs. Treat it as
 
 | Category | Skills |
 |---|---|
-| Programming languages | Python, JavaScript, Bash |
-| Front-end | React 18, HTML, CSS |
-| Back-end and APIs | Node.js 20, Express, REST APIs |
+| Programming languages | Java 17, Python, JavaScript, Bash |
+| Front-end | React (18/19), HTML, CSS |
+| Back-end and APIs | Spring Boot 3, Spring Cloud Gateway, Node.js 20, Express, REST APIs |
 | AI and ML | LangGraph, LangChain, ChromaDB, RAG, sentence-transformers, LLM APIs (Groq, OpenRouter) |
-| Databases | PostgreSQL 16, ChromaDB (vector store) |
+| Databases and caches | PostgreSQL 16, MongoDB 7, Redis 7, ChromaDB (vector store) |
 | CI/CD and version control | Jenkins, Git, GitHub |
 | Containers and orchestration | Docker (multi-stage builds), Docker Compose, Kubernetes (Minikube), Helm 3, Nginx (reverse proxy) |
 | Cloud and infrastructure as code | AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible |
 | Operating systems | Linux (Ubuntu), Windows |
-| DevSecOps | Gitleaks, SonarQube, Trivy, Hadolint, Checkov |
+| DevSecOps and IAM | Keycloak (OAuth2, OIDC SSO), Gitleaks, SonarQube, Trivy, Hadolint, Checkov |
 | Currently learning | Azure, Grafana |
 | Spoken languages | English (Professional Working Proficiency), Sinhala (Native) |
 
 ---
 
-## 4. Projects (all solo)
+## 4. Projects
 
 ### 4.1 AWS Infrastructure Provisioning and Deployment Automation
 GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Automation
@@ -77,6 +77,14 @@ Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transfo
 
 - Developed an autonomous 4-stage LangGraph multi-agent pipeline backed by a ChromaDB RAG engine with hybrid LLM routing (Groq and OpenRouter) to generate personalized career roadmaps from student profiles.
 - Containerized the solution with Docker multi-stage builds using a CPU-only PyTorch index (saving ~2.2 GB image size) and deployed an interactive Streamlit application with a skill readiness tracker.
+
+### 4.4 IntelliLearn: AI-Powered Microservices Learning Platform
+GitHub: https://github.com/sachilz/intellitutor-platform
+
+Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 7, Redis 7, Keycloak (OAuth2 / OIDC SSO), Docker (multi-stage builds), Docker Compose, Nginx, Swagger / OpenAPI, OpenRouter LLM (RAG)
+
+- Architected and containerized a 10-service enterprise learning platform using Docker multi-stage builds and Docker Compose, configuring Spring Cloud Gateway for dynamic route proxying, Redis rate-limiting, and Keycloak OAuth2/OIDC centralized authentication.
+- Built core backend services with Java 17 and Spring Boot 3 featuring isolated MongoDB database namespaces per domain, aggregated interactive OpenAPI/Swagger documentation, and integrated an AI tutor via RAG and OpenRouter LLMs.
 
 ---
 
@@ -141,4 +149,3 @@ You have no work or internship experience, so CVs lead with projects.
 7. **Removed on your instruction:** the "65% image size reduction" claim.
 8. **Source of truth:** always read `README.md` before building or updating any CV. All facts, technologies, bullet points, and project descriptions must come from this file only. Do not invent or assume any detail not written here.
 9. **Full-page layout:** every CV must fill the entire page with no large blank space at the bottom. Adjust section spacing, line spacing, or bullet point density so the content reaches the bottom margin cleanly.
-
