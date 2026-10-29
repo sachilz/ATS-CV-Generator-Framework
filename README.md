@@ -59,32 +59,28 @@ GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Au
 
 Technologies: AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible, Jenkins, Docker, Nginx, Gitleaks, SonarQube, Trivy, Hadolint, Checkov, Bash
 
-- Provisioned custom AWS networking (VPC, public subnet, IGW) and encrypted Ubuntu EC2 instances via Terraform IaC, automating host configuration, Docker engine, and Nginx reverse proxy using Ansible roles over SSH.
-- Built a 14-stage Jenkins declarative CI/CD pipeline integrating comprehensive DevSecOps gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated container testing prior to deployment.
+- Provisioned AWS VPC networking and EC2 instances via Terraform IaC and Ansible automation, implementing a 14-stage Jenkins declarative CI/CD pipeline integrated with DevSecOps quality gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated containerized testing.
 
 ### 4.2 Cloud-Native Authentication Application Deployment on Kubernetes
 GitHub: https://github.com/sachilz/Cloud-Native-Authentication-Application-Deployment-on-Kubernetes
 
 Technologies: Docker (multi-stage builds), Kubernetes (Minikube), Helm 3, React 18, Node.js 20, Express, PostgreSQL 16, Nginx
 
-- Containerized a full-stack multi-tier application (React 18, Node.js/Express, PostgreSQL 16) with Docker multi-stage builds, authoring declarative Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets, health probes, and PVCs).
-- Packaged the complete stack into a parameterized Helm 3 chart with database migration Jobs, enabling repeatable, environment-agnostic deployments across Kubernetes namespaces.
+- Containerized a full-stack multi-tier application using Docker multi-stage builds and authored production-ready Kubernetes manifests and Helm 3 charts featuring automated database migration Jobs, health probes, and persistent volume claims.
 
 ### 4.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
 GitHub: https://github.com/sachilz/career-advisor-agentic-ai
 
 Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transformers (all-MiniLM-L6-v2), Groq (LLaMA-3.1), OpenRouter (GPT-4o-mini), Streamlit, Docker
 
-- Developed an autonomous 4-stage LangGraph multi-agent pipeline backed by a ChromaDB RAG engine with hybrid LLM routing (Groq and OpenRouter) to generate personalized career roadmaps from student profiles.
-- Containerized the solution with Docker multi-stage builds using a CPU-only PyTorch index (saving ~2.2 GB image size) and deployed an interactive Streamlit application with a skill readiness tracker.
+- Developed an autonomous 4-stage LangGraph multi-agent career roadmap system backed by a ChromaDB RAG engine with hybrid LLM routing (Groq, OpenRouter), containerized via CPU-optimized Docker builds and deployed with Streamlit.
 
 ### 4.4 IntelliLearn: AI-Powered Microservices Learning Platform
 GitHub: https://github.com/sachilz/intellitutor-platform
 
 Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 7, Redis 7, Keycloak (OAuth2 / OIDC SSO), Docker (multi-stage builds), Docker Compose, Nginx, Swagger / OpenAPI, OpenRouter LLM (RAG)
 
-- Architected and containerized a 10-service enterprise learning platform using Docker multi-stage builds and Docker Compose, configuring Spring Cloud Gateway for dynamic route proxying, Redis rate-limiting, and Keycloak OAuth2/OIDC centralized authentication.
-- Built core backend services with Java 17 and Spring Boot 3 featuring isolated MongoDB database namespaces per domain, aggregated interactive OpenAPI/Swagger documentation, and integrated an AI tutor via RAG and OpenRouter LLMs.
+- Architected and containerized a 10-service learning platform with Docker Compose and Spring Cloud Gateway, integrating Keycloak OAuth2/OIDC SSO, Redis rate-limiting, domain-isolated MongoDB databases, and an AI tutor powered by RAG and OpenRouter LLMs.
 
 ---
 
@@ -103,7 +99,7 @@ You have no work or internship experience, so CVs lead with projects.
 | Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 – Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
 | Content Creator (NextOps) | YouTube, self-employed | Mar 2026 – Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
 | Technical Writer | Medium | May 2024 – Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
-| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Regular, active member (not a committee member). LinkedIn currently lists "Committee Member" and should be changed to "Member". |
+| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Regular member; actively engage with club events and activities and workshops |
 
 ---
 
@@ -135,17 +131,3 @@ You have no work or internship experience, so CVs lead with projects.
 | Practical Database Course for Beginners: 6 courses in 1 (SQL, DBMS) | Udemy | Jul 2024 |
 
 **No other certifications** (no AWS, Azure, or CCNA).
-
----
-
-## 8. Your Standing Rules for Every CV
-
-1. **Font:** use Latin Modern (`\usepackage{lmodern}`) in all CVs.
-2. **Certificates:** label this section as "Certifications and Training" and include only the certificates and courses relevant to the target role (for DevOps roles, mainly KodeKloud courses such as Linux, AWS, Terraform, Kubernetes, Docker, Jenkins, Git, and Microsoft Foundry). Never present course completion certificates as proctored industry certifications.
-3. **Projects:** always include the AWS Infrastructure Provisioning and Deployment Automation project, and choose your strongest projects for the role. Do not list every project.
-4. **Honesty:** use only facts from this file. Keep Azure and Grafana under "Currently Learning". Kubernetes is now backed by a project, so list it as "Kubernetes (Minikube)" in skills.
-5. **Date format:** show the degree as "Jan 2024 – Apr 2028 (expected)", with no year or semester of study.
-6. **Length:** one page for role-specific CVs. The two-page master CV is for your portfolio.
-7. **Removed on your instruction:** the "65% image size reduction" claim.
-8. **Source of truth:** always read `README.md` before building or updating any CV. All facts, technologies, bullet points, and project descriptions must come from this file only. Do not invent or assume any detail not written here.
-9. **Full-page layout:** every CV must fill the entire page with no large blank space at the bottom. Adjust section spacing, line spacing, or bullet point density so the content reaches the bottom margin cleanly.
