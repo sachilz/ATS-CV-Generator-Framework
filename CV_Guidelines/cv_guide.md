@@ -9,7 +9,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Strictly one A4 page, single column. The CV must never run onto a second page, and the content must fill the page right down to the bottom margin.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
-- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Experience.
+- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience.
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never leave one out. Each link is blue and the label in front of it stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
@@ -112,7 +112,7 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
 - **2 or 3 certificates only.** Show only the 2 or 3 strongest certificates that relate to the job description. Never more than 3.
-- **Experience: Include ALL roles without exception.** Undergraduates do not have full-time industry jobs yet, so every listed role (Student Ambassador, content creation, technical writing, clubs, community memberships) is essential proof of technical leadership and initiative. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section. NEVER omit, filter, or drop any role. If a Credly badge exists, include it on the same line as the description, right-aligned. Use `\vspace{3pt}` between experience entries.
+- **Professional Experience: Mandatory ATS Heading (`\section{Professional Experience}`) & Include ALL roles.** Always use `\section{Professional Experience}` (not just "Experience") so ATS scanners instantly recognize the work history section. Undergraduates do not have full-time industry jobs yet, so every listed role (Student Ambassador, content creation, technical writing, clubs, community memberships) is essential proof of technical leadership and initiative. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section. NEVER omit, filter, or drop any role. If a Credly badge exists, include it on the same line as the description, right-aligned. Use `\vspace{3pt}` between experience entries.
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
@@ -131,7 +131,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Elastic section title spacing.** Use `\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}`. The elastic rubber lengths (`plus 1.5pt minus 1.5pt`) allow LaTeX on Overleaf to automatically compress spacing if project descriptions are longer, and automatically expand spacing if project descriptions are shorter, ensuring the CV always fits strictly on ONE page and touches the bottom margin symmetrically.
 
-**Professional summary.** Copy the summary exactly from your profile file. Do not rewrite it for each job.
+**Professional summary (ATS Job-Matched).** Tailor the professional summary to naturally incorporate the exact target Job Title from the JD (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern position...") and key qualifying terms from the JD (such as "motivated", "collaborative", "responsive web applications") while staying 100% truthful to the candidate's profile facts. Keep to strictly 3 to 4 lines.
 
 **Colors.** Define both colors at the very top of the CV file, right after the packages. Use linkblue for every link and techblue only for the technology tags:
 
@@ -235,7 +235,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \begin{document}
 \begin{center}
 {\LARGE \textbf{YOUR FULL NAME}}\\[3pt]
-{\small Aspiring [Role] \textbar{} Seeking [Role] Internship}\\[2pt]
+{\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
 {\small City, Country \textbar{} +00 00 000 0000 \textbar{} you@email.com}\\[2pt]
 {\small LinkedIn: \href{https://linkedin.com/in/you}{\textcolor{linkblue}{linkedin.com/in/you}} \textbar{}
 GitHub: \href{https://github.com/you}{\textcolor{linkblue}{github.com/you}} \textbar{}
@@ -246,7 +246,7 @@ YouTube: \href{https://youtube.com/@you}{\textcolor{linkblue}{youtube.com/@you}}
 
 \section{Professional Summary}
 {\small
-Copy your professional summary exactly from your profile file.
+Tailor your professional summary to include the exact target Job Title from the JD and key descriptive ATS keywords (e.g., "motivated", "collaborative") based on your profile facts (3 to 4 lines).
 }
 
 \section{Technical Skills}
@@ -292,7 +292,7 @@ Your Stream. Passed with X passes.
 \end{itemize}
 }
 
-\section{Experience}
+\section{Professional Experience}
 {\small
 % RULE: Include EVERY role and community activity from the profile file.
 % Never omit or drop any experience entry.

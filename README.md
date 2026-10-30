@@ -10,7 +10,9 @@ This repository provides a modular, prompt-engineered system that tailors a **st
 
 - **🛡️ Zero Hallucinations**: Claude is strictly constrained to facts from your candidate profile file. It will never invent fake metrics, inflated numbers, or non-existent credentials.
 - **📄 Strictly One-Page A4 Rule**: Built-in LaTeX typography knobs and spacing constraints guarantee that the CV stays on exactly one page, filling neatly to the bottom margin.
-- **🎯 Dynamic JD Alignment**:
+- **🎯 Dynamic JD Alignment & ATS Title Matching**:
+  - Directly matches the **exact Job Title** in the header subtitle and professional summary for 100% ATS score.
+  - Weaves in key JD qualifying keywords (e.g., "motivated", "collaborative", "responsive web applications") into the professional summary.
   - Automatically identifies and picks the **4 best-matching projects** for the target role.
   - Prioritizes technical skills matching the JD requirements while retaining project tools.
   - Selects the **2–3 strongest certifications** directly relevant to the vacancy.
@@ -115,7 +117,8 @@ Claude will output:
 | **Projects** | Exactly 4 projects, 1 bullet each | High-impact focus for 10–20 second scans |
 | **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
 | **Project Gap** | `\vspace{5pt}` after each project | Visual breathing room between experience blocks |
-| **Header** | Name, target role, contact & social links | Single-line compact layout |
+| **Header** | Name, exact JD job title, contact & social links | Guaranteed ATS Job Title recognition |
+| **Headings** | ATS-compliant names (`Professional Experience`) | Ensures ATS parsers recognize work history |
 
 ---
 

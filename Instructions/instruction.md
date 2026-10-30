@@ -61,8 +61,12 @@ Once the target Job Description (JD) is received:
    - **Facts only**: Use ONLY information from `info.md`. Never invent skills, metrics, percentages, job titles, or credentials.
    - **Strictly ONE A4 page**: The CV must never spill onto a second page.
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
-   - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Experience.
-   - **Professional Summary**: Copy the summary **exactly** as written in `info.md` (word for word). Do not rewrite it.
+   - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Professional Experience.
+   - **Professional Summary (ATS Tailored & Job-Matched)**:
+     - Base it strictly on the candidate's summary in `info.md` — never invent credentials or work experience.
+     - **Dynamically incorporate the exact Job Title from that specific JD**: Extract the exact target title from whichever JD the user provides (e.g., *"DevOps Engineer – Intern"*, *"Cloud Associate"*, *"Backend Software Engineer Intern"*, *"Full Stack Developer Intern"*). Never hardcode a fixed title. State this exact role in the summary statement (e.g., "Motivated IT undergraduate and Microsoft Student Ambassador seeking a [Exact Target Title from JD] position...").
+     - **Weave in key qualifying adjectives and soft/hard ATS keywords from the JD**: If the JD highlights terms like *"motivated"*, *"collaborative"*, *"modern, responsive web applications"*, *"user-friendly interfaces"*, or *"willingness to learn"*, integrate these exact terms naturally into the summary where truthful to the candidate.
+     - Keep the summary strictly concise (3 to 4 lines maximum in the PDF) so it never overflows.
    - **Technical Skills**:
      - 5 to 7 concise category lines.
      - Each category must fit on **one line** in the PDF.
@@ -73,11 +77,13 @@ Once the target Job Description (JD) is received:
      - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
    - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Include A/L details from `info.md` in professional wording.
    - **Certifications and Training**: Include 2 or 3 strongest items relevant to the JD.
-   - **Experience Section (MANDATORY: Include ALL roles)**:
+   - **Professional Experience Section (MANDATORY ATS HEADING: Name as `\section{Professional Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
      - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2.5pt}`.
-   - **Header**: Include all available social links from `info.md` (LinkedIn, GitHub, Portfolio, Medium, YouTube) in `linkblue`.
+   - **Header & Job Title Match**:
+     - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Backend Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
+     - Include all available social links from `info.md` (LinkedIn, GitHub, Portfolio, Medium, YouTube) in `linkblue`.
    - **Colors**:
      ```latex
      \definecolor{linkblue}{RGB}{0,85,190}
@@ -168,7 +174,7 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 %% ── HEADER ────────────────────────────────────────────────────────────
 \begin{center}
 {\LARGE \textbf{[CANDIDATE FULL NAME]}}\\[3pt]
-{\small Aspiring [Target Role] \textbar{} Seeking Internship}\\[2pt]
+{\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
 {\small [City, Country] \textbar{} [Phone Number] \textbar{} [Email Address]}\\[2pt]
 {\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{[LinkedIn Display]}} \textbar{}
 GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{[GitHub Display]}} \textbar{}
@@ -180,7 +186,7 @@ YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{[YouTube Display]}}}
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-[Copy the professional summary exactly as written in info.md]
+[Tailor the professional summary to naturally include the exact target Job Title (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern role...") and key JD adjectives like "motivated", "collaborative", and core focus areas from info.md. Keep strictly to 3–4 lines.]
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────
@@ -249,8 +255,8 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
 \end{itemize}
 }
 
-%% ── EXPERIENCE (Include 100% of all roles from info.md) ───────────────
-\section{Experience}
+%% ── PROFESSIONAL EXPERIENCE (MANDATORY ATS HEADING: Include 100% of all roles) ──
+\section{Professional Experience}
 {\small
 \textbf{[Role / Title 1]}, [Organization / Company]
   \hfill \textbf{[Start Date] -- [End Date / Present]}
@@ -289,7 +295,7 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
 - [ ] Exactly **4 projects** included.
 - [ ] ALL **experience entries and community roles** from `info.md` are included (100% of them, none omitted).
 - [ ] All available social links from `info.md` included in the header.
-- [ ] Professional Summary copied **word-for-word** from `info.md`.
+- [ ] Professional Summary tailored with the exact target Job Title and JD keywords (e.g. "motivated"), staying true to `info.md` facts.
 - [ ] Project descriptions copied **exactly** from `info.md` (1 bullet per project).
 - [ ] Only **2–3 certificates**, chosen for target JD relevance.
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.
