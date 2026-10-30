@@ -54,7 +54,7 @@ Once the target Job Description (JD) is received:
 1. **Analyze the JD internally**:
    - Identify target role, essential technical skills, preferred tools, and ATS keywords.
    - Cross-reference with `info.md` to pick the **4 best-matching projects**.
-   - Select the **2 to 3 strongest certifications** directly relevant to the JD.
+   - Select strictly the **2 strongest certifications** directly relevant to the JD (keeping it to 2 is essential for 1-page fit).
    - Align the **Technical Skills** to prioritize technologies demanded by the JD that exist in `info.md`, along with the core tools from the 4 selected projects.
 
 2. **Strict Standing Rules for the CV**:
@@ -76,13 +76,14 @@ Once the target Job Description (JD) is received:
      - **Technologies line (STRICTLY ONE LINE ONLY)**: `Technologies: \textcolor{techblue}{...}` with **6 to 8 tags**. Must stretch across towards the right margin (under the GitHub link) but **MUST NEVER WRAP TO A SECOND LINE**.
      - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
    - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Include A/L details from `info.md` in professional wording.
-   - **Certifications and Training**: Include 2 or 3 strongest items relevant to the JD.
+   - **Certifications and Training**: Strictly include the **2 strongest certificates** directly relevant to the JD. Limiting to 2 certificates is critical to guarantee the 1-page fit.
    - **Professional Experience Section (MANDATORY ATS HEADING: Name as `\section{Professional Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
-     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2.5pt}`.
-   - **Header & Job Title Match**:
-     - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Backend Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
+     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2pt plus 0.5pt minus 0.5pt}`.
+   - **Candidate Name & Header Styling (STRICT FONT & BOLD RULE)**:
+     - **Name formatting is MANDATORY**: Always format as `{\LARGE \textbf{[Candidate Full Name]}}\\[3pt]`. **NEVER omit `\textbf`**. The name must be prominently bold, clear, dark, and elegant in Latin Modern font (`\usepackage{lmodern}`). Never render the name in unbolded, normal weight, or altered font.
+     - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Full Stack Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
      - **Social Links Format (STRICTLY CONSISTENT DOMAIN URL FORMAT)**: All links in the header MUST follow the exact same clean domain-based format (strip `https://` for display). Never show raw usernames alone (e.g., `sachilz`) and never show plain text names (e.g., `NextOps`). Every link must look uniform:
        - **LinkedIn**: `linkedin.com/in/[username]` (e.g., `linkedin.com/in/sachilz`)
        - **GitHub**: `github.com/[username]` (e.g., `github.com/sachilz`)
@@ -118,34 +119,24 @@ Deliver exactly these two items:
 
 **A second page is a failure. Fix it before delivering the LaTeX code.**
 
-### Dynamic Spacing & Content Density Management (AUTOMATIC):
-Claude must evaluate the content volume before generating the LaTeX code:
-- **Margins**: Strictly equal on all 4 sides: `\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}` (or `\usepackage[margin=0.45in]{geometry}`).
-- **Elastic Rubber Spacing**: Use `\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}` and `\vspace{3.5pt plus 1pt minus 1pt}`. This allows the LaTeX engine to automatically expand when content is shorter and automatically compress when project descriptions are longer.
-- **If candidate has extra-long project descriptions (3+ lines each)**:
-  - Keep base section spacing compact: `\titlespacing*{\section}{0pt}{5.2pt plus 1pt minus 1pt}{2pt}`
-  - Keep project gap at `\vspace{3pt}`
-  - Ensure `Technologies:` lines are strictly 1 line (6-7 tags).
-- **If candidate has shorter project descriptions (1-2 lines)**:
-  - Base section spacing can be `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1.5pt}{2.5pt}` to fill down cleanly to the bottom margin.
-
-### Precision 1-Page Tuning (MANDATORY):
-When the candidate has dense content (4 projects + 4 experience entries + multiple skills):
-- **Geometry**: `\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}`
-- **Section Spacing**: `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` (adjust between 5pt and 6.5pt as needed to fill or tighten the page).
-- **Bullet Spacing**: `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
-- **Project Gap**: `\vspace{3.5pt}` between projects.
-- **Experience Gap**: `\vspace{2.5pt}` between experience roles.
-
-If the CV still touches a second page:
-1. Ensure all `Technologies:` lines are strictly 1 line (6-7 tags).
-2. Set `\titlespacing*{\section}{0pt}{5pt}{1.5pt}`.
-3. Show 2 certificates instead of 3.
-4. **NEVER remove a project (keep 4).**
-5. **NEVER remove an experience entry (keep all).**
-
-### If there is blank space at the bottom:
-Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a time until the page is full.
+### Automated 1-Page Space Calibration (MANDATORY TO PREVENT 2-PAGE OVERFLOW):
+To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on all 4 sides**:
+1. **Geometry (Strictly Equal 0.4in Margins)**:
+   `\usepackage[margin=0.4in]{geometry}` (Top = Bottom = Left = Right = 0.4in — perfectly balanced on all 4 sides).
+2. **Section Spacing (Tuned Calibration)**:
+   `\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}`
+3. **Bullet Spacing**:
+   `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
+4. **Project Gap**:
+   `\vspace{3pt plus 0.5pt minus 0.5pt}` after each project's Technologies line (projects 1, 2, 3).
+5. **Experience Gap**:
+   `\vspace{2pt plus 0.5pt minus 0.5pt}` between experience roles.
+6. **Strict Content Budget**:
+   - Professional Summary: exactly 3–4 lines.
+   - Skills: 5–6 categories (each on strictly 1 line).
+   - Projects: 4 projects, each with 1 bullet (2 lines max in PDF). Technologies line strictly 1 line (6–7 tags).
+   - Certifications: strictly 2 items.
+   - Experience: all 4 roles from `info.md`, each with 1 bullet.
 
 ---
 
@@ -156,7 +147,7 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage[margin=0.4in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -171,9 +162,9 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt} % ELASTIC SECTION SPACING (auto-adjusts to content length)
+\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=0.5pt plus 0.5pt minus 0.5pt,topsep=1pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 
@@ -216,7 +207,7 @@ YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{youtube.com/@[channel]}}}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
+\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
 
 % ── PROJECT 2 ──
 \textbf{[Project Title 2]} \hfill \ghlink{[GitHub URL 2]}
@@ -224,7 +215,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
+\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
 
 % ── PROJECT 3 ──
 \textbf{[Project Title 3]} \hfill \ghlink{[GitHub URL 3]}
@@ -232,7 +223,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP
+\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
 
 % ── PROJECT 4 ──
 \textbf{[Project Title 4]} \hfill \ghlink{[GitHub URL 4]}
@@ -271,19 +262,19 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
     \hfill \href{[Badge URL]}{\textcolor{linkblue}{[Badge Link]}}
 \end{itemize}
 
-\vspace{2.5pt}
+\vspace{2pt plus 0.5pt minus 0.5pt}
 \textbf{[Role / Title 2]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{2.5pt}
+\vspace{2pt plus 0.5pt minus 0.5pt}
 \textbf{[Role / Title 3]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{2.5pt}
+\vspace{2pt plus 0.5pt minus 0.5pt}
 \textbf{[Community Role / Club]}, [Organization] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of involvement and contributions]
@@ -303,7 +294,7 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
 - [ ] All header social links use strictly uniform domain format (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` — never bare names like "NextOps" or "sachilz").
 - [ ] Professional Summary tailored with the exact target Job Title and JD keywords (e.g. "motivated"), staying true to `info.md` facts.
 - [ ] Project descriptions copied **exactly** from `info.md` (1 bullet per project).
-- [ ] Only **2–3 certificates**, chosen for target JD relevance.
+- [ ] Strictly **2 certificates** chosen for JD relevance (prevents 2nd page overflow).
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.
 - [ ] Each Technologies line fits on **strictly ONE single line** (never wraps to a 2nd line, extends up to the GitHub text margin).
 - [ ] `\vspace{5pt}` present **immediately** after Technologies lines for projects 1, 2, and 3.

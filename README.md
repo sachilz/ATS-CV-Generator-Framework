@@ -15,7 +15,7 @@ This repository provides a modular, prompt-engineered system that tailors a **st
   - Weaves in key JD qualifying keywords (e.g., "motivated", "collaborative", "responsive web applications") into the professional summary.
   - Automatically identifies and picks the **4 best-matching projects** for the target role.
   - Prioritizes technical skills matching the JD requirements while retaining project tools.
-  - Selects the **2–3 strongest certifications** directly relevant to the vacancy.
+  - Selects strictly the **2 strongest certifications** directly relevant to the vacancy (guarantees 1-page fit).
 - **⚡ Claude Canvas / Artifact Integration**: The complete LaTeX code is delivered directly in Claude’s side Artifact panel (`CV_[CandidateName].tex`) for instant one-click copying — keeping the chat clean.
 - **🔍 ATS Keyword Review**: Highlights keywords successfully matched in the CV and flags missing keywords from the JD so you can review and manually adjust if needed.
 - **🧩 Reusable for Any Candidate**: Fully parameterized; works with any profile file without hardcoded dependencies.
@@ -112,12 +112,12 @@ Claude will output:
 |---|---|---|
 | **Font** | Latin Modern (`lmodern`, 10pt body) | Timeless, clean, academic readability |
 | **Page Length** | Strictly 1 A4 Page | Eliminates weak spillover pages |
-| **Margins** | Symmetric (Left = Right = 0.45in, Top = Bottom = 0.45in) | Perfectly equal borders on all 4 sides |
+| **Margins** | Symmetric (Left = Right = Top = Bottom = 0.4in) | 100% equal borders on all 4 sides |
 | **Colors** | `linkblue` (links) & `techblue` (tool tags) | Subtle professional contrast without breaking ATS |
 | **Projects** | Exactly 4 projects, 1 bullet each | High-impact focus for 10–20 second scans |
 | **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
-| **Project Gap** | `\vspace{5pt}` after each project | Visual breathing room between experience blocks |
-| **Header** | Name, exact JD job title, contact & uniform domain links (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...`) | Professional consistency & guaranteed ATS recognition |
+| **Project Gap** | `\vspace{3pt}` after each project | Balanced spacing preventing 2-page overflow |
+| **Header** | Bold Name (`\LARGE \textbf{...}`), exact JD job title, uniform domain links (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...`) | High contrast bold header & guaranteed ATS recognition |
 | **Headings** | ATS-compliant names (`Professional Experience`) | Ensures ATS parsers recognize work history |
 
 ---

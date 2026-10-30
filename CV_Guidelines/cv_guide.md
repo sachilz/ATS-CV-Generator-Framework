@@ -39,8 +39,8 @@ Honesty rules for this file:
 
 Put these rules at the bottom of your profile file so the AI applies them to every CV:
 
-1. Font: Latin Modern (`\usepackage{lmodern}`).
-2. Certificates: include only the 2 or 3 strongest ones that relate to the job description. Never more than 3.
+1. Font & Candidate Name: Latin Modern (`\usepackage{lmodern}`). Candidate name MUST ALWAYS be formatted as `{\LARGE \textbf{YOUR FULL NAME}}\\[3pt]` with `\textbf` strictly included. Never omit `\textbf` or use normal weight font for the name.
+2. Certificates: strictly include the 2 strongest ones that relate to the job description. Limiting to 2 certificates is critical to guarantee the 1-page fit.
 3. Include strictly 4 projects in every CV. Choose the 4 that best match the job requirements. If the profile file has only 4, include all 4.
 4. Use only facts from the profile file. Never invent details.
 5. Show the degree dates as "Mon YYYY - Mon YYYY (expected)" with no year or semester of study.
@@ -111,25 +111,25 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
-- **2 or 3 certificates only.** Show only the 2 or 3 strongest certificates that relate to the job description. Never more than 3.
+- **Strictly 2 certificates only.** Show strictly the 2 strongest certificates directly relevant to the target role. Limiting to 2 certificates is essential to prevent the CV from overflowing to a 2nd page.
 - **Professional Experience: Mandatory ATS Heading (`\section{Professional Experience}`) & Include ALL roles.** Always use `\section{Professional Experience}` (not just "Experience") so ATS scanners instantly recognize the work history section. Undergraduates do not have full-time industry jobs yet, so every listed role (Student Ambassador, content creation, technical writing, clubs, community memberships) is essential proof of technical leadership and initiative. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section. NEVER omit, filter, or drop any role. If a Credly badge exists, include it on the same line as the description, right-aligned. Use `\vspace{3pt}` between experience entries.
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
-**Project spacing.** After each project's "Technologies:" line, add `\vspace{3.5pt}` before the next project title, so the projects are clearly separated.
+**Project spacing.** After each project's "Technologies:" line, add `\vspace{3pt plus 0.5pt minus 0.5pt}` before the next project title, so the projects are clearly separated.
 
-**Project spacing is mandatory.** Put the `\vspace{3.5pt}` line between every two projects, directly after the "Technologies:" line of the first project and before the next project title, exactly like this. Never skip it, and never remove it when fitting the page:
+**Project spacing is mandatory.** Put the `\vspace{3pt plus 0.5pt minus 0.5pt}` line between every two projects, directly after the "Technologies:" line of the first project and before the next project title, exactly like this. Never skip it, and never remove it when fitting the page:
 
 ```latex
 Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
-\vspace{3.5pt}
+\vspace{3pt plus 0.5pt minus 0.5pt}
 \textbf{Next Project Title} \hfill \ghlink{https://github.com/you/next-project}
 ```
 
 **Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
 
-**Elastic section title spacing.** Use `\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}`. The elastic rubber lengths (`plus 1.5pt minus 1.5pt`) allow LaTeX on Overleaf to automatically compress spacing if project descriptions are longer, and automatically expand spacing if project descriptions are shorter, ensuring the CV always fits strictly on ONE page and touches the bottom margin symmetrically.
+**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}` with `\usepackage[margin=0.4in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
 **Professional summary (ATS Job-Matched).** Tailor the professional summary to naturally incorporate the exact target Job Title from the JD (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern position...") and key qualifying terms from the JD (such as "motivated", "collaborative", "responsive web applications") while staying 100% truthful to the candidate's profile facts. Keep to strictly 3 to 4 lines.
 
@@ -161,7 +161,7 @@ The LaTeX template at the end of this guide produces the same clean look.
 The CV must be strictly one page: never a second page, and no big empty space at the bottom. It should end close to the bottom margin. These are the controls:
 
 - **Section spacing:** the number in `\titlespacing*{\section}{0pt}{8pt}{3pt}`. Raise 8pt to spread sections out. Never go below 8pt, because section titles must stay clearly separated from the content above them.
-- **Project gap:** the `\vspace{3.5pt}` between projects.
+- **Project gap:** the `\vspace{3pt plus 0.5pt minus 0.5pt}` between projects.
 - **Bullet spacing:** `itemsep` inside `\setlist[itemize]`.
 
 If the CV runs onto a second page, trim in this order:
@@ -214,7 +214,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[left=0.45in,right=0.45in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage[margin=0.4in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -228,8 +228,8 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6pt plus 1.5pt minus 1.5pt}{2.5pt}   % ELASTIC SECTION SPACING (auto-adjusts to content length)
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.5pt plus 0.5pt minus 0.5pt,topsep=1pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}
@@ -269,7 +269,7 @@ Tailor your professional summary to include the exact target Job Title from the 
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
 
-\vspace{3.5pt plus 1pt minus 1pt}  % ELASTIC PROJECT GAP KNOB
+\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP KNOB
 \textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
