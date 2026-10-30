@@ -80,7 +80,7 @@ Once the target Job Description (JD) is received:
    - **Professional Experience Section (MANDATORY ATS HEADING: Name as `\section{Professional Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
-     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2pt plus 0.5pt minus 0.5pt}`.
+     - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{3.5pt plus 1pt minus 1pt}`.
    - **Candidate Name & Header Styling (STRICT FONT & BOLD RULE)**:
      - **Name formatting is MANDATORY**: Always format as `{\LARGE \textbf{[Candidate Full Name]}}\\[3pt]`. **NEVER omit `\textbf`**. The name must be prominently bold, clear, dark, and elegant in Latin Modern font (`\usepackage{lmodern}`). Never render the name in unbolded, normal weight, or altered font.
      - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Full Stack Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
@@ -121,16 +121,16 @@ Deliver exactly these two items:
 
 ### Automated 1-Page Space Calibration (MANDATORY TO PREVENT 2-PAGE OVERFLOW):
 To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on all 4 sides**:
-1. **Geometry (Strictly Equal 0.35in Margins)**:
-   `\usepackage[margin=0.35in]{geometry}` (Top = Bottom = Left = Right = 0.35in — perfectly balanced on all 4 sides).
+1. **Geometry (Strictly Equal 0.42in Margins)**:
+   `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in — perfectly balanced on all 4 sides).
 2. **Section Spacing (Tuned Calibration)**:
-   `\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}`
+   `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}`
 3. **Bullet Spacing**:
-   `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
+   `\setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}`
 4. **Project Gap**:
-   `\vspace{3pt plus 0.5pt minus 0.5pt}` after each project's Technologies line (projects 1, 2, 3).
+   `\vspace{4.5pt plus 1pt minus 1pt}` after each project's Technologies line (projects 1, 2, 3).
 5. **Experience Gap**:
-   `\vspace{2pt plus 0.5pt minus 0.5pt}` between experience roles.
+   `\vspace{3.5pt plus 1pt minus 1pt}` between experience roles.
 6. **Strict Content Budget**:
    - Professional Summary: exactly 3–4 lines.
    - Skills: 5–6 categories (each on strictly 1 line).
@@ -147,7 +147,7 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.35in]{geometry}
+\usepackage[margin=0.42in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -162,9 +162,9 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 
@@ -207,7 +207,7 @@ YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{youtube.com/@[channel]}}}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
+\vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 2 ──
 \textbf{[Project Title 2]} \hfill \ghlink{[GitHub URL 2]}
@@ -215,7 +215,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
+\vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 3 ──
 \textbf{[Project Title 3]} \hfill \ghlink{[GitHub URL 3]}
@@ -223,7 +223,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
 Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
-\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP
+\vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 4 ──
 \textbf{[Project Title 4]} \hfill \ghlink{[GitHub URL 4]}
@@ -261,19 +261,19 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
     \hfill \href{[Badge URL]}{\textcolor{linkblue}{[Badge Link]}}
 \end{itemize}
 
-\vspace{2pt plus 0.5pt minus 0.5pt}
+\vspace{3.5pt plus 1pt minus 1pt}
 \textbf{[Role / Title 2]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{2pt plus 0.5pt minus 0.5pt}
+\vspace{3.5pt plus 1pt minus 1pt}
 \textbf{[Role / Title 3]}, [Organization / Company] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of responsibilities and achievements]
 \end{itemize}
 
-\vspace{2pt plus 0.5pt minus 0.5pt}
+\vspace{3.5pt plus 1pt minus 1pt}
 \textbf{[Community Role / Club]}, [Organization] \hfill \textbf{[Dates]}
 \begin{itemize}
   \item [Description of involvement and contributions]

@@ -116,20 +116,20 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Education.** Show your university degree and also your G.C.E. Advanced Level details from the profile file: the school on the main line, then the A/L stream and result on the line below, in professional wording, for example: Technology Stream. Passed with 3 C passes.
 - **One page.** All of this must still fit on exactly one page.
 
-**Project spacing.** After each project's "Technologies:" line, add `\vspace{3pt plus 0.5pt minus 0.5pt}` before the next project title, so the projects are clearly separated.
+**Project spacing.** After each project's "Technologies:" line, add `\vspace{4.5pt plus 1pt minus 1pt}` before the next project title, so the projects are clearly separated.
 
-**Project spacing is mandatory.** Put the `\vspace{3pt plus 0.5pt minus 0.5pt}` line between every two projects, directly after the "Technologies:" line of the first project and before the next project title, exactly like this. Never skip it, and never remove it when fitting the page:
+**Project spacing is mandatory.** Put the `\vspace{4.5pt plus 1pt minus 1pt}` line between every two projects, directly after the "Technologies:" line of the first project and before the next project title, exactly like this. Never skip it, and never remove it when fitting the page:
 
 ```latex
 Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
-\vspace{3pt plus 0.5pt minus 0.5pt}
+\vspace{4.5pt plus 1pt minus 1pt}
 \textbf{Next Project Title} \hfill \ghlink{https://github.com/you/next-project}
 ```
 
 **Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
 
-**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}` with `\usepackage[margin=0.35in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
+**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
 **Professional summary (ATS Job-Matched).** Tailor the professional summary to naturally incorporate the exact target Job Title from the JD (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern position...") and key qualifying terms from the JD (such as "motivated", "collaborative", "responsive web applications") while staying 100% truthful to the candidate's profile facts. Keep to strictly 3 to 4 lines.
 
@@ -161,7 +161,7 @@ The LaTeX template at the end of this guide produces the same clean look.
 The CV must be strictly one page: never a second page, and no big empty space at the bottom. It should end close to the bottom margin. These are the controls:
 
 - **Section spacing:** the number in `\titlespacing*{\section}{0pt}{8pt}{3pt}`. Raise 8pt to spread sections out. Never go below 8pt, because section titles must stay clearly separated from the content above them.
-- **Project gap:** the `\vspace{3pt plus 0.5pt minus 0.5pt}` between projects.
+- **Project gap:** the `\vspace{4.5pt plus 1pt minus 1pt}` between projects.
 - **Bullet spacing:** `itemsep` inside `\setlist[itemize]`.
 
 If the CV runs onto a second page, trim in this order:
@@ -214,7 +214,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.35in]{geometry}
+\usepackage[margin=0.42in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -228,12 +228,12 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
-\setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}
-\linespread{0.96}\selectfont
+% Balanced vertical distribution
 
 \begin{center}
 {\LARGE \textbf{YOUR FULL NAME}}\\[3pt]
@@ -271,7 +271,7 @@ Tailor your professional summary to include the exact target Job Title from the 
 \end{itemize}
 Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
 
-\vspace{3pt plus 0.5pt minus 0.5pt}  % PROJECT GAP KNOB
+\vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP KNOB
 \textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
