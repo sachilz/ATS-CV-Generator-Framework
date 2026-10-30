@@ -39,7 +39,7 @@ Honesty rules for this file:
 
 Put these rules at the bottom of your profile file so the AI applies them to every CV:
 
-1. Font & Candidate Name: Latin Modern (`\usepackage{lmodern}`). Candidate name MUST ALWAYS be formatted in Small Capitals as `{\LARGE \scshape YOUR FULL NAME}\\[3.5pt]` (rendering as `SACHINTHA DILSHAN MADHUSHANKHA`). Never omit `\scshape`.
+1. Font & Candidate Name: Latin Modern (`\usepackage{lmodern}`). Candidate name MUST STRICTLY ALWAYS be formatted as `{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[4pt]` (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[4pt]`). Never omit `\bfseries` or `\MakeUppercase` under any circumstances.
 2. Certificates: strictly include the 2 strongest ones that relate to the job description. Limiting to 2 certificates is critical to guarantee the 1-page fit.
 3. Include strictly 4 projects in every CV. Choose the 4 that best match the job requirements. If the profile file has only 4, include all 4.
 4. Use only facts from the profile file. Never invent details.
@@ -236,7 +236,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 % Balanced vertical distribution
 
 \begin{center}
-{\LARGE \scshape YOUR FULL NAME}\\[3.5pt]
+{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[4pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[2.5pt]
 {\small City, Country \textbar{} +00 00 000 0000 \textbar{} you@email.com}\\[2pt]
 % NOTE: All header links MUST display in the exact same domain URL format (e.g. medium.com/@..., youtube.com/@...) — never bare names!
