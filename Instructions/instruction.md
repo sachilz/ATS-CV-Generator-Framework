@@ -121,10 +121,10 @@ Deliver exactly these two items:
 
 ### Automated 1-Page Space Calibration (MANDATORY TO PREVENT 2-PAGE OVERFLOW):
 To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on all 4 sides**:
-1. **Geometry (Strictly Equal 0.4in Margins)**:
-   `\usepackage[margin=0.4in]{geometry}` (Top = Bottom = Left = Right = 0.4in — perfectly balanced on all 4 sides).
+1. **Geometry (Strictly Equal 0.35in Margins)**:
+   `\usepackage[margin=0.35in]{geometry}` (Top = Bottom = Left = Right = 0.35in — perfectly balanced on all 4 sides).
 2. **Section Spacing (Tuned Calibration)**:
-   `\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}`
+   `\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}`
 3. **Bullet Spacing**:
    `\setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}`
 4. **Project Gap**:
@@ -147,7 +147,7 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.4in]{geometry}
+\usepackage[margin=0.35in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -162,7 +162,7 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
   [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]
   {leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
@@ -236,9 +236,8 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 %% ── EDUCATION ─────────────────────────────────────────────────────────
 \section{Education}
 {\small
-\textbf{[Degree Name]}, [University / Institution]
-  \hfill \textbf{[Start Mon YYYY] -- [End Mon YYYY] (expected)}\\
-Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
+\textbf{[Degree Name]}, [University / Institution] \hfill \textbf{[Start Mon YYYY] -- [End Mon YYYY] (expected)}\\
+[Faculty]. Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[2pt]
 \textbf{[Secondary / School Qualification]}, [School Name] \hfill \textbf{[Year]}\\
 [Stream / Specialization]. [Results / Passes].
 }

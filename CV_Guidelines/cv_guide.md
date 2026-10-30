@@ -129,7 +129,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
 
-**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}` with `\usepackage[margin=0.4in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
+**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}` with `\usepackage[margin=0.35in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
 **Professional summary (ATS Job-Matched).** Tailor the professional summary to naturally incorporate the exact target Job Title from the JD (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern position...") and key qualifying terms from the JD (such as "motivated", "collaborative", "responsive web applications") while staying 100% truthful to the candidate's profile facts. Keep to strictly 3 to 4 lines.
 
@@ -214,7 +214,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=0.4in]{geometry}
+\usepackage[margin=0.35in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -228,11 +228,13 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{4.8pt plus 1pt minus 1pt}{1.8pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\titlespacing*{\section}{0pt}{4pt plus 0.5pt minus 0.5pt}{1.5pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]{leftmargin=1.2em,itemsep=0pt plus 0.5pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}
+\linespread{0.96}\selectfont
+
 \begin{center}
 {\LARGE \textbf{YOUR FULL NAME}}\\[3pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
@@ -281,7 +283,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
 \section{Education}
 {\small
 \textbf{BSc (Hons) in Your Degree}, Your University \hfill \textbf{Mon YYYY -- Mon YYYY (expected)}\\
-Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[3pt]
+Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
 \textbf{G.C.E. Advanced Level}, Your School \hfill \textbf{YYYY}\\
 Your Stream. Passed with X passes.
 }
