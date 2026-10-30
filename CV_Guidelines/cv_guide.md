@@ -9,7 +9,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Strictly one A4 page, single column. The CV must never run onto a second page, and the content must fill the page right down to the bottom margin.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
-- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience.
+- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience, References (conditional).
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/sachilz`, `github.com/sachilz`, `sachilz.me`, `medium.com/@sachilz`, `youtube.com/@NextOpz`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
@@ -175,6 +175,15 @@ If the CV runs onto a second page, trim in this order:
 
 If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
 
+
+**References and 1-Page vs 2-Page Budget Criteria.**
+1. **1-Page Strict Baseline:** For standard CVs without references, strictly fit on ONE single page.
+2. **References Inclusion:** Include `\section{References}` ONLY when references are listed in your profile file (`info.md`) or explicitly requested.
+3. **1-Page vs 2-Page Decision:**
+   - If references can comfortably fit on Page 1 along with all core content, keep it on 1 Page.
+   - If dense projects (4 projects), technical skills, education, and all 4 experience roles together with references exceed 1 page, do NOT compress into an unreadable mess. Gracefully expand to **strictly 2 pages**, balancing spacing across both pages.
+4. **References Layout:** Format in two side-by-side columns using `minipage[t]{0.48\textwidth}` with `\hfill` and clickable email links.
+
 ## 8. Step 7: Write strong project bullets
 
 Each project has 1 key point in your profile file, and the CV copies it exactly as written. Write that key point in your profile file with this pattern: action verb, what you built, tools used, specific outcome.
@@ -316,6 +325,24 @@ Your Stream. Passed with X passes.
 \item Role description copied from your profile file.
 \end{itemize}
 }
+
+% Optional References Section (Two-column minipage layout)
+% \section{References}
+% {\small
+% \begin{minipage}[t]{0.48\textwidth}
+% \textbf{Referee Name One}\\
+% Senior Lecturer, Faculty of IT, Horizon Campus\\
+% \href{mailto:email@horizoncampus.edu.lk}{\textcolor{linkblue}{email@horizoncampus.edu.lk}}\\
+% +94 77 000 0000
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.48\textwidth}
+% \textbf{Referee Name Two}\\
+% Emeritus Professor, University of Ruhuna\\
+% \href{mailto:email@gmail.com}{\textcolor{linkblue}{email@gmail.com}}\\
+% +94 77 000 0000
+% \end{minipage}
+% }
 \end{document}
 ```
 

@@ -81,9 +81,15 @@ Once the target Job Description (JD) is received:
 
 2. **Strict Standing Rules for the CV**:
    - **Facts only**: Use ONLY information from `info.md`. Never invent skills, metrics, percentages, job titles, or credentials.
-   - **Strictly ONE A4 page**: The CV must never spill onto a second page.
+    - **Page Budget & Length (1-Page Default vs 2-Page References Rule)**:
+      - **1-Page Strict Default**: By default (without References), the CV MUST strictly fit onto **ONE single A4 page**.
+      - **References & 2-Page Criteria (MANDATORY LOGIC)**:
+        1. **Criterion 1 (Data-driven inclusion)**: Check `info.md` for `## 9. References` (or if user requests references). If present, include the `\section{References}` section.
+        2. **Criterion 2 (1-Page Priority)**: If candidate content + References can cleanly fit on **1 Page** (by gentle spacing calibration), keep it on 1 Page.
+        3. **Criterion 3 (Conditional 2-Page Expansion)**: If 4 full projects + experience + skills + references cannot physically fit on 1 page without unnatural crowding, DO NOT squeeze it into an unreadable mess. Gracefully expand to **strictly 2 pages**, aligning vertical spacing cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Professional Experience, References).
+        4. **Criterion 4 (Strict 1-Page Baseline)**: If NO references are provided in `info.md`, the 1-page rule remains strictly non-negotiable.
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
-   - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Professional Experience.
+    - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Professional Experience → References (conditional).
    - **Professional Summary (ATS Tailored & Job-Matched)**:
      - Base it strictly on the candidate's summary in `info.md` — never invent credentials or work experience.
      - **Dynamically incorporate the exact Job Title from that specific JD**: Extract the exact target title from whichever JD the user provides (e.g., *"DevOps Engineer – Intern"*, *"Cloud Associate"*, *"Backend Software Engineer Intern"*, *"Full Stack Developer Intern"*). Never hardcode a fixed title. State this exact role in the summary statement (e.g., "Motivated IT undergraduate and Microsoft Student Ambassador seeking a [Exact Target Title from JD] position...").
@@ -103,6 +109,28 @@ Once the target Job Description (JD) is received:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
      - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{3.5pt plus 1pt minus 1pt}`.
+    - **References Section (Conditional: Include ONLY if in `info.md` or requested)**:
+      - Heading: `\section{References}`
+      - Layout: Use a clean side-by-side two-column layout using two `minipage` blocks (`0.48\textwidth` each, separated by `\hfill`).
+      - Format:
+        ```latex
+        \section{References}
+        {\small
+        \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Thilina Samarasinghe}\\
+        Senior Lecturer, Faculty of Information Technology, Horizon Campus\\
+        \href{mailto:thilina.samarasinghe@horizoncampus.edu.lk}{\textcolor{linkblue}{thilina.samarasinghe@horizoncampus.edu.lk}}\\
+        +94 77 361 7305 / +94 70 661 7305
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Prof. P. Withanage}\\
+        Emeritus Professor of Economics, University of Ruhuna\\
+        \href{mailto:profpvithanage@gmail.com}{\textcolor{linkblue}{profpvithanage@gmail.com}}\\
+        +94 77 6979 917
+        \end{minipage}
+        }
+        ```
     - **Candidate Name & Header Styling (STRICT MANDATORY RULES)**:
       - **Candidate Name formatting is NON-NEGOTIABLE & STRICT**: Always format as:
         ```latex
@@ -308,6 +336,25 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
   \item [Description of involvement and contributions]
 \end{itemize}
 }
+
+%% ── REFERENCES (Include ONLY if present in info.md or requested by user) ──
+%% Un-comment when including references:
+% \section{References}
+% {\small
+% \begin{minipage}[t]{0.48\textwidth}
+% \textbf{[Referee 1 Full Name]}\\
+% [Designation / Position], [Faculty / Department], [Institution]\\
+% \href{mailto:[Email]}{\textcolor{linkblue}{[Email]}}\\
+% [Phone Number(s)]
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.48\textwidth}
+% \textbf{[Referee 2 Full Name]}\\
+% [Designation / Position], [Faculty / Department], [Institution]\\
+% \href{mailto:[Email]}{\textcolor{linkblue}{[Email]}}\\
+% [Phone Number(s)]
+% \end{minipage}
+% }
 
 \end{document}
 ```

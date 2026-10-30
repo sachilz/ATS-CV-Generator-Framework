@@ -137,3 +137,14 @@ You have no work or internship experience, so CVs lead with projects.
 | Practical Database Course for Beginners: 6 courses in 1 (SQL, DBMS) | Udemy | Jul 2024 |
 
 **No other certifications** (no AWS, Azure, or CCNA).
+
+---
+
+## 9. References (Optional)
+
+Include this section on the CV only if requested by the user or when applying to roles requiring references.
+
+| Name | Designation & Institution | Email | Phone |
+|---|---|---|---|
+| Thilina Samarasinghe | Senior Lecturer, Faculty of Information Technology, Horizon Campus | thilina.samarasinghe@horizoncampus.edu.lk | +94 77 361 7305 / +94 70 661 7305 |
+| Prof. P. Withanage | Emeritus Professor of Economics, University of Ruhuna | profpvithanage@gmail.com | +94 77 6979 917 |
