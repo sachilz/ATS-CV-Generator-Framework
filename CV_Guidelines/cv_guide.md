@@ -237,14 +237,11 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 
 \begin{center}
 {\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[4pt]
-{\small \textbf{[Exact Job Title from Job Description]}}\\[2.5pt]
-{\small City, Country \textbar{} +00 00 000 0000 \textbar{} you@email.com}\\[2pt]
+{\small \textbf{[Exact Job Title from Job Description]}}\\[1pt]
+{\small City, Country \textbar{} +00 00 000 0000 \textbar{} \href{mailto:you@email.com}{\textcolor{linkblue}{you@email.com}}}\\[1pt]
 % NOTE: All header links MUST display in the exact same domain URL format (e.g. medium.com/@..., youtube.com/@...) — never bare names!
-{\small LinkedIn: \href{https://linkedin.com/in/you}{\textcolor{linkblue}{linkedin.com/in/you}} \textbar{}
-GitHub: \href{https://github.com/you}{\textcolor{linkblue}{github.com/you}} \textbar{}
-Portfolio: \href{https://yoursite.com}{\textcolor{linkblue}{yoursite.com}}}\\[2pt]
-{\small Medium: \href{https://medium.com/@you}{\textcolor{linkblue}{medium.com/@you}} \textbar{}
-YouTube: \href{https://youtube.com/@you}{\textcolor{linkblue}{youtube.com/@you}}}
+{\small LinkedIn: \href{https://linkedin.com/in/you}{\textcolor{linkblue}{linkedin.com/in/you}} \textbar{} GitHub: \href{https://github.com/you}{\textcolor{linkblue}{github.com/you}} \textbar{} Portfolio: \href{https://yoursite.com}{\textcolor{linkblue}{yoursite.com}}}\\[1pt]
+{\small Medium: \href{https://medium.com/@you}{\textcolor{linkblue}{medium.com/@you}} \textbar{} YouTube: \href{https://youtube.com/@you}{\textcolor{linkblue}{youtube.com/@you}}}
 \end{center}
 
 \section{Professional Summary}
