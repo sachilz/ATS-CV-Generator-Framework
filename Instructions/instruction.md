@@ -1,4 +1,23 @@
-# CV Generation Instructions for Claude
+# CV Generation Instructions for Claude & ChatGPT
+
+## 🛑 STRICT GATING & EXECUTION PROTOCOL (MANDATORY HALT RULES)
+
+> [!CAUTION]
+> **PREMATURE CV GENERATION IS STRICTLY PROHIBITED.**
+> Under NO circumstances should you output ANY LaTeX code, CV draft, or resume preview during Step 1 or Step 2.
+> **DO NOT DEFAULT TO "DEVOPS" OR ANY OTHER ROLE**: Even if previous chat history, user custom instructions, or `info.md` mention DevOps, **NEVER assume or default to DevOps or any other job title**. You must wait for the exact Job Description (JD) provided by the user in this specific session.
+
+### The 3 Mandatory Execution Gates:
+- **GATE 1 (When user provides this instruction file)**:
+  - ⛔ **ABSOLUTE RESTRICTION**: DO NOT generate any CV. DO NOT output any LaTeX code. DO NOT ask for the Job Description (JD) yet.
+  - ✅ **ACTION**: Acknowledge readiness, ask ONLY for `info.md` and `cv_guide.md`, and **STOP GENERATING IMMEDIATELY**.
+- **GATE 2 (When user provides `info.md` and `cv_guide.md`)**:
+  - ⛔ **ABSOLUTE RESTRICTION**: DO NOT generate any CV. DO NOT output any LaTeX code. DO NOT assume the user wants a DevOps CV.
+  - ✅ **ACTION**: Validate the files. If complete (or user says "Proceed with what I have"), ask for the **Job Description (JD)**, and **STOP GENERATING IMMEDIATELY**.
+- **GATE 3 (ONLY when user provides the Job Description in a subsequent message)**:
+  - ✅ **ACTION**: Only now, analyze that specific JD, extract the exact target job title and keywords, select the best 4 matching projects, and generate the tailored one-page LaTeX CV.
+
+---
 
 ## System Overview & Required Files
 
@@ -15,8 +34,10 @@ This system operates in strict sequential stages to build a one-page, ATS-optimi
 ### Step 1 — Initial Activation (When user provides `instruction.md`)
 When the user shares or activates this instruction file:
 - **DO NOT ask for the Job Description (JD) yet.**
+- **DO NOT generate any CV, outline, or LaTeX code.**
 - Acknowledge the instructions and ask the user to upload the two required files:
   > "I am ready to build your tailored one-page ATS CV. Please provide your **`info.md`** (candidate information file) and **`cv_guide.md`** (CV design guide)."
+- **STRICT HALT**: Stop and end your response immediately after asking for these two files. Do not say or do anything else.
 
 ---
 
@@ -45,6 +66,7 @@ Once the user uploads or shares `info.md` and `cv_guide.md`:
    - Once `info.md` is complete (or the user says "Proceed with what I have"):
      Confirm and request the Job Description:
      > "Your `info.md` and `cv_guide.md` are verified and ready! Please share the **Job Description (JD)** for the position you are targeting, and I will generate your tailored one-page CV."
+   - **STRICT HALT**: Stop and end your response immediately after requesting the Job Description. **DO NOT output any LaTeX code, resume draft, or default to a DevOps CV.** You MUST wait for the user's next message containing the target Job Description.
 
 ---
 
