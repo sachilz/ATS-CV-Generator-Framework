@@ -83,7 +83,13 @@ Once the target Job Description (JD) is received:
      - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{2.5pt}`.
    - **Header & Job Title Match**:
      - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Backend Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
-     - Include all available social links from `info.md` (LinkedIn, GitHub, Portfolio, Medium, YouTube) in `linkblue`.
+     - **Social Links Format (STRICTLY CONSISTENT DOMAIN URL FORMAT)**: All links in the header MUST follow the exact same clean domain-based format (strip `https://` for display). Never show raw usernames alone (e.g., `sachilz`) and never show plain text names (e.g., `NextOps`). Every link must look uniform:
+       - **LinkedIn**: `linkedin.com/in/[username]` (e.g., `linkedin.com/in/sachilz`)
+       - **GitHub**: `github.com/[username]` (e.g., `github.com/sachilz`)
+       - **Portfolio**: `[domain.ext]` (e.g., `sachilz.me`)
+       - **Medium**: `medium.com/@[username]` (e.g., `medium.com/@sachilz`)
+       - **YouTube**: `youtube.com/@[channel]` (e.g., `youtube.com/@NextOpz` — NEVER just the channel name "NextOps")
+     - All links colored with `linkblue`, labels (LinkedIn:, GitHub:, etc.) in black.
    - **Colors**:
      ```latex
      \definecolor{linkblue}{RGB}{0,85,190}
@@ -176,11 +182,11 @@ Raise `5.5pt` in `\titlespacing*{\section}{0pt}{5.5pt}{2pt}` by 0.5pt-1pt at a t
 {\LARGE \textbf{[CANDIDATE FULL NAME]}}\\[3pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
 {\small [City, Country] \textbar{} [Phone Number] \textbar{} [Email Address]}\\[2pt]
-{\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{[LinkedIn Display]}} \textbar{}
-GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{[GitHub Display]}} \textbar{}
-Portfolio: \href{[Portfolio URL]}{\textcolor{linkblue}{[Portfolio Display]}}}\\[2pt]
-{\small Medium: \href{[Medium URL]}{\textcolor{linkblue}{[Medium Display]}} \textbar{}
-YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{[YouTube Display]}}}
+{\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{linkedin.com/in/[username]}} \textbar{}
+GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{github.com/[username]}} \textbar{}
+Portfolio: \href{[Portfolio URL]}{\textcolor{linkblue}{[domain.ext]}}}\\[2pt]
+{\small Medium: \href{[Medium URL]}{\textcolor{linkblue}{medium.com/@[username]}} \textbar{}
+YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{youtube.com/@[channel]}}}
 \end{center}
 
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
@@ -294,7 +300,7 @@ Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[3pt]
 - [ ] Used candidate's actual profile data from `info.md` (no hardcoded sample data or invented facts).
 - [ ] Exactly **4 projects** included.
 - [ ] ALL **experience entries and community roles** from `info.md` are included (100% of them, none omitted).
-- [ ] All available social links from `info.md` included in the header.
+- [ ] All header social links use strictly uniform domain format (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` — never bare names like "NextOps" or "sachilz").
 - [ ] Professional Summary tailored with the exact target Job Title and JD keywords (e.g. "motivated"), staying true to `info.md` facts.
 - [ ] Project descriptions copied **exactly** from `info.md` (1 bullet per project).
 - [ ] Only **2–3 certificates**, chosen for target JD relevance.

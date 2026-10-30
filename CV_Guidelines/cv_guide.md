@@ -11,7 +11,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
 - Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience.
 - Section headings in bold small capitals with a thin line underneath.
-- The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never leave one out. Each link is blue and the label in front of it stays black.
+- The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/sachilz`, `github.com/sachilz`, `sachilz.me`, `medium.com/@sachilz`, `youtube.com/@NextOpz`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
 - Dates aligned to the right edge of the page.
 - Only relevant content for the target job. Leave out weak or unrelated items.
@@ -47,7 +47,7 @@ Put these rules at the bottom of your profile file so the AI applies them to eve
 6. Length: strictly one page. Never produce a second page.
 7. Project descriptions: copy each project's description exactly as written in the profile file (1 key point per project). Do not rewrite it or add bullets.
 8. Technology tags: no italics. Color only the tags with \\textcolor{techblue}{...}. The color techblue is defined at the very top of the file.
-9. Header: always show all social links from the profile file (LinkedIn, GitHub, Portfolio, Medium, YouTube), none missing. Links are blue; GitHub and Credly links have no underline.
+9. Header: always show all social links from the profile file (LinkedIn, GitHub, Portfolio, Medium, YouTube), none missing. Strictly uniform domain format: `linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` (never bare names like "NextOps" or "sachilz"). Links are blue; GitHub and Credly links have no underline.
 10. Full-page layout: no large blank space at the bottom of the page. LaTeX code: always deliver it as a file or canvas, never pasted inside the chat message.
 
 ## 4. Step 3: Start the chat with a master prompt
@@ -237,6 +237,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 {\LARGE \textbf{YOUR FULL NAME}}\\[3pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
 {\small City, Country \textbar{} +00 00 000 0000 \textbar{} you@email.com}\\[2pt]
+% NOTE: All header links MUST display in the exact same domain URL format (e.g. medium.com/@..., youtube.com/@...) — never bare names!
 {\small LinkedIn: \href{https://linkedin.com/in/you}{\textcolor{linkblue}{linkedin.com/in/you}} \textbar{}
 GitHub: \href{https://github.com/you}{\textcolor{linkblue}{github.com/you}} \textbar{}
 Portfolio: \href{https://yoursite.com}{\textcolor{linkblue}{yoursite.com}}}\\[2pt]

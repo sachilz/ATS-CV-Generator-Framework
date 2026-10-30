@@ -117,7 +117,7 @@ Claude will output:
 | **Projects** | Exactly 4 projects, 1 bullet each | High-impact focus for 10–20 second scans |
 | **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
 | **Project Gap** | `\vspace{5pt}` after each project | Visual breathing room between experience blocks |
-| **Header** | Name, exact JD job title, contact & social links | Guaranteed ATS Job Title recognition |
+| **Header** | Name, exact JD job title, contact & uniform domain links (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...`) | Professional consistency & guaranteed ATS recognition |
 | **Headings** | ATS-compliant names (`Professional Experience`) | Ensures ATS parsers recognize work history |
 
 ---
