@@ -103,9 +103,9 @@ Once the target Job Description (JD) is received:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
      - Right-align Credly badge links on the same line if available. Separate entries with `\vspace{3.5pt plus 1pt minus 1pt}`.
-   - **Candidate Name & Header Styling (STRICT FONT & BOLD RULE)**:
-     - **Name formatting is MANDATORY**: Always format as `{\LARGE \textbf{[Candidate Full Name]}}\\[3pt]`. **NEVER omit `\textbf`**. The name must be prominently bold, clear, dark, and elegant in Latin Modern font (`\usepackage{lmodern}`). Never render the name in unbolded, normal weight, or altered font.
-     - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2pt]` or `{\small \textbf{Full Stack Software Engineer – Intern}}\\[2pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
+    - **Candidate Name & Header Styling (STRICT SMALL CAPS RULE)**:
+      - **Name formatting is MANDATORY (Small Capitals)**: Always format as `{\LARGE \scshape [Candidate Full Name]}\\[3.5pt]`. This applies Latin Modern Small Capitals (`\scshape`), rendering the name as `SACHINTHA DILSHAN MADHUSHANKHA` (with large initial caps and small-cap body letters), exactly matching the section headings styling and giving the timeless, balanced LaTeX aesthetic.
+      - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[2.5pt]` or `{\small \textbf{Full Stack Software Engineer – Intern}}\\[2.5pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
      - **Social Links Format (STRICTLY CONSISTENT DOMAIN URL FORMAT)**: All links in the header MUST follow the exact same clean domain-based format (strip `https://` for display). Never show raw usernames alone (e.g., `sachilz`) and never show plain text names (e.g., `NextOps`). Every link must look uniform:
        - **LinkedIn**: `linkedin.com/in/[username]` (e.g., `linkedin.com/in/sachilz`)
        - **GitHub**: `github.com/[username]` (e.g., `github.com/sachilz`)
@@ -192,8 +192,8 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 
 %% ── HEADER ────────────────────────────────────────────────────────────
 \begin{center}
-{\LARGE \textbf{[CANDIDATE FULL NAME]}}\\[3pt]
-{\small \textbf{[Exact Job Title from Job Description]}}\\[2pt]
+{\LARGE \scshape [CANDIDATE FULL NAME]}\\[3.5pt]
+{\small \textbf{[Exact Job Title from Job Description]}}\\[2.5pt]
 {\small [City, Country] \textbar{} [Phone Number] \textbar{} [Email Address]}\\[2pt]
 {\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{linkedin.com/in/[username]}} \textbar{}
 GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{github.com/[username]}} \textbar{}
