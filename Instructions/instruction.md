@@ -106,11 +106,15 @@ Once the target Job Description (JD) is received:
     - **Candidate Name & Header Styling (STRICT MANDATORY RULES)**:
       - **Candidate Name formatting is NON-NEGOTIABLE & STRICT**: Always format as:
         ```latex
-        {\LARGE\bfseries\MakeUppercase{[Candidate Full Name]}}\\[4pt]
+        {\LARGE\bfseries\MakeUppercase{[Candidate Full Name]}}\\[3pt]
         ```
-        (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[4pt]`). Under NO circumstances should this command be changed or altered. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[4pt]`. Never omit `\bfseries`, never omit `\MakeUppercase`, and never use any alternative styling.
-      - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{DevOps Engineer – Intern}}\\[1pt]` or `{\small \textbf{Full Stack Software Engineer – Intern}}\\[1pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
-      - **Strict Header Line Spacing (1pt)**: The line spacing between Name and Job Title is strictly `\\[4pt]`. The line spacing between ALL subsequent lines (Job Title, Contact info, and Social link lines) MUST STRICTLY be `\\[1pt]`. Never use 2pt or 2.5pt for these lines.
+        (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[3pt]`). Under NO circumstances should this command be changed or altered. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[3pt]`. Never omit `\bfseries`, never omit `\MakeUppercase`, and never use `4pt` or any alternative styling.
+      - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{Cloud Engineer Intern}}\\[1.5pt]` or `{\small \textbf{DevOps Engineer – Intern}}\\[1.5pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
+      - **Strict Header Line Spacing**:
+        - Name to Subtitle (Job Title): strictly `\\[3pt]`.
+        - Subtitle (Job Title) to Contact Info: strictly `\\[1.5pt]`.
+        - Contact Info to Social Links 1: strictly `\\[1pt]`.
+        - Social Links 1 to Social Links 2: strictly `\\[1pt]`.
       - **Clickable Email**: In the contact info line, the email address MUST ALWAYS be clickable using `\href{mailto:[Email Address]}{\textcolor{linkblue}{[Email Address]}}`.
      - **Social Links Format (STRICTLY CONSISTENT DOMAIN URL FORMAT)**: All links in the header MUST follow the exact same clean domain-based format (strip `https://` for display). Never show raw usernames alone (e.g., `sachilz`) and never show plain text names (e.g., `NextOps`). Every link must look uniform:
        - **LinkedIn**: `linkedin.com/in/[username]` (e.g., `linkedin.com/in/sachilz`)
@@ -198,8 +202,8 @@ To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on
 
 %% ── HEADER ────────────────────────────────────────────────────────────
 \begin{center}
-{\LARGE\bfseries\MakeUppercase{[CANDIDATE FULL NAME]}}\\[4pt]
-{\small \textbf{[Exact Job Title from Job Description]}}\\[1pt]
+{\LARGE\bfseries\MakeUppercase{[CANDIDATE FULL NAME]}}\\[3pt]
+{\small \textbf{[Exact Job Title from Job Description]}}\\[1.5pt]
 {\small [City, Country] \textbar{} [Phone Number] \textbar{} \href{mailto:[Email Address]}{\textcolor{linkblue}{[Email Address]}}}\\[1pt]
 {\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{linkedin.com/in/[username]}} \textbar{} GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{github.com/[username]}} \textbar{} Portfolio: \href{[Portfolio URL]}{\textcolor{linkblue}{[domain.ext]}}}\\[1pt]
 {\small Medium: \href{[Medium URL]}{\textcolor{linkblue}{medium.com/@[username]}} \textbar{} YouTube: \href{[YouTube URL]}{\textcolor{linkblue}{youtube.com/@[channel]}}}
