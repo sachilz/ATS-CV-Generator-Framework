@@ -156,32 +156,22 @@ Always ask for the LaTeX code as a file or canvas that you can open and download
 
 The LaTeX template at the end of this guide produces the same clean look.
 
-## 7. Step 6: Make it fill exactly one page
+## 7. Step 6: Page Budget & Structure Preservation Rules
 
-The CV must be strictly one page: never a second page, and no big empty space at the bottom. It should end close to the bottom margin. These are the controls:
+1. **Page 1 is Always the Priority Target**:
+   If all content (even with References, if spacing allows naturally) can fit cleanly on **1 single page**, keep it on **1 Page**! Ignore the 2nd page entirely.
 
-- **Section spacing:** the number in `\titlespacing*{\section}{0pt}{8pt}{3pt}`. Raise 8pt to spread sections out. Never go below 8pt, because section titles must stay clearly separated from the content above them.
-- **Project gap:** the `\vspace{4.5pt plus 1pt minus 1pt}` between projects.
-- **Bullet spacing:** `itemsep` inside `\setlist[itemize]`.
+2. **NEVER Break the Visual Structure to Force 1 Page**:
+   Under NO circumstances should you delete `\vspace`, reduce inter-project gaps to 0, or glue project titles directly under previous `Technologies:` lines just to force everything onto 1 page.
+   - The Project separator gap (`\vspace{4.5pt plus 1pt minus 1pt}`) after each project's `Technologies:` line is **STRICTLY MANDATORY**.
+   - Section titles, bullet spacing, and project separation must maintain their clean, professional visual structure.
 
-If the CV runs onto a second page, trim in this order:
+3. **2nd Page is Strictly an Optional Fallback**:
+   The 2nd page is an optional fallback that should **ONLY** be created when:
+   - Content is genuinely too long (e.g. dense projects + experience + references included), AND
+   - It is physically impossible to keep on 1 page without breaking the layout structure or stripping out `\vspace`.
+   When a 2nd page is created, distribute the sections cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Professional Experience, References) so that both pages look balanced, intentional, and readable.
 
-1. Reduce the small gaps between bullets, but never reduce the space above section titles below 8pt.
-2. Shorten the summary by a sentence.
-3. Merge two skill lines, but never remove a skill used in the 4 projects.
-4. Remove the least relevant certificate line.
-5. Never drop a project: the CV must keep exactly 4 projects. Shorten the summary or the skills lines instead.
-6. Never drop an experience entry: all listed roles and community activities must remain in the CV.
-
-If there is blank space at the bottom, raise the section spacing one point at a time until the page is full.
-
-
-**References and 1-Page vs 2-Page Budget Criteria.**
-1. **1-Page Strict Baseline:** For standard CVs without references, strictly fit on ONE single page.
-2. **References Inclusion:** Include `\section{References}` ONLY when references are listed in your profile file (`info.md`) or explicitly requested.
-3. **1-Page vs 2-Page Decision:**
-   - If references can comfortably fit on Page 1 along with all core content, keep it on 1 Page.
-   - If dense projects (4 projects), technical skills, education, and all 4 experience roles together with references exceed 1 page, do NOT compress into an unreadable mess. Gracefully expand to **strictly 2 pages**, balancing spacing across both pages.
 4. **References Layout:** Format in two side-by-side columns using `minipage[t]{0.48\textwidth}` with `\hfill` and clickable email links.
 
 ## 8. Step 7: Write strong project bullets

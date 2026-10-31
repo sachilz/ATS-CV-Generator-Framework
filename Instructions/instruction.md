@@ -175,28 +175,24 @@ Deliver exactly these two items:
 
 ---
 
-## One-Page Fitting Controls (If Overflow Occurs)
+## Page Budget & Structure Preservation Rules
 
-**A second page is a failure. Fix it before delivering the LaTeX code.**
+> [!IMPORTANT]
+> **1. Page 1 is Always the Priority Target**:
+> If all content (even with References, if spacing allows naturally) can fit cleanly on **1 single page**, keep it on **1 Page**! Ignore the 2nd page entirely.
 
-### Automated 1-Page Space Calibration (MANDATORY TO PREVENT 2-PAGE OVERFLOW):
-To ensure the CV fits strictly onto **ONE A4 page** with **100% equal margins on all 4 sides**:
-1. **Geometry (Strictly Equal 0.42in Margins)**:
-   `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in — perfectly balanced on all 4 sides).
-2. **Section Spacing (Tuned Calibration)**:
-   `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}`
-3. **Bullet Spacing**:
-   `\setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}`
-4. **Project Gap**:
-   `\vspace{4.5pt plus 1pt minus 1pt}` after each project's Technologies line (projects 1, 2, 3).
-5. **Experience Gap**:
-   `\vspace{3.5pt plus 1pt minus 1pt}` between experience roles.
-6. **Strict Content Budget**:
-   - Professional Summary: exactly 3–4 lines.
-   - Skills: 5–6 categories (each on strictly 1 line).
-   - Projects: 4 projects, each with 1 bullet (2 lines max in PDF). Technologies line strictly 1 line (6–7 tags).
-   - Certifications: strictly 2 items.
-   - Experience: all 4 roles from `info.md`, each with 1 bullet.
+> [!CAUTION]
+> **2. NEVER Break the Visual Structure to Force 1 Page**:
+> Under NO circumstances should you delete `\vspace`, reduce inter-project gaps to 0, or glue project titles directly under previous `Technologies:` lines just to force everything onto 1 page.
+> - The Project separator gap (`\vspace{4.5pt plus 1pt minus 1pt}` or `\vspace{5pt}`) after each project's `Technologies:` line is **MANDATORY**.
+> - Section titles, bullet spacing, and project separation must maintain their clean, professional visual structure.
+
+> [!NOTE]
+> **3. 2nd Page is Strictly an Optional Fallback**:
+> The 2nd page is an optional fallback that should **ONLY** be created when:
+> - Content is genuinely too long (e.g. dense projects + experience + references included), AND
+> - It is physically impossible to keep on 1 page without breaking the layout structure or stripping out `\vspace`.
+> When a 2nd page is created, distribute the sections cleanly across both pages (e.g. Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Professional Experience, References) so that both pages look balanced, intentional, and readable.
 
 ---
 
