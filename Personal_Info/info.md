@@ -24,7 +24,7 @@ This file contains the information you have shared for building CVs. Treat it as
 
 ## 2. Professional Summary
 
-> IT undergraduate and Microsoft Student Ambassador focused on DevOps, Software Engineering, AI, Cloud, and Infrastructure. Hands-on experience provisioning AWS infrastructure using Terraform and Ansible, deploying containerized microservices to Kubernetes, and building CI/CD pipelines with DevSecOps tools. Experienced in developing AI applications using RAG and multi-agent frameworks, with an interest in building scalable, secure, and automated systems.
+> IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience provisioning AWS infrastructure via Terraform and Ansible, deploying containerized microservices on Kubernetes, and automating CI/CD pipelines with integrated DevSecOps gates. Experienced in architecting RAG-based multi-agent systems and publishing technical engineering guides (12K+ views). Focused on delivering reliable, scalable, and secure cloud-native systems.
 
 ---
 

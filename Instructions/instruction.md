@@ -94,11 +94,12 @@ Once the target Job Description (JD) is received:
         4. **Criterion 4 (Strict 1-Page Baseline)**: If NO references are provided in `info.md`, the 1-page rule remains strictly non-negotiable.
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
     - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience → References (conditional).
-   - **Professional Summary (ATS Tailored & Job-Matched)**:
-     - Base it strictly on the candidate's summary in `info.md` — never invent credentials or work experience.
-     - **Dynamically incorporate the exact Job Title from that specific JD**: Extract the exact target title from whichever JD the user provides (e.g., *"DevOps Engineer – Intern"*, *"Cloud Associate"*, *"Backend Software Engineer Intern"*, *"Full Stack Developer Intern"*). Never hardcode a fixed title. State this exact role in the summary statement (e.g., "Motivated IT undergraduate and Microsoft Student Ambassador seeking a [Exact Target Title from JD] position...").
-     - **Weave in key qualifying adjectives and soft/hard ATS keywords from the JD**: If the JD highlights terms like *"motivated"*, *"collaborative"*, *"modern, responsive web applications"*, *"user-friendly interfaces"*, or *"willingness to learn"*, integrate these exact terms naturally into the summary where truthful to the candidate.
-     - Keep the summary strictly concise (3 to 4 lines maximum in the PDF) so it never overflows.
+   - **Professional Summary (Evidence-Based & JD Tech-Stack Matched)**:
+     - **STRICT PROHIBITION ON FILLER BUZZWORDS**: NEVER use empty filler phrases such as *"Motivated"*, *"Passionate"*, *"Hardworking"*, *"Interested in..."*, *"Aspiring"*, or *"Eager to learn"*. Recruiters consider these meaningless fluff.
+     - **Lead with Tangible Evidence & Academic Standing**: Start directly with verified credentials and identity from `info.md`: *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*
+     - **Name the Employer's Exact Tech Stack from the JD**: Explicitly identify and name the specific technologies, architectural patterns, and tools required by the target Job Description that match `info.md` (e.g., Docker, Kubernetes, AWS, Terraform, CI/CD pipelines, Spring Boot, React, or Python/RAG).
+     - **State the Exact Target Job Title & Technical Value**: End by stating the exact job title from the JD and the concrete engineering value the candidate delivers (e.g., *"Seeking a [Exact Job Title from JD] position to architect resilient deployment pipelines and automate cloud-native infrastructure."*).
+     - **Keep Strictly to 3 to 4 Lines**: Must remain tight, factual, and impactful (3 to 4 lines maximum in the PDF) so it preserves the vertical page budget.
    - **Technical Skills**:
      - 5 to 7 concise category lines.
      - Each category must fit on **one line** in the PDF.
@@ -240,7 +241,7 @@ Deliver exactly these two items:
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-[Tailor the professional summary to naturally include the exact target Job Title (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern role...") and key JD adjectives like "motivated", "collaborative", and core focus areas from info.md. Keep strictly to 3–4 lines.]
+[Craft an evidence-based summary (strictly 3 to 4 lines). BANNED FILLERS: "Motivated", "Passionate", "Interested in". Lead with credentials: "IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience [building/deploying systems using JD tech stack]...". End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────
@@ -367,7 +368,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 - [ ] Exactly **4 projects** included.
 - [ ] ALL **experience entries and community roles** from `info.md` are included (100% of them, none omitted).
 - [ ] All header social links use strictly uniform domain format (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` — never bare names like "NextOps" or "sachilz").
-- [ ] Professional Summary tailored with the exact target Job Title and JD keywords (e.g. "motivated"), staying true to `info.md` facts.
+- [ ] Professional Summary is evidence-based (leads with GPA/credentials, names employer's stack, contains zero filler like "motivated" or "interested in", targets exact JD title).
 - [ ] Project descriptions copied **exactly** from `info.md` (1 bullet per project).
 - [ ] Strictly **2 certificates** chosen for JD relevance (prevents 2nd page overflow).
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.

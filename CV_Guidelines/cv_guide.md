@@ -133,7 +133,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
-**Professional summary (ATS Job-Matched).** Tailor the professional summary to naturally incorporate the exact target Job Title from the JD (e.g. "Motivated IT undergraduate... seeking a Full Stack Software Engineer – Intern position...") and key qualifying terms from the JD (such as "motivated", "collaborative", "responsive web applications") while staying 100% truthful to the candidate's profile facts. Keep to strictly 3 to 4 lines.
+**Professional summary (Evidence-based & JD Tech Stack Matched).** Lead with concrete evidence rather than empty buzzwords. **Never use filler words** like "Motivated", "Passionate", "Interested in...", or "Eager to learn". Instead, start with verified credentials (e.g., *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*), explicitly name the specific tools and tech stack requested by the target Job Description (e.g., Docker, Kubernetes, AWS, Terraform, Spring Boot), and state the exact target Job Title along with the technical value you deliver. Keep to strictly 3 to 4 lines.
 
 **Colors.** Define both colors at the very top of the CV file, right after the packages. Use linkblue for every link and techblue only for the technology tags:
 
@@ -247,7 +247,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 
 \section{Professional Summary}
 {\small
-Tailor your professional summary to include the exact target Job Title from the JD and key descriptive ATS keywords (e.g., "motivated", "collaborative") based on your profile facts (3 to 4 lines).
+Craft an evidence-based summary (strictly 3 to 4 lines). Never use filler like "Motivated" or "Interested in...". Lead with verified credentials (IT undergraduate, 3.52 GPA, Microsoft Student Ambassador), name the employer's tech stack from the JD, and state the exact target role along with the technical value delivered.
 }
 
 \section{Technical Skills}
