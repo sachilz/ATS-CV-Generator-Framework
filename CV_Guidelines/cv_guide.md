@@ -228,7 +228,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \raggedbottom
-\titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.5pt}]
+\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]
 \titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
@@ -282,8 +282,8 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
 {\small
 \textbf{BSc (Hons) in Your Degree}, Your University \hfill \textbf{Mon YYYY -- Mon YYYY (expected)}\\
 Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
-\textbf{G.C.E. Advanced Level}, Your School \hfill \textbf{YYYY}\\
-Your Stream. Passed with X passes.
+\textbf{G.C.E. Advanced Level}, Your School \hfill \textbf{YYYY}
+% NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 
 \section{Certifications and Training}

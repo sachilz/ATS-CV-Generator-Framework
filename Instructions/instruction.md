@@ -220,8 +220,8 @@ Deliver exactly these two items:
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \raggedbottom
-\titleformat{\section}{\bfseries\normalsize\scshape}{}{0pt}{}
-  [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
+\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}
+  [\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]
 \titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]
   {leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
