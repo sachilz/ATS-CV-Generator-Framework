@@ -107,7 +107,7 @@ Once the target Job Description (JD) is received:
      - Copy each project description **exactly** as written in `info.md` (1 key point bullet per project).
      - **Technologies line (STRICTLY ONE LINE ONLY)**: `Technologies: \textcolor{techblue}{...}` with **6 to 8 tags**. Must stretch across towards the right margin (under the GitHub link) but **MUST NEVER WRAP TO A SECOND LINE**.
      - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
-   - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Include A/L details from `info.md` in professional wording.
+   - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Show degree, faculty, relevant coursework, and GPA. For secondary school, show `\textbf{G.C.E. Advanced Level}, Kandakapulpotha National College \hfill \textbf{2022}` on a single line. **STRICT RULE: NEVER include A/L results or grades ('CCC' / 'Passed with 3 C passes') on the CV.** The strong 3.52 university GPA stands proudly on its own; listing 'CCC' weakens the candidate profile and wastes vertical space.
    - **Certifications and Training**: Strictly include the **2 strongest certificates** directly relevant to the JD. Limiting to 2 certificates is critical to guarantee the 1-page fit.
    - **Professional Experience Section (MANDATORY ATS HEADING: Name as `\section{Professional Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
@@ -295,8 +295,8 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 {\small
 \textbf{[Degree Name]}, [University / Institution] \hfill \textbf{[Start Mon YYYY] -- [End Mon YYYY] (expected)}\\
 [Faculty]. Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[2pt]
-\textbf{[Secondary / School Qualification]}, [School Name] \hfill \textbf{[Year]}\\
-[Stream / Specialization]. [Results / Passes].
+\textbf{[Secondary / School Qualification]}, [School Name] \hfill \textbf{[Year]}
+% NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 
 %% ── CERTIFICATIONS AND TRAINING (2–3 strongest, matching JD) ──────────

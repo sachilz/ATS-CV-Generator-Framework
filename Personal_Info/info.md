@@ -35,7 +35,8 @@ This file contains the information you have shared for building CVs. Treat it as
 - GPA: 3.52 / 4.0
 - Relevant coursework: Computer Networks, Operating Systems, Cloud Computing (AWS)
 
-**G.C.E. Advanced Level**, Kandakapulpotha National College, 2022 (results: CCC, optional to show)
+**G.C.E. Advanced Level**, Kandakapulpotha National College, 2022
+- Note: Do NOT list A/L results/grades ('CCC') on the CV. The strong 3.52 university GPA stands on its own; answer A/L grades only if explicitly asked by an employer.
 
 ---
 
