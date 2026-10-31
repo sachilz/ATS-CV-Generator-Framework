@@ -10,7 +10,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Margins: STRICT FIXED CONSTANT `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in). Never change this margin value under any circumstances across different CVs.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
-- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience, References (conditional).
+- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Community & Content Experience, References (conditional).
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/sachilz`, `github.com/sachilz`, `sachilz.me`, `medium.com/@sachilz`, `youtube.com/@NextOpz`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
@@ -114,7 +114,7 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Exactly 4 projects.** Always show exactly 4 projects, with each description copied exactly as written in your profile file (1 key point each). When you add new projects to the profile file later, the AI must read the job requirements and pick the 4 best matching projects.
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
 - **Strictly 2 certificates only.** Show strictly the 2 strongest certificates directly relevant to the target role. Limiting to 2 certificates is essential to prevent the CV from overflowing to a 2nd page.
-- **Professional Experience: Mandatory ATS Heading (`\section{Professional Experience}`) & Include ALL roles.** Always use `\section{Professional Experience}` (not just "Experience") so ATS scanners instantly recognize the work history section. Undergraduates do not have full-time industry jobs yet, so every listed role (Student Ambassador, content creation, technical writing, clubs, community memberships) is essential proof of technical leadership and initiative. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section. NEVER omit, filter, or drop any role. If a Credly badge exists, include it on the same line as the description, right-aligned. Use `\vspace{3pt}` between experience entries.
+- **Experience Heading: `\section{Community \& Content Experience}` & Include ALL roles.** Name this section `\section{Community \& Content Experience}` (escaped as `\&` in LaTeX). Because undergraduates do not have corporate industry jobs yet, labeling student ambassador roles and YouTube channels as "Professional Experience" can look dishonest to recruiters. "Community & Content Experience" is 100% transparent and respected. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section (Student Ambassador, YouTube, Medium, Clubs). NEVER omit, filter, or drop any role. Right-align Credly badges. Use `\vspace{3.5pt plus 1pt minus 1pt}` between entries.
 - **Education.** Show your university degree (dates, GPA, coursework) and your G.C.E. Advanced Level (school name and year only). **STRICT RULE: Do NOT include A/L results or grades ('CCC' / 'Passed with 3 C passes') on the CV.** The candidate's strong 3.52 university GPA stands on its own, and listing 'CCC' hurts the candidate profile and wastes vertical space.
 - **One page.** All of this must still fit on exactly one page.
 
@@ -172,7 +172,7 @@ The LaTeX template at the end of this guide produces the same clean look.
    The 2nd page is an optional fallback that should **ONLY** be created when:
    - Content is genuinely too long (e.g. dense projects + experience + references included), AND
    - It is physically impossible to keep on 1 page without breaking the layout structure or stripping out `\vspace`.
-   When a 2nd page is created, distribute the sections cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Professional Experience, References) so that both pages look balanced, intentional, and readable.
+   When a 2nd page is created, distribute the sections cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Community & Content Experience, References) so that both pages look balanced, intentional, and readable.
 
 4. **References Layout:** Format in two side-by-side columns using `minipage[t]{0.48\textwidth}` with `\hfill` and clickable email links.
 
@@ -293,7 +293,7 @@ Your Stream. Passed with X passes.
 \end{itemize}
 }
 
-\section{Professional Experience}
+\section{Community \& Content Experience}
 {\small
 % RULE: Include EVERY role and community activity from the profile file.
 % Never omit or drop any experience entry.

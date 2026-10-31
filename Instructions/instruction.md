@@ -90,10 +90,10 @@ Once the target Job Description (JD) is received:
       - **References & 2-Page Criteria (MANDATORY LOGIC)**:
         1. **Criterion 1 (Data-driven inclusion)**: Check `info.md` for `## 9. References` (or if user requests references). If present, include the `\section{References}` section.
         2. **Criterion 2 (1-Page Priority)**: If candidate content + References can cleanly fit on **1 Page** (by gentle spacing calibration), keep it on 1 Page.
-        3. **Criterion 3 (Conditional 2-Page Expansion)**: If 4 full projects + experience + skills + references cannot physically fit on 1 page without unnatural crowding, DO NOT squeeze it into an unreadable mess. Gracefully expand to **strictly 2 pages**, aligning vertical spacing cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Professional Experience, References).
+        3. **Criterion 3 (Conditional 2-Page Expansion)**: If 4 full projects + experience + skills + references cannot physically fit on 1 page without unnatural crowding, DO NOT squeeze it into an unreadable mess. Gracefully expand to **strictly 2 pages**, aligning vertical spacing cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Community & Content Experience, References).
         4. **Criterion 4 (Strict 1-Page Baseline)**: If NO references are provided in `info.md`, the 1-page rule remains strictly non-negotiable.
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
-    - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Professional Experience → References (conditional).
+    - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience → References (conditional).
    - **Professional Summary (ATS Tailored & Job-Matched)**:
      - Base it strictly on the candidate's summary in `info.md` — never invent credentials or work experience.
      - **Dynamically incorporate the exact Job Title from that specific JD**: Extract the exact target title from whichever JD the user provides (e.g., *"DevOps Engineer – Intern"*, *"Cloud Associate"*, *"Backend Software Engineer Intern"*, *"Full Stack Developer Intern"*). Never hardcode a fixed title. State this exact role in the summary statement (e.g., "Motivated IT undergraduate and Microsoft Student Ambassador seeking a [Exact Target Title from JD] position...").
@@ -308,8 +308,8 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 \end{itemize}
 }
 
-%% ── PROFESSIONAL EXPERIENCE (MANDATORY ATS HEADING: Include 100% of all roles) ──
-\section{Professional Experience}
+%% ── COMMUNITY & CONTENT EXPERIENCE (Include 100% of all roles) ──
+\section{Community \& Content Experience}
 {\small
 \textbf{[Role / Title 1]}, [Organization / Company]
   \hfill \textbf{[Start Date] -- [End Date / Present]}

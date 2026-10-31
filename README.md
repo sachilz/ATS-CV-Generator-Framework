@@ -118,7 +118,7 @@ Claude will output:
 | **Tech Tags** | Strictly 1 line (6–8 tags max, extends towards GitHub text margin) | Never wraps to a 2nd line; prevents 2-page overflow |
 | **Project Gap** | Mandatory `\vspace{5pt}` after projects 1, 2, and 3 | Clean project separation |
 | **Header** | Name (`\LARGE\bfseries\MakeUppercase{...}`), exact JD job title, uniform domain links (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...`) | High contrast bold header & guaranteed ATS recognition |
-| **Headings** | ATS-compliant names (`Professional Experience`) | Ensures ATS parsers recognize work history |
+| **Headings** | Honest, transparent headings (`Community & Content Experience`) | Prevents recruiter distrust while highlighting leadership & content impact |
 
 ---
 
