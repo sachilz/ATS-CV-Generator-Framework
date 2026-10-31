@@ -66,28 +66,28 @@ GitHub: https://github.com/sachilz/AWS-Infrastructure-Provisioning-Deployment-Au
 
 Technologies: AWS (EC2, VPC, IAM, Security Groups, Internet Gateway), Terraform, Ansible, Jenkins, Docker, Nginx, Gitleaks, SonarQube, Trivy, Hadolint, Checkov, Bash
 
-- Provisioned AWS VPC networking and EC2 instances via Terraform IaC and Ansible automation, implementing a 14-stage Jenkins declarative CI/CD pipeline with 5 integrated DevSecOps quality gates (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated containerized testing across the full deployment lifecycle.
+- Provisioned AWS VPC networking and EC2 instances using Terraform and Ansible, creating a 14-stage Jenkins CI/CD pipeline integrated with 5 security scanners (Gitleaks, SonarQube, Checkov, Hadolint, Trivy) and automated Docker deployment.
 
 ### 5.2 Cloud-Native Authentication Application Deployment on Kubernetes
 GitHub: https://github.com/sachilz/Cloud-Native-Authentication-Application-Deployment-on-Kubernetes
 
 Technologies: Docker (multi-stage builds), Kubernetes (Minikube), Helm 3, React 18, Node.js 20, Express, PostgreSQL 16, Nginx
 
-- Containerized a full-stack 3-tier application (frontend, backend, database) using Docker multi-stage builds and authored production-ready Kubernetes manifests and Helm 3 charts featuring automated database migration Jobs, liveness/readiness health probes, and persistent volume claims for zero-downtime deployments.
+- Containerized a 3-tier application (React, Node.js, PostgreSQL) with multi-stage Dockerfiles and deployed it on Kubernetes using Helm charts with health probes (liveness/readiness), persistent storage (PVC), and database migration Jobs.
 
 ### 5.3 Career Advisor AI: Multi-Agent System with LangGraph and ChromaDB RAG
 GitHub: https://github.com/sachilz/career-advisor-agentic-ai
 
 Technologies: Python 3.11, LangGraph, LangChain, ChromaDB, RAG, sentence-transformers (all-MiniLM-L6-v2), Groq (LLaMA-3.1), OpenRouter (GPT-4o-mini), Streamlit, Docker
 
-- Developed an autonomous 4-stage LangGraph multi-agent career roadmap system backed by a ChromaDB RAG engine with hybrid LLM routing across 2 providers (Groq LLaMA-3.1, OpenRouter GPT-4o-mini), containerized via CPU-optimized Docker builds and deployed with a Streamlit web interface.
+- Built a 4-step LangGraph multi-agent career roadmap app using ChromaDB for RAG context retrieval and hybrid LLM routing between Groq and OpenRouter, containerized with Docker and served via Streamlit.
 
 ### 5.4 IntelliLearn: AI-Powered Microservices Learning Platform
 GitHub: https://github.com/sachilz/intellitutor-platform
 
 Technologies: Java 17, Spring Boot 3.3, Spring Cloud Gateway, React 19, MongoDB 7, Redis 7, Keycloak (OAuth2 / OIDC SSO), Docker (multi-stage builds), Docker Compose, Nginx, Swagger / OpenAPI, OpenRouter LLM (RAG)
 
-- Architected and containerized a 10-service microservices learning platform with Docker Compose and Spring Cloud Gateway, integrating Keycloak OAuth2/OIDC SSO, Redis rate-limiting, 3 domain-isolated MongoDB databases, and an AI tutor powered by RAG and OpenRouter LLMs.
+- Built and containerized a 10-service microservices platform using Spring Boot and Docker Compose, configuring Spring Cloud Gateway routing, Keycloak authentication, Redis rate-limiting, MongoDB databases, and an AI tutor via RAG.
 
 ---
 
@@ -106,7 +106,7 @@ You have no work or internship experience, so CVs lead with projects.
 | Microsoft Student Ambassador | Microsoft (remote, part-time) | Oct 2026 – Present | Share knowledge on Microsoft technologies and cloud through LinkedIn and Medium. You do not host events. Credly badge: https://www.credly.com/badges/00f350fb-86ae-4d5c-8733-9f8896a0484e |
 | Content Creator (NextOps) | YouTube, self-employed | Mar 2026 – Present | Step-by-step tutorials on Linux, AWS, Docker, and automation tools. |
 | Technical Writer | Medium | May 2024 – Present | Practical tutorials on Linux, Docker, CI/CD, and cloud deployments. |
-| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Actively participate in technical cybersecurity workshops, awareness sessions, and community initiatives. |
+| Member | Community of Cyber Security in Horizon (C2SH), Horizon Campus | Nov 2024 – Present | Collaborate on hands-on cybersecurity workshops, practical security labs, and campus-wide awareness sessions. |
 
 ---
 
