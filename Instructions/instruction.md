@@ -136,17 +136,17 @@ Once the target Job Description (JD) is received:
         }
         ```
     - **Candidate Name & Header Styling (STRICT MANDATORY RULES)**:
-      - **Candidate Name formatting is NON-NEGOTIABLE & STRICT**: Always format as:
+      - **Candidate Name formatting is NON-NEGOTIABLE & STRICT CONSTANT**: Always format as:
         ```latex
-        {\LARGE\bfseries\MakeUppercase{[Candidate Full Name]}}\\[3pt]
+        {\LARGE\bfseries\MakeUppercase{[Candidate Full Name]}}\\[1.5pt]
         ```
-        (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[3pt]`). Under NO circumstances should this command be changed or altered. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[3pt]`. Never omit `\bfseries`, never omit `\MakeUppercase`, and never use `4pt` or any alternative styling.
+        (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[1.5pt]`). Under NO circumstances should this command or spacing value be changed. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[1.5pt]`. The spacing after the name is a FIXED CONSTANT strictly set to `1.5pt` (`\\[1.5pt]`). Never use `3pt`, `4pt`, or any other spacing value. Never omit `\bfseries` or `\MakeUppercase`.
       - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{Cloud Engineer Intern}}\\[1.5pt]` or `{\small \textbf{DevOps Engineer – Intern}}\\[1.5pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
-      - **Strict Header Line Spacing**:
-        - Name to Subtitle (Job Title): strictly `\\[3pt]`.
-        - Subtitle (Job Title) to Contact Info: strictly `\\[1.5pt]`.
-        - Contact Info to Social Links 1: strictly `\\[1pt]`.
-        - Social Links 1 to Social Links 2: strictly `\\[1pt]`.
+      - **Strict Header Line Spacing (Fixed Constants)**:
+        - Name to Subtitle (Job Title): strictly constant `\\[1.5pt]`.
+        - Subtitle (Job Title) to Contact Info: strictly constant `\\[1.5pt]`.
+        - Contact Info to Social Links 1: strictly constant `\\[1pt]`.
+        - Social Links 1 to Social Links 2: strictly constant `\\[1pt]`.
       - **Clickable Email**: In the contact info line, the email address MUST ALWAYS be clickable using `\href{mailto:[Email Address]}{\textcolor{linkblue}{[Email Address]}}`.
      - **Social Links Format (STRICTLY CONSISTENT DOMAIN URL FORMAT)**: All links in the header MUST follow the exact same clean domain-based format (strip `https://` for display). Never show raw usernames alone (e.g., `sachilz`) and never show plain text names (e.g., `NextOps`). Every link must look uniform:
        - **LinkedIn**: `linkedin.com/in/[username]` (e.g., `linkedin.com/in/sachilz`)
@@ -230,7 +230,7 @@ Deliver exactly these two items:
 
 %% ── HEADER ────────────────────────────────────────────────────────────
 \begin{center}
-{\LARGE\bfseries\MakeUppercase{[CANDIDATE FULL NAME]}}\\[3pt]
+{\LARGE\bfseries\MakeUppercase{[CANDIDATE FULL NAME]}}\\[1.5pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[1.5pt]
 {\small [City, Country] \textbar{} [Phone Number] \textbar{} \href{mailto:[Email Address]}{\textcolor{linkblue}{[Email Address]}}}\\[1pt]
 {\small LinkedIn: \href{[LinkedIn URL]}{\textcolor{linkblue}{linkedin.com/in/[username]}} \textbar{} GitHub: \href{[GitHub URL]}{\textcolor{linkblue}{github.com/[username]}} \textbar{} Portfolio: \href{[Portfolio URL]}{\textcolor{linkblue}{[domain.ext]}}}\\[1pt]

@@ -40,7 +40,7 @@ Honesty rules for this file:
 
 Put these rules at the bottom of your profile file so the AI applies them to every CV:
 
-1. Font & Candidate Name: Latin Modern (`\usepackage{lmodern}`). Candidate name MUST STRICTLY ALWAYS be formatted as `{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[3pt]` (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[3pt]`). Never omit `\bfseries` or `\MakeUppercase`, and strictly keep spacing to `3pt`.
+1. Font & Candidate Name: Latin Modern (`\usepackage{lmodern}`). Candidate name MUST STRICTLY ALWAYS be formatted as `{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[1.5pt]` (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[1.5pt]`). The `1.5pt` line spacing is a strict fixed constant. Never omit `\bfseries` or `\MakeUppercase`, and never use `3pt` or `4pt`.
 2. Certificates: strictly include the 2 strongest ones that relate to the job description. Limiting to 2 certificates is critical to guarantee the 1-page fit.
 3. Include strictly 4 projects in every CV. Choose the 4 that best match the job requirements. If the profile file has only 4, include all 4.
 4. Use only facts from the profile file. Never invent details.
@@ -237,7 +237,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 % Balanced vertical distribution
 
 \begin{center}
-{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[3pt]
+{\LARGE\bfseries\MakeUppercase{YOUR FULL NAME}}\\[1.5pt]
 {\small \textbf{[Exact Job Title from Job Description]}}\\[1.5pt]
 {\small City, Country \textbar{} +00 00 000 0000 \textbar{} \href{mailto:you@email.com}{\textcolor{linkblue}{you@email.com}}}\\[1pt]
 % NOTE: All header links MUST display in the exact same domain URL format (e.g. medium.com/@..., youtube.com/@...) — never bare names!
