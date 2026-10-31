@@ -80,6 +80,10 @@ Once the target Job Description (JD) is received:
    - Align the **Technical Skills** to prioritize technologies demanded by the JD that exist in `info.md`, along with the core tools from the 4 selected projects.
 
 2. **Strict Standing Rules for the CV**:
+   - **Page Geometry & Margins (STRICT FIXED CONSTANT - NEVER CHANGE)**:
+     `\usepackage[margin=0.42in]{geometry}`
+     - **MANDATORY CONSTANT**: Margins MUST ALWAYS be set to strictly and exactly **`0.42in`** on all 4 sides (Top = Bottom = Left = Right = 0.42in).
+     - **ABSOLUTE PROHIBITION**: NEVER change, increase, or decrease this margin under any circumstances across any CV generated. Never use 0.3in, 0.35in, 0.4in, 0.5in, or asymmetric margin values. The margin is a permanent fixed constant.
    - **Facts only**: Use ONLY information from `info.md`. Never invent skills, metrics, percentages, job titles, or credentials.
     - **Page Budget & Length (1-Page Default vs 2-Page References Rule)**:
       - **1-Page Strict Default**: By default (without References), the CV MUST strictly fit onto **ONE single A4 page**.
@@ -370,4 +374,5 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 - [ ] Each Technologies line fits on **strictly ONE single line** (never wraps to a 2nd line, extends up to the GitHub text margin).
 - [ ] `\vspace{5pt}` present **immediately** after Technologies lines for projects 1, 2, and 3.
 - [ ] All dates use `--` (en dash) in LaTeX.
-- [ ] CV fits strictly **one A4 page** — no overflow to page 2, no large blank space at bottom.
+- [ ] Geometry margins strictly set to constant `\usepackage[margin=0.42in]{geometry}` (never changed to any other value).
+- [ ] CV fits strictly **one A4 page** (or 2 pages if conditional references/density warrant it) — no large blank space at bottom.

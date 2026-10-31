@@ -6,7 +6,8 @@ A step-by-step guide for students and interns, based on a DevOps internship CV b
 
 The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable by applicant tracking systems (ATS). These are the design rules:
 
-- Strictly one A4 page, single column. The CV must never run onto a second page, and the content must fill the page right down to the bottom margin.
+- Strictly one A4 page, single column (unless conditional references require 2 pages).
+- Margins: STRICT FIXED CONSTANT `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in). Never change this margin value under any circumstances across different CVs.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
 - Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Professional Experience, References (conditional).
@@ -49,6 +50,7 @@ Put these rules at the bottom of your profile file so the AI applies them to eve
 8. Technology tags: no italics. Color only the tags with \\textcolor{techblue}{...}. The color techblue is defined at the very top of the file.
 9. Header: always show all social links from the profile file (LinkedIn, GitHub, Portfolio, Medium, YouTube), none missing. Strictly uniform domain format: `linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` (never bare names like "NextOps" or "sachilz"). Links are blue; GitHub and Credly links have no underline.
 10. Full-page layout: no large blank space at the bottom of the page. LaTeX code: always deliver it as a file or canvas, never pasted inside the chat message.
+11. Margins (Strict Fixed Constant): Always use `\usepackage[margin=0.42in]{geometry}`. The margins MUST ALWAYS be strictly 0.42in on all 4 sides. Under NO circumstances should the margin value be altered or customized across different CVs.
 
 ## 4. Step 3: Start the chat with a master prompt
 
