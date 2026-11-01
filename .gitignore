@@ -1,0 +1,33 @@
+# Personal Information (Private Candidate Data)
+Personal_Info/info.md
+Personal_Info/sachintha-pi.md
+Personal_Info/*-pi.md
+Personal_Info/*.private.md
+Personal_Info/*.local.md
+!Personal_Info/info_template.md
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary & Log Files
+*.tmp
+*.bak
+*.log
+__pycache__/
+*.pyc
+
+# LaTeX Build Artifacts (if compiled locally)
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
