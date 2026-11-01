@@ -96,7 +96,7 @@ Once the target Job Description (JD) is received:
     - **Section order**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience → References (conditional).
    - **Professional Summary (Evidence-Based & JD Tech-Stack Matched)**:
      - **STRICT PROHIBITION ON FILLER BUZZWORDS**: NEVER use empty filler phrases such as *"Motivated"*, *"Passionate"*, *"Hardworking"*, *"Interested in..."*, *"Aspiring"*, or *"Eager to learn"*. Recruiters consider these meaningless fluff.
-     - **Lead with Tangible Evidence & Academic Standing**: Start directly with verified credentials and identity from `info.md`: *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*
+     - **Lead with Tangible Evidence & Academic Standing**: Start directly with verified credentials and identity from `info.md` (e.g., *"IT undergraduate ([GPA] GPA) and [Key Role from info.md] with hands-on experience..."*)
      - **Name the Employer's Exact Tech Stack from the JD**: Explicitly identify and name the specific technologies, architectural patterns, and tools required by the target Job Description that match `info.md` (e.g., Docker, Kubernetes, AWS, Terraform, CI/CD pipelines, Spring Boot, React, or Python/RAG).
      - **State the Exact Target Job Title & Technical Value**: End by stating the exact job title from the JD and the concrete engineering value the candidate delivers (e.g., *"Seeking a [Exact Job Title from JD] position to architect resilient deployment pipelines and automate cloud-native infrastructure."*).
      - **Keep Strictly to 3 to 4 Lines**: Must remain tight, factual, and impactful (3 to 4 lines maximum in the PDF) so it preserves the vertical page budget.
@@ -108,7 +108,7 @@ Once the target Job Description (JD) is received:
      - Copy each project description **exactly** as written in `info.md` (1 key point bullet per project).
      - **Technologies line (STRICTLY ONE LINE ONLY)**: `Technologies: \textcolor{techblue}{...}` with **6 to 8 tags**. Must stretch across towards the right margin (under the GitHub link) but **MUST NEVER WRAP TO A SECOND LINE**.
      - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
-   - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Show degree, faculty, relevant coursework, and GPA. For secondary school, show `\textbf{G.C.E. Advanced Level}, Kandakapulpotha National College \hfill \textbf{2022}` on a single line. **STRICT RULE: NEVER include A/L results or grades ('CCC' / 'Passed with 3 C passes') on the CV.** The strong 3.52 university GPA stands proudly on its own; listing 'CCC' weakens the candidate profile and wastes vertical space.
+   - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Show degree, faculty, relevant coursework, and GPA. For secondary / high school qualification, show `\textbf{[Secondary Qualification]}, [School Name] \hfill \textbf{[Year]}` on a single line. **STRICT RULE: NEVER include secondary examination grades / results on the CV.** A strong university GPA stands proudly on its own; listing secondary school grades weakens the candidate profile and wastes vertical space.
    - **Certifications and Training**: Strictly include the **2 strongest certificates** directly relevant to the JD. Limiting to 2 certificates is critical to guarantee the 1-page fit.
    - **Professional Experience Section (MANDATORY ATS HEADING: Name as `\section{Professional Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
@@ -122,17 +122,17 @@ Once the target Job Description (JD) is received:
         \section{References}
         {\small
         \begin{minipage}[t]{0.48\textwidth}
-        \textbf{Thilina Samarasinghe}\\
-        Senior Lecturer, Faculty of Information Technology, Horizon Campus\\
-        \href{mailto:thilina.samarasinghe@horizoncampus.edu.lk}{\textcolor{linkblue}{thilina.samarasinghe@horizoncampus.edu.lk}}\\
-        +94 77 361 7305 / +94 70 661 7305
+        \textbf{[Referee Name 1]}\\
+        [Title / Designation], [Department], [Institution / Company]\\
+        \href{mailto:[Email 1]}{\textcolor{linkblue}{[Email 1]}}\\
+        [Phone Number 1]
         \end{minipage}
         \hfill
         \begin{minipage}[t]{0.48\textwidth}
-        \textbf{Prof. P. Withanage}\\
-        Emeritus Professor of Economics, University of Ruhuna\\
-        \href{mailto:profpvithanage@gmail.com}{\textcolor{linkblue}{profpvithanage@gmail.com}}\\
-        +94 77 6979 917
+        \textbf{[Referee Name 2]}\\
+        [Title / Designation], [Department], [Institution / Company]\\
+        \href{mailto:[Email 2]}{\textcolor{linkblue}{[Email 2]}}\\
+        [Phone Number 2]
         \end{minipage}
         }
         ```
@@ -141,7 +141,7 @@ Once the target Job Description (JD) is received:
         ```latex
         {\LARGE\bfseries\MakeUppercase{[Candidate Full Name]}}\\[1.5pt]
         ```
-        (e.g. `{\LARGE\bfseries\MakeUppercase{Sachintha Dilshan Madhushankha}}\\[1.5pt]`). Under NO circumstances should this command or spacing value be changed. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[1.5pt]`. The spacing after the name is a FIXED CONSTANT strictly set to `1.5pt` (`\\[1.5pt]`). Never use `3pt`, `4pt`, or any other spacing value. Never omit `\bfseries` or `\MakeUppercase`.
+        (e.g. `{\LARGE\bfseries\MakeUppercase{[CANDIDATE FULL NAME]}}\\[1.5pt]`). Under NO circumstances should this command or spacing value be changed. It MUST strictly use `\LARGE\bfseries\MakeUppercase{...}\\[1.5pt]`. The spacing after the name is a FIXED CONSTANT strictly set to `1.5pt` (`\\[1.5pt]`). Never use `3pt`, `4pt`, or any other spacing value. Never omit `\bfseries` or `\MakeUppercase`.
       - **Sub-header line MUST dynamically match the exact Job Title from that specific JD**: Extract whatever title is on the uploaded JD (e.g., `{\small \textbf{Cloud Engineer Intern}}\\[1.5pt]` or `{\small \textbf{DevOps Engineer – Intern}}\\[1.5pt]`). Never use a hardcoded role. This ensures ATS scanners match the candidate directly to the specific job applied for.
       - **Strict Header Line Spacing (Fixed Constants)**:
         - Name to Subtitle (Job Title): strictly constant `\\[1.5pt]`.
@@ -241,7 +241,7 @@ Deliver exactly these two items:
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-[Craft an evidence-based summary (strictly 3 to 4 lines). BANNED FILLERS: "Motivated", "Passionate", "Interested in". Lead with credentials: "IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience [building/deploying systems using JD tech stack]...". End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
+[Craft an evidence-based summary (strictly 3 to 4 lines). BANNED FILLERS: "Motivated", "Passionate", "Interested in". Lead with credentials: "IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from info.md] with hands-on experience [building/deploying systems using JD tech stack]...". End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────

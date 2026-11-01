@@ -12,7 +12,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
 - Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Community & Content Experience, References (conditional).
 - Section headings in bold small capitals with a thin line underneath.
-- The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/sachilz`, `github.com/sachilz`, `sachilz.me`, `medium.com/@sachilz`, `youtube.com/@NextOpz`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
+- The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/username`, `github.com/username`, `portfolio.com`, `medium.com/@username`, `youtube.com/@channel`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
 - Dates aligned to the right edge of the page.
 - Only relevant content for the target job. Leave out weak or unrelated items.
@@ -115,7 +115,7 @@ The AI then reorders your skills, copies your summary from the profile file, pic
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
 - **Strictly 2 certificates only.** Show strictly the 2 strongest certificates directly relevant to the target role. Limiting to 2 certificates is essential to prevent the CV from overflowing to a 2nd page.
 - **Experience Heading: `\section{Community \& Content Experience}` & Include ALL roles.** Name this section `\section{Community \& Content Experience}` (escaped as `\&` in LaTeX). Because undergraduates do not have corporate industry jobs yet, labeling student ambassador roles and YouTube channels as "Professional Experience" can look dishonest to recruiters. "Community & Content Experience" is 100% transparent and respected. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section (Student Ambassador, YouTube, Medium, Clubs). NEVER omit, filter, or drop any role. Right-align Credly badges. Use `\vspace{3.5pt plus 1pt minus 1pt}` between entries.
-- **Education.** Show your university degree (dates, GPA, coursework) and your G.C.E. Advanced Level (school name and year only). **STRICT RULE: Do NOT include A/L results or grades ('CCC' / 'Passed with 3 C passes') on the CV.** The candidate's strong 3.52 university GPA stands on its own, and listing 'CCC' hurts the candidate profile and wastes vertical space.
+- **Education.** Show your university degree (dates, GPA, coursework) and your secondary / high school (qualification name, school name, and year only). **STRICT RULE: Do NOT include secondary school results or grades on the CV.** The candidate's university GPA stands on its own, and listing secondary grades weakens the candidate profile and wastes vertical space.
 - **One page.** All of this must still fit on exactly one page.
 
 **Project spacing.** After each project's "Technologies:" line, add `\vspace{4.5pt plus 1pt minus 1pt}` before the next project title, so the projects are clearly separated.
@@ -133,7 +133,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
-**Professional summary (Evidence-based & JD Tech Stack Matched).** Lead with concrete evidence rather than empty buzzwords. **Never use filler words** like "Motivated", "Passionate", "Interested in...", or "Eager to learn". Instead, start with verified credentials (e.g., *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*), explicitly name the specific tools and tech stack requested by the target Job Description (e.g., Docker, Kubernetes, AWS, Terraform, Spring Boot), and state the exact target Job Title along with the technical value you deliver. Keep to strictly 3 to 4 lines.
+**Professional summary (Evidence-based & JD Tech Stack Matched).** Lead with concrete evidence rather than empty buzzwords. **Never use filler words** like "Motivated", "Passionate", "Interested in...", or "Eager to learn". Instead, start with verified credentials (e.g., *"IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from profile] with hands-on experience..."*), explicitly name the specific tools and tech stack requested by the target Job Description (e.g., Docker, Kubernetes, AWS, Terraform, Spring Boot), and state the exact target Job Title along with the technical value you deliver. Keep to strictly 3 to 4 lines.
 
 **Colors.** Define both colors at the very top of the CV file, right after the packages. Use linkblue for every link and techblue only for the technology tags:
 
@@ -247,7 +247,7 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 
 \section{Professional Summary}
 {\small
-Craft an evidence-based summary (strictly 3 to 4 lines). Never use filler like "Motivated" or "Interested in...". Lead with verified credentials (IT undergraduate, 3.52 GPA, Microsoft Student Ambassador), name the employer's tech stack from the JD, and state the exact target role along with the technical value delivered.
+Craft an evidence-based summary (strictly 3 to 4 lines). Never use filler like "Motivated" or "Interested in...". Lead with verified credentials (degree, GPA, leadership/community roles from profile), name the employer's tech stack from the JD, and state the exact target role along with the technical value delivered.
 }
 
 \section{Technical Skills}
@@ -322,17 +322,17 @@ Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
 % \section{References}
 % {\small
 % \begin{minipage}[t]{0.48\textwidth}
-% \textbf{Referee Name One}\\
-% Senior Lecturer, Faculty of IT, Horizon Campus\\
-% \href{mailto:email@horizoncampus.edu.lk}{\textcolor{linkblue}{email@horizoncampus.edu.lk}}\\
-% +94 77 000 0000
+% \textbf{[Referee Name 1]}\\
+% [Title / Designation], [Department / Company]\\
+% \href{mailto:[email1]}{\textcolor{linkblue}{[email1]}}\\
+% [Phone Number 1]
 % \end{minipage}
 % \hfill
 % \begin{minipage}[t]{0.48\textwidth}
-% \textbf{Referee Name Two}\\
-% Emeritus Professor, University of Ruhuna\\
-% \href{mailto:email@gmail.com}{\textcolor{linkblue}{email@gmail.com}}\\
-% +94 77 000 0000
+% \textbf{[Referee Name 2]}\\
+% [Title / Designation], [Department / Company]\\
+% \href{mailto:[email2]}{\textcolor{linkblue}{[email2]}}\\
+% [Phone Number 2]
 % \end{minipage}
 % }
 \end{document}
