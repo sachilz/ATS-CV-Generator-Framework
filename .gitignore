@@ -1,10 +1,16 @@
-# Personal Information (Private Candidate Data)
-Personal_Info/info.md
-Personal_Info/sachintha-pi.md
-Personal_Info/*-pi.md
-Personal_Info/*.private.md
-Personal_Info/*.local.md
-!Personal_Info/info_template.md
+# Personal Information (Private Candidate Data - ignored anywhere in the repo)
+info.md
+**/info.md
+sachintha-pi.md
+**/sachintha-pi.md
+*-pi.md
+**/*-pi.md
+*.private.md
+**/*.private.md
+*.local.md
+**/*.local.md
+!**/info_template.md
+!info_template.md
 
 # Operating System Files
 .DS_Store
