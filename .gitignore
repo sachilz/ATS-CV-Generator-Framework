@@ -23,12 +23,13 @@ desktop.ini
 *.swp
 *.swo
 
-# Temporary & Log Files
+# Temporary & Scratch Files
 *.tmp
 *.bak
 *.log
 __pycache__/
 *.pyc
+*.py
 
 # LaTeX Build Artifacts (if compiled locally)
 *.aux

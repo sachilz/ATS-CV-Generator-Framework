@@ -20,7 +20,7 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
 - [Key Features](#-key-features)
 - [Repository Architecture](#-repository-architecture)
 - [How It Works (Pipeline)](#-how-it-works-pipeline)
-- [Quick Start Guide (4 Steps)](#-quick-start-guide-4-steps)
+- [Quick Start Guide (5 Steps)](#-quick-start-guide-5-steps)
 - [Copy-Paste AI Prompts](#-copy-paste-ai-prompts)
 - [Engine Standards & Typography](#-engine-standards--typography)
 - [Privacy & Security](#-privacy--security)
@@ -37,7 +37,7 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
 | **Generic Filler Words** | Strictly bans clichés (*"motivated"*, *"passionate"*, *"interested in"*). Leads with verified GPA, credentials, and evidence. |
 | **Multi-Page Overflow** | Tuned LaTeX geometry (`0.42in` margins, elastic glue spacing, 1-line tech tags) locks output strictly to **1 Page**. |
 | **Unrealistic / Overclaimed Bullets** | Enforces defensible, technically sound project bullets (no inflated *"zero-downtime production"* claims for lab projects). |
-| **Manual Tailoring Fatigue** | Automatically selects the 4 best-matching projects, prioritizes relevant skills, and weaves the exact JD job title into the summary. |
+| **Chat Clutter & Essays** | Completely eliminates verbose ATS reviews, essays, and checklists in the chat. Delivers only your clean CV files directly. |
 
 ---
 
@@ -50,6 +50,10 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
   - Automatically identifies and highlights the employer's tech stack.
   - Selects the **top 4 most relevant projects** from your profile.
   - Selects strictly the **2 strongest certifications** relevant to the opening.
+- **🎛️ 3 Output Formats (User Choice):**
+  - **Option 1: LaTeX Code only** (for Overleaf / local compilation)
+  - **Option 2: PDF only** (compiled, download-ready PDF)
+  - **Option 3: Both** (LaTeX code + compiled PDF)
 - **💼 Evidence-Based Professional Summary:** Replaces empty corporate buzzwords with tangible achievements, GPA, leadership roles, and hands-on tooling.
 - **🎨 Visual Hierarchy & Clean Typography:** Uses Latin Modern typography, `\large` bold small-caps section headings, distinct project separations (`\vspace{5pt}`), and uniform domain link styling.
 - **🔒 Privacy First:** Integrated `.gitignore` ensures your personal contact information (phone number, email, references) never gets accidentally committed to public repositories.
@@ -71,8 +75,11 @@ Personal_CV_Generator/
 ├── CV_Guidelines/                 # Design & typography specifications
 │   └── cv_guide.md                # Base LaTeX template, spacing knobs, and rules
 │
-└── Instructions/                  # Prompt-engineered agent instructions
-    └── instruction.md             # Master system prompt for Claude (Artifacts) & ChatGPT
+├── Instructions/                  # Master CV generator instructions
+│   └── instruction.md             # Master system prompt for Claude (Artifacts) & ChatGPT
+│
+└── Verification_Instructions/     # Recruiter & ATS inspection framework
+    └── verification_instruction.md # Hyper-critical 4-section audit instructions & report format
 ```
 
 ---
@@ -90,17 +97,24 @@ flowchart TD
     F --> G["4. User Submits Target Job Description (JD)"]
     E -- Ready --> G
     
-    G --> H["Smart JD Analysis &\nLaTeX Code Generation"]
-    H --> I["Claude Artifact / Canvas Panel\n(CV_CandidateName.tex)"]
-    H --> J["Chat Output:\nATS Keyword Review (Matched vs Missing)"]
+    G --> H["Smart JD Analysis &\nPrompt User for Output Format"]
+    H --> I{"User Selects Format"}
+    I -- Option 1 --> J["LaTeX Code Only (.tex)"]
+    I -- Option 2 --> K["PDF Document Only (.pdf)"]
+    I -- Option 3 --> L["Both (.tex + .pdf)"]
     
-    I --> K["Overleaf / LaTeX Engine"]
-    K --> L["📄 Beautiful One-Page ATS PDF"]
+    J --> M["📄 Beautiful One-Page ATS CV"]
+    K --> M
+    L --> M
+
+    M -.-> N{"Run Recruiter Audit?"}
+    N -- Yes --> O["5. Recruiter & ATS Verification Audit\n(Verification_Instructions/verification_instruction.md)"]
+    O --> P["📊 4-Section Recruiter & ATS Audit Report"]
 ```
 
 ---
 
-## 🚀 Quick Start Guide (4 Steps)
+## 🚀 Quick Start Guide (5 Steps)
 
 ### Step 1: Clone or Fork this Repository
 ```bash
@@ -133,10 +147,22 @@ cd Personal_CV_Generator
 3. Send the **Initial Prompt** (see prompt template below).
 4. When the AI confirms readiness, paste your target **Job Description (JD)**.
 
-### Step 4: Compile in Overleaf
-1. Open [Overleaf](https://www.overleaf.com) and create a **Blank Project**.
-2. Replace all code with the generated `.tex` source code.
-3. Click **Recompile** — your 1-page ATS-optimized PDF is ready to download!
+### Step 4: Choose Your Output Format & Download
+The AI will ask for your preferred output format:
+- **Option 1: LaTeX Code only** (for Overleaf compilation)
+- **Option 2: PDF only** (download-ready PDF)
+- **Option 3: Both** (LaTeX code + compiled PDF)
+
+Reply with **1**, **2**, or **3**, and the AI will deliver your CV directly without chat clutter or review essays!
+
+### Step 5: (Optional) Run the Recruiter & ATS Verification Audit
+Once your CV is generated, if you want a ruthless evaluation of how your CV stacks up against the JD:
+1. Provide `Verification_Instructions/verification_instruction.md` (or reply **"Review my CV"**).
+2. The AI adopts the persona of a Senior Recruiter & Hiring Manager reviewing 200+ resumes weekly and delivers a **4-section audit report**:
+   - **ATS Score & Compatibility (1–100 Rating & Missing Keywords)**
+   - **Strengths & Weaknesses (Top 3 of each)**
+   - **Bullet Point Optimization (Duty-based vs Achievement-based Before/After rewrites)**
+   - **Red Flags & Recruiter Screening Verdict (Pass / Warning / Rejection)**
 
 ---
 
@@ -149,7 +175,7 @@ I have attached three files:
 2. cv_guide.md (Layout, LaTeX template, and typography constraints)
 3. info.md (My verified personal profile data)
 
-Please read all three files thoroughly. Verify my profile against the required sections. Once verified, please confirm that you are ready for my target Job Description (JD). Do not generate any LaTeX code yet.
+Please read all three files thoroughly. Verify my profile against the required sections. Once verified, please confirm that you are ready for my target Job Description (JD). Do not generate any LaTeX code or PDF yet.
 ```
 
 ### Message 2: Submitting the Job Description
@@ -158,7 +184,17 @@ Here is the target Job Description (JD) I am applying for:
 
 [PASTE FULL JOB DESCRIPTION TEXT OR DETAILS HERE]
 
-Please analyze this JD, match my profile facts against its requirements, and generate my tailored one-page LaTeX CV code in an artifact/canvas panel, followed by the ATS Keyword Review in chat.
+Please analyze this JD and match my profile facts against its requirements. Ask me for my preferred output format (1: LaTeX Code only, 2: PDF only, 3: Both) before generating the CV.
+```
+
+### Message 3: (Optional) Hyper-Critical Recruiter & ATS Audit
+```text
+Act as an expert recruiter and hiring manager who reviews 200+ resumes weekly. Using Verification_Instructions/verification_instruction.md, perform a hyper-critical CV Review on my generated CV against the target Job Description with these 4 sections:
+
+1. ATS Score & Compatibility (Rate 1-100 on JD match, list missing keywords and skills)
+2. Strengths & Weaknesses (Best parts for this role vs what needs immediate rewriting)
+3. Bullet Point Optimization (Review bullets: duty-based vs achievement-based; rewrite 3 bullets for stronger impact)
+4. Red Flags (Identify gaps, confusing language, or formatting issues that would cause rejection)
 ```
 
 ---

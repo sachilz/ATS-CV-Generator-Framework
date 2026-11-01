@@ -47,7 +47,7 @@ Put these rules at the bottom of your profile file so the AI applies them to eve
 5. Show the degree dates as "Mon YYYY - Mon YYYY (expected)" with no year or semester of study.
 6. Length: strictly one page. Never produce a second page.
 7. Project descriptions: copy each project's description exactly as written in the profile file (1 key point per project). Do not rewrite it or add bullets.
-8. Technology tags: no italics. Color only the tags with \\textcolor{techblue}{...}. The color techblue is defined at the very top of the file.
+8. Technology tags: no italics. Color only the tags with \textcolor{techblue}{...}. The color techblue is defined at the very top of the file.
 9. Header: always show all social links from the profile file (LinkedIn, GitHub, Portfolio, Medium, YouTube), none missing. Strictly uniform domain format: `linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` (never bare names like "NextOps" or "sachilz"). Links are blue; GitHub and Credly links have no underline.
 10. Full-page layout: no large blank space at the bottom of the page. LaTeX code: always deliver it as a file or canvas, never pasted inside the chat message.
 11. Margins (Strict Fixed Constant): Always use `\usepackage[margin=0.42in]{geometry}`. The margins MUST ALWAYS be strictly 0.42in on all 4 sides. Under NO circumstances should the margin value be altered or customized across different CVs.
@@ -68,14 +68,13 @@ information relevant to the target job.
 When I give a job description (or a target such as "DevOps internship for
 a career fair"), do this in order:
 1. Analyze the role: title, essential and preferred skills, ATS keywords.
-2. Assess my fit: strongest matches, gaps, risks.
-3. Ask me concise questions only if essential information is missing.
-4. Build a one-page, single-column, ATS-friendly CV that follows my
-   standing rules and the design template.
-5. Run a quality check: every claim supported, keywords natural, no
-   spelling or date errors, no placeholders.
-
-Deliver: (a) The CV via LaTeX artifact/canvas only, and (b) an ATS Keyword Review in the chat listing Matched Keywords included and Missing Keywords from the JD (so the user can review and manually adjust if needed).
+2. Check my profile for completeness.
+3. Ask me for my preferred output format:
+   - Option 1: LaTeX Code only (for Overleaf)
+   - Option 2: PDF only (compiled ready-to-use PDF)
+   - Option 3: Both (LaTeX code + compiled PDF)
+4. Build a one-page, single-column, ATS-friendly CV according to my chosen format.
+5. Keep the chat response clean and direct (no ATS review essays or filler).
 Never claim the CV guarantees an interview or ATS success.
 
 Strict rules:
@@ -92,7 +91,7 @@ Strict rules:
   download, never pasted inside the chat message.
 ```
 
-## 5. Step 4: Give the target
+## 5. Step 4: Give the target & choose output format
 
 Tell the AI what you are applying for:
 
@@ -100,14 +99,18 @@ Tell the AI what you are applying for:
 - A career fair: say "create a DevOps focused CV for a career fair, use my best 4 projects".
 - A general role: say "create a Software Engineer internship CV".
 
-The AI then reorders your skills, copies your summary from the profile file, picks the best projects, and keeps only the relevant certificates. Every role needs its own version of the CV.
+The AI will then ask for your preferred output format (LaTeX Code only, PDF only, or Both) and build the CV matching the vacancy.
 
 **Recommended order of messages.** Send things in this order so the AI never skips a rule:
 
 1. In your first message, upload this guide and your profile file (for example `info.md`). Say: "Read both. Follow this guide for layout and rules, and use my profile file as the only source of facts."
 2. Wait for the AI to confirm. Do not send the job description yet.
-3. Send the job description last. The AI must read the job requirements, check them against your profile file, and only then build the CV, picking the skills, projects and certificates that match what the job asks for.
-4. Check the result before you send it: exactly one page, and all five social links in the header (LinkedIn, GitHub, Portfolio, Medium, YouTube).
+3. Send the job description. The AI will ask for your preferred output format:
+   - Option 1: LaTeX Code only (for Overleaf)
+   - Option 2: PDF only (compiled ready-to-use PDF)
+   - Option 3: Both (LaTeX code + compiled PDF)
+4. Confirm your choice (1, 2, or 3), and the AI builds and delivers your tailored CV directly without chat clutter or review essays.
+5. (Optional) If you want a hyper-critical recruiter scan and ATS keyword audit, reply "Review my CV" or upload `Verification_Instructions/verification_instruction.md` to get the comprehensive 4-section Recruiter & ATS Audit Report.
 
 **CV content rules.** Every CV must follow these:
 
@@ -142,21 +145,19 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 \definecolor{techblue}{RGB}{55,85,150}
 ```
 
-## 6. Step 5: Ask for the right output
+## 6. Step 5: Choose your output format
 
-Use one of these requests:
+Before generating the CV, choose one of these 3 format options:
 
-- "Create the CV as a PDF only." You get the finished file to send.
-- "Create the CV as a PDF and also the Overleaf LaTeX code separately." You get a PDF plus a `.tex` file you can edit later.
+- **Option 1: LaTeX Code only** — You get the `.tex` file in an artifact panel for Overleaf compilation.
+- **Option 2: PDF only** — You get the finished, download-ready PDF document.
+- **Option 3: Both** — You get both the LaTeX source code and the compiled PDF.
 
-Always ask for the LaTeX code as a file or canvas that you can open and download, never pasted inside the chat message. If your AI cannot create files, ask for the LaTeX code in a canvas and compile it yourself:
-
+If you compile the LaTeX code on Overleaf yourself:
 1. Go to overleaf.com and create a free account.
 2. Choose New Project, then Blank Project.
 3. Paste the LaTeX code over the default file.
 4. Press Recompile and download the PDF.
-
-The LaTeX template at the end of this guide produces the same clean look.
 
 ## 7. Step 6: Page Budget & Structure Preservation Rules
 
@@ -200,9 +201,9 @@ For each project add one "Technologies:" line in plain black text with tags colo
 
 ## 10. Quick prompts you can reuse
 
-- "Create a DevOps focused CV for a career fair. Use my best 4 projects. PDF only."
-- "Here is a job description. Analyze it, tell me my gaps, then create a tailored one-page CV as a PDF and the Overleaf code separately."
-- "Update my profile file with these new details and rebuild the CV."
+- "Create a DevOps focused CV for a career fair. Use my best 4 projects. Option 2: PDF only."
+- "Here is a job description. Analyze it and build my CV. Option 3: Both LaTeX and PDF."
+- "Update my profile file with these new details and rebuild the CV. Option 1: LaTeX code only."
 - "The CV runs onto 2 pages. Fit it to one page without removing my best project."
 - "The page has blank space at the bottom. Spread the content so it fills the page."
 
@@ -336,12 +337,3 @@ Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
 % \end{minipage}
 % }
 \end{document}
-```
-
-Tips for using the template:
-
-- Add more `\textbf{Project...}` blocks until you have exactly 4 projects, each with 1 key point copied from your profile file.
-- Under Experience, include **EVERY** role, content creation, writing, or club from the profile file. Never drop any role.
-- Delete the Credly line if you have no badge to link. Keep every social link you own in the header (LinkedIn, GitHub, Portfolio, Medium, YouTube) and remove only the ones you do not have.
-- Use `--` for an en dash in date ranges and `\&` for an ampersand in LaTeX.
-- Never put tables, images or columns in the CV, because they can break ATS parsing.
