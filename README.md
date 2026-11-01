@@ -1,74 +1,106 @@
-# AI-Powered ATS CV Generator System 🚀
+# 📄 AI-Powered ATS CV Generator Framework 🚀
 
-An automated, intelligent, and ATS-optimized CV generation framework designed to work seamlessly with **Claude (Artifacts / Canvas)**, **ChatGPT**, **LaTeX**, and **Overleaf**.
+[![LaTeX](https://img.shields.io/badge/LaTeX-Overleaf-008080?style=for-the-badge&logo=overleaf&logoColor=white)](https://www.overleaf.com)
+[![Claude 3.7 / 3.5](https://img.shields.io/badge/AI%20Model-Claude%20%7C%20ChatGPT-6f42c1?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai)
+[![ATS Optimized](https://img.shields.io/badge/ATS-Optimized%20100%25-2ea44f?style=for-the-badge&logo=checkmarx&logoColor=white)](#-why-this-framework)
+[![Page Budget](https://img.shields.io/badge/Page%20Budget-Strictly%201%20Page-orange?style=for-the-badge)](#-layout--typography-standards)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-This repository provides a modular, prompt-engineered system that tailors a **strictly one-page, ATS-compliant CV** for any given Job Description (JD) using the candidate's personal markdown profile as the **single source of truth** — eliminating AI hallucinations, formatting headaches, and multi-page overflow.
+An intelligent, production-ready CV generation framework engineered for **students, graduates, software engineers, and cloud/DevOps professionals**. 
 
-> **💡 Universal & Open-Source:** Any student, graduate, or professional can clone this repository, fill out the profile template, and generate tailor-made CVs for any tech job vacancy!
+This system bridges the gap between **raw career facts** and **ATS-tailored, single-page LaTeX CVs**. By combining strict prompt-engineered constraints with a tuned LaTeX layout, it eliminates the common pitfalls of AI-generated resumes: hallucinations, generic fluff, broken layouts, and multi-page overflow.
 
----
-
-## 📌 Key Highlights
-
-- **🛡️ Zero Hallucinations**: The AI is strictly constrained to facts from your candidate profile file (`info.md`). It will never invent fake metrics, inflated numbers, or non-existent credentials.
-- **📄 Strictly One-Page A4 Rule**: Built-in LaTeX typography knobs and spacing constraints guarantee that the CV stays on exactly one page, filling neatly to the bottom margin.
-- **🎯 Dynamic JD Alignment & ATS Title Matching**:
-  - Directly matches the **exact Job Title** from the JD in the header subtitle and professional summary.
-  - **Evidence-Based Summary**: Completely eliminates filler buzzwords (*"motivated"*, *"passionate"*, *"interested in"*) and leads with credentials, GPA, and the exact tech stack required by the employer.
-  - Automatically identifies and picks the **4 best-matching projects** for the target role.
-  - Prioritizes technical skills matching the JD requirements while retaining project tools.
-  - Selects strictly the **2 strongest certifications** directly relevant to the vacancy (guarantees 1-page fit).
-- **⚡ Claude Canvas / Artifact Integration**: The complete LaTeX code is delivered directly in Claude’s side Artifact panel (`CV_[CandidateName].tex`) for instant one-click copying — keeping the chat clean.
-- **🔍 ATS Keyword Review**: Highlights keywords successfully matched in the CV and flags missing keywords from the JD so you can review and manually adjust if needed.
-- **🧩 Reusable for Any Candidate**: Fully parameterized; works for any student, engineer, or professional across software, DevOps, cloud, data, and IT domains.
+> **🌟 100% Universal & Open-Source:** Anyone can clone this repository, fill out the blank profile template, and generate custom, job-matched CVs in under 5 minutes!
 
 ---
 
-## 📂 Repository Structure
+## 📑 Table of Contents
+
+- [The Problem It Solves](#-the-problem-it-solves)
+- [Key Features](#-key-features)
+- [Repository Architecture](#-repository-architecture)
+- [How It Works (Pipeline)](#-how-it-works-pipeline)
+- [Quick Start Guide (4 Steps)](#-quick-start-guide-4-steps)
+- [Copy-Paste AI Prompts](#-copy-paste-ai-prompts)
+- [Engine Standards & Typography](#-engine-standards--typography)
+- [Privacy & Security](#-privacy--security)
+- [Troubleshooting & FAQ](#-troubleshooting--faq)
+- [Author & Maintainer](#-author--maintainer)
+
+---
+
+## 🎯 The Problem It Solves
+
+| Common AI / Resume Pain Points | How This Framework Solves It |
+|---|---|
+| **AI Hallucinations & Fake Metrics** | Constrains AI strictly to your candidate profile file (`info.md`). Never invents metrics, tools, or fake job roles. |
+| **Generic Filler Words** | Strictly bans clichés (*"motivated"*, *"passionate"*, *"interested in"*). Leads with verified GPA, credentials, and evidence. |
+| **Multi-Page Overflow** | Tuned LaTeX geometry (`0.42in` margins, elastic glue spacing, 1-line tech tags) locks output strictly to **1 Page**. |
+| **Unrealistic / Overclaimed Bullets** | Enforces defensible, technically sound project bullets (no inflated *"zero-downtime production"* claims for lab projects). |
+| **Manual Tailoring Fatigue** | Automatically selects the 4 best-matching projects, prioritizes relevant skills, and weaves the exact JD job title into the summary. |
+
+---
+
+## ✨ Key Features
+
+- **🛡️ Single Source of Truth Architecture:** Your markdown profile (`info.md`) holds every fact about you. The AI acts only as an intelligent compiler and formatter, not an author.
+- **📄 Strictly 1 A4 Page Fit:** Engineered with mathematical vertical space budgeting. Every element (header, 4 projects, skills, education, certifications, and experience) fits onto a single page without manual tweaking.
+- **🎯 Dynamic Job Description (JD) Matching:**
+  - Extracts the exact target Job Title from the posting and injects it into the subtitle and summary.
+  - Automatically identifies and highlights the employer's tech stack.
+  - Selects the **top 4 most relevant projects** from your profile.
+  - Selects strictly the **2 strongest certifications** relevant to the opening.
+- **💼 Evidence-Based Professional Summary:** Replaces empty corporate buzzwords with tangible achievements, GPA, leadership roles, and hands-on tooling.
+- **🎨 Visual Hierarchy & Clean Typography:** Uses Latin Modern typography, `\large` bold small-caps section headings, distinct project separations (`\vspace{5pt}`), and uniform domain link styling.
+- **🔒 Privacy First:** Integrated `.gitignore` ensures your personal contact information (phone number, email, references) never gets accidentally committed to public repositories.
+
+---
+
+## 📂 Repository Architecture
 
 ```text
 Sachintha-CV-Profile/
-├── README.md                      # Complete guide & documentation
+│
+├── README.md                      # Comprehensive user guide and project documentation
+├── .gitignore                     # Protects private candidate data from git commits
 │
 ├── Personal_Info/                 # Candidate data directory
-│   ├── info_template.md           # Universal blank template for any candidate
-│   └── info.md                    # Candidate profile (single source of truth for facts)
+│   ├── info_template.md           # Universal blank template ready for ANY candidate
+│   └── info.md                    # (Local/Private) Your filled personal profile file
 │
-├── CV_Guidelines/                 # Layout and design specification
-│   └── cv_guide.md                # Typography rules, spacing knobs, Overleaf guide,
-│                                  # and base LaTeX template
+├── CV_Guidelines/                 # Design & typography specifications
+│   └── cv_guide.md                # Base LaTeX template, spacing knobs, and rules
 │
-└── Instructions/                  # AI agent orchestration
-    └── instruction.md             # Master system instructions directing Claude & ChatGPT
-                                   # on how to parse, validate, and build the CV
+└── Instructions/                  # Prompt-engineered agent instructions
+    └── instruction.md             # Master system prompt for Claude (Artifacts) & ChatGPT
 ```
 
 ---
 
-## 🛠️ How It Works (Step-by-Step)
+## 🔄 How It Works (Pipeline)
 
 ```mermaid
 flowchart TD
-    A["Candidate Profile\n(Personal_Info/info.md)"] --> D["Claude / ChatGPT\nwith instruction.md & cv_guide.md"]
-    B["CV Guidelines\n(CV_Guidelines/cv_guide.md)"] --> D
-    C["Instructions\n(Instructions/instruction.md)"] --> D
+    A["1. Candidate Profile\n(Personal_Info/info.md)"] --> D["AI Agent Engine\n(Claude 3.7 / ChatGPT)"]
+    B["2. CV Guidelines\n(CV_Guidelines/cv_guide.md)"] --> D
+    C["3. System Instructions\n(Instructions/instruction.md)"] --> D
     
-    D --> E{"Info Validation Check"}
-    E -- Missing Critical Details --> F["Ask User to Provide Missing Info\nor 'Proceed with what I have'"]
-    F --> G["User Provides Target JD"]
-    E -- Info Complete --> G
+    D --> E{"Profile Complete?"}
+    E -- Missing Info --> F["Alert User:\nProvide info or 'Proceed with what I have'"]
+    F --> G["4. User Submits Target Job Description (JD)"]
+    E -- Ready --> G
     
-    G --> H["Intelligent Matching &\nLaTeX Generation"]
+    G --> H["Smart JD Analysis &\nLaTeX Code Generation"]
     H --> I["Claude Artifact / Canvas Panel\n(CV_CandidateName.tex)"]
     H --> J["Chat Output:\nATS Keyword Review (Matched vs Missing)"]
     
     I --> K["Overleaf / LaTeX Engine"]
-    K --> L["One-Page ATS-Optimized PDF 📄"]
+    K --> L["📄 Beautiful One-Page ATS PDF"]
 ```
 
 ---
 
-## 🚀 Quick Start Guide (Build Your Own CV in 5 Minutes)
+## 🚀 Quick Start Guide (4 Steps)
 
 ### Step 1: Clone or Fork this Repository
 ```bash
@@ -76,66 +108,124 @@ git clone https://github.com/sachilz/Sachintha-CV-Profile.git
 cd Sachintha-CV-Profile
 ```
 
-### Step 2: Fill Out Your Profile File
+### Step 2: Create Your Profile File
 1. Open [`Personal_Info/info_template.md`](Personal_Info/info_template.md).
-2. Copy it to [`Personal_Info/info.md`](Personal_Info/info.md) (or edit `info.md` directly).
-3. Fill in your factual details:
-   - Contact info & uniform social URLs (`linkedin.com/in/...`, `github.com/...`, `portfolio.com`)
-   - Degree, GPA, relevant coursework, and secondary school
-   - Technical skills grouped by category
-   - At least 4 projects with title, GitHub link, 1-bullet description, and technologies
-   - University clubs, student ambassadorships, technical writing, or experience
-   - Verified course certifications & training
-   - *(Optional)* References for a clean 2-column layout
+2. Copy it to create your private profile file:
+   ```bash
+   cp Personal_Info/info_template.md Personal_Info/info.md
+   ```
+3. Fill out your details:
+   - Contact info & uniform links (`linkedin.com/in/...`, `github.com/...`, `portfolio.com`)
+   - Degree, GPA, relevant coursework, and high school
+   - Technical skills grouped by categories
+   - At least 4 projects (1 factual bullet point each)
+   - Extracurriculars, clubs, content creation, or experience roles
+   - Verified certifications (course certificates)
 
-### Step 3: Start a Chat with Claude (or ChatGPT)
-Attach the following **3 files** in your initial prompt:
-1. `Instructions/instruction.md`
-2. `CV_Guidelines/cv_guide.md`
-3. Your Profile file (`Personal_Info/info.md`)
+> *Note: `Personal_Info/info.md` is pre-configured in `.gitignore`, so your personal data remains strictly local and private.*
 
-> **Initial Prompt to AI:**
-> *"Read the attached instructions, guidelines, and candidate profile. Please confirm once you are ready for the Job Description."*
+### Step 3: Run with Claude or ChatGPT
+1. Open [Claude](https://claude.ai) (Recommended for Canvas/Artifacts) or [ChatGPT](https://chatgpt.com).
+2. Attach the **3 core files**:
+   - `Instructions/instruction.md`
+   - `CV_Guidelines/cv_guide.md`
+   - `Personal_Info/info.md`
+3. Send the **Initial Prompt** (see prompt template below).
+4. When the AI confirms readiness, paste your target **Job Description (JD)**.
 
-### Step 4: Provide the Target Job Description (JD)
-Once the AI acknowledges readiness:
-1. Paste the target **Job Description (JD)** text or upload an image/screenshot of the job posting.
-2. The AI will cross-reference your profile facts with the JD requirements and build your tailored CV.
-
-### Step 5: Compile in Overleaf
+### Step 4: Compile in Overleaf
 1. Open [Overleaf](https://www.overleaf.com) and create a **Blank Project**.
-2. Replace all contents with the generated LaTeX source code.
-3. Click **Recompile** and download your ATS-ready, single-page PDF!
+2. Replace all code with the generated `.tex` source code.
+3. Click **Recompile** — your 1-page ATS-optimized PDF is ready to download!
 
 ---
 
-## 📐 Layout & Typography Standards
+## 💬 Copy-Paste AI Prompts
 
-| Element | Standard / Value | Purpose |
+### Message 1: System Initialization
+```text
+I have attached three files:
+1. instruction.md (Execution rules and workflow)
+2. cv_guide.md (Layout, LaTeX template, and typography constraints)
+3. info.md (My verified personal profile data)
+
+Please read all three files thoroughly. Verify my profile against the required sections. Once verified, please confirm that you are ready for my target Job Description (JD). Do not generate any LaTeX code yet.
+```
+
+### Message 2: Submitting the Job Description
+```text
+Here is the target Job Description (JD) I am applying for:
+
+[PASTE FULL JOB DESCRIPTION TEXT OR DETAILS HERE]
+
+Please analyze this JD, match my profile facts against its requirements, and generate my tailored one-page LaTeX CV code in an artifact/canvas panel, followed by the ATS Keyword Review in chat.
+```
+
+---
+
+## 📐 Engine Standards & Typography
+
+The LaTeX engine is calibrated to maximize readability, maintain 100% equal margins, and guarantee a 1-page fit:
+
+| Element | Exact Standard | Reason / Impact |
 |---|---|---|
-| **Font** | Latin Modern (`lmodern`, 10pt base) | High-contrast, classic, ATS-recognized typography |
-| **Page Length** | Strictly 1 A4 Page (Conditional 2 pages for dense refs) | Clean, focused, high-impact readability |
-| **Margins** | Fixed Constant `\usepackage[margin=0.42in]{geometry}` | Strictly 0.42in on all 4 sides; permanent constant |
-| **Candidate Name** | `{\LARGE\bfseries\MakeUppercase{...}}\\[1.5pt]` | Fixed 1.5pt vertical gap; prominent visual weight |
-| **Section Headings** | `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}` | 12pt Bold Small Caps; distinct visual hierarchy |
-| **Section Spacing** | `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` | Auto-calibrated glue spacing for perfect 1-page fit |
-| **Colors** | `linkblue` (RGB: 0, 85, 190) & `techblue` (RGB: 55, 85, 150) | ATS-safe subtle visual distinction for links and tags |
-| **Projects** | Exactly 4 projects, 1 factual bullet each | Defensible, realistic achievements (no inflated buzzwords) |
-| **Project Gap** | Mandatory `\vspace{4.5pt plus 1pt minus 1pt}` or `\vspace{5pt}` | Clean visual separation between consecutive projects |
-| **Summary** | Evidence-based, JD-tech-stack matched (3–4 lines) | Bans filler words (*"motivated"*, *"passionate"*, *"interested in"*) |
+| **Preamble Geometry** | `\usepackage[margin=0.42in]{geometry}` | Strictly constant 0.42in margins on all 4 sides; provides optimal vertical real estate. |
+| **Candidate Name** | `{\LARGE\bfseries\MakeUppercase{...}}\\[1.5pt]` | Prominent visual anchor; locked 1.5pt spacing prevents awkward vertical gaps. |
+| **Section Headings** | `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}` | 12pt Bold Small Caps with a clean horizontal rule (`\rule{\linewidth}{0.5pt}`). |
+| **Section Spacing** | `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` | Auto-calibrated elastic glue spacing; LaTeX compresses or stretches dynamically. |
+| **Project Separators** | Mandatory `\vspace{4.5pt plus 1pt minus 1pt}` | Enforces clean breathing space between consecutive projects; never removed. |
+| **Technologies Lines** | Strictly 1 line per project (e.g. 6 to 8 tags) | Styled with `\textcolor{techblue}{...}`; never wraps to a 2nd line. |
+| **Experience Heading** | `\section{Community \& Content Experience}` | Transparent and honest for undergraduates; builds recruiter trust. |
+| **Bullet Points** | `itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt` | Compact, highly readable list spacing. |
+
+---
+
+## 🔒 Privacy & Security
+
+Your resume contains sensitive personal data (phone numbers, email addresses, referee contact details). 
+
+This repository includes a pre-configured `.gitignore` that prevents your personal profile files from being tracked:
+- `Personal_Info/info.md`
+- `Personal_Info/*-pi.md`
+- `Personal_Info/*.private.md`
+
+Only the blank template ([`Personal_Info/info_template.md`](Personal_Info/info_template.md)) and system instruction files remain in version control. You can safely fork and contribute to this repository without risking privacy leaks.
+
+---
+
+## ❓ Troubleshooting & FAQ
+
+### Q1: What if the generated CV spills over onto a 2nd page?
+The spacing engine is designed so that a standard profile with 4 projects, 2 certificates, skills, education, and experience fits on 1 page. If an overflow occurs:
+1. **Check the Technologies lines:** Ensure each project's `Technologies:` line hasn't wrapped onto a 2nd line.
+2. **Summary length:** Ensure the Professional Summary is strictly 3 to 4 lines.
+3. **Certifications count:** Keep strictly to the 2 most relevant certificates.
+4. **Project count:** Keep strictly to 4 projects.
+
+### Q2: Can I include References?
+Yes. If you have referee data in `info.md` (or explicitly request them), the AI formats them into a clean 2-column `minipage` layout. If the combined content fits on 1 page, it stays on 1 page; if not, it cleanly transitions to a balanced 2-page format without breaking visual structure.
+
+### Q3: Why LaTeX instead of Word or Canva?
+- **ATS Parsers Love LaTeX:** LaTeX produces pure, searchable, standard font-encoded text without weird hidden tables or columns that trip up ATS scanners.
+- **Mathematical Precision:** Spacing and layout are deterministic — unlike Word, which shifts margins and breaks pagination unpredictably.
 
 ---
 
 ## 👤 Author & Maintainer
 
-- **Sachintha Dilshan Madhushankha**
-  - **Portfolio**: [sachilz.me](https://sachilz.me)
-  - **LinkedIn**: [linkedin.com/in/sachilz](https://www.linkedin.com/in/sachilz)
-  - **GitHub**: [@sachilz](https://github.com/sachilz)
-  - **YouTube**: [@NextOpz](https://www.youtube.com/@NextOpz)
+Created and maintained with ❤️ by:
+
+**Sachintha Dilshan Madhushankha**  
+*IT Undergraduate | Microsoft Learn Student Ambassador | DevOps & Cloud Enthusiast*
+
+- 🌐 **Portfolio**: [sachilz.me](https://sachilz.me)
+- 💼 **LinkedIn**: [linkedin.com/in/sachilz](https://www.linkedin.com/in/sachilz)
+- 🐙 **GitHub**: [@sachilz](https://github.com/sachilz)
+- 📺 **YouTube**: [@NextOpz](https://www.youtube.com/@NextOpz)
+- ✍️ **Medium**: [@sachilz](https://medium.com/@sachilz)
 
 ---
 
 ## 📄 License
 
-This project is open-source and free to adapt for personal, academic, and career development purposes.
+This framework is licensed under the [MIT License](LICENSE). You are free to fork, customize, share, and use this repository for your career and academic journey.
