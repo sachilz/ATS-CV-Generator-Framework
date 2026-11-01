@@ -59,7 +59,7 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
 ## 📂 Repository Architecture
 
 ```text
-Sachintha-CV-Profile/
+Personal_CV_Generator/
 │
 ├── README.md                      # Comprehensive user guide and project documentation
 ├── .gitignore                     # Protects private candidate data from git commits
@@ -104,8 +104,8 @@ flowchart TD
 
 ### Step 1: Clone or Fork this Repository
 ```bash
-git clone https://github.com/sachilz/Sachintha-CV-Profile.git
-cd Sachintha-CV-Profile
+git clone https://github.com/sachilz/Personal_CV_Generator.git
+cd Personal_CV_Generator
 ```
 
 ### Step 2: Create Your Profile File
