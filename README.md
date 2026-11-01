@@ -185,6 +185,7 @@ Here is the target Job Description (JD) I am applying for:
 [PASTE FULL JOB DESCRIPTION TEXT OR DETAILS HERE]
 
 Please analyze this JD and match my profile facts against its requirements. Ask me for my preferred output format (1: LaTeX Code only, 2: PDF only, 3: Both) before generating the CV.
+Remember: The CV must strictly fit on ONE single A4 page (all 7 sections on Page 1, omit references unless I explicitly ask, and use the exact LaTeX preamble with section underline rules).
 ```
 
 ### Message 3: (Optional) Hyper-Critical Recruiter & ATS Audit
@@ -239,7 +240,7 @@ The spacing engine is designed so that a standard profile with 4 projects, 2 cer
 4. **Project count:** Keep strictly to 4 projects.
 
 ### Q2: Can I include References?
-Yes. If you have referee data in `info.md` (or explicitly request them), the AI formats them into a clean 2-column `minipage` layout. If the combined content fits on 1 page, it stays on 1 page; if not, it cleanly transitions to a balanced 2-page format without breaking visual structure.
+Yes. If you explicitly request references in your prompt (e.g. *"Include references"*), the AI formats them into a clean 2-column `minipage` layout. By default, references are omitted to ensure every CV fits strictly on 1 page. If references are included and cause an overflow, the AI cleanly formats them without breaking the visual structure.
 
 ### Q3: Why LaTeX instead of Word or Canva?
 - **ATS Parsers Love LaTeX:** LaTeX produces pure, searchable, standard font-encoded text without weird hidden tables or columns that trip up ATS scanners.

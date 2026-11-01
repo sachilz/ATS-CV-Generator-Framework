@@ -10,7 +10,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Margins: STRICT FIXED CONSTANT `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in). Never change this margin value under any circumstances across different CVs.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
-- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Community & Content Experience, References (conditional).
+- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Community & Content Experience. (All 7 sections fit on exactly 1 page. References are excluded by default).
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/username`, `github.com/username`, `portfolio.com`, `medium.com/@username`, `youtube.com/@channel`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
@@ -78,17 +78,13 @@ a career fair"), do this in order:
 Never claim the CV guarantees an interview or ATS success.
 
 Strict rules:
-- The CV must fit on exactly ONE page. Never produce a second page.
-- The header must always include ALL my social links from the profile
-  file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never skip any.
-- Keep a clear gap above every section title: at least 8pt of space
-  before each heading. Never squeeze the headings against the text above.
-- Use the LaTeX template from this guide exactly as given: do not change
-  the preamble or the section formatting, only the content.
-- Read the job requirements first, then check them against my profile
-  file, and only then build the CV.
-- Give me the LaTeX code as a file or canvas that I can open and
-  download, never pasted inside the chat message.
+- The CV must fit on exactly ONE page. All sections (Header, Summary, Skills, 4 Projects, Education, 2 Certificates, Experience) MUST be on that single page. Never produce a second page.
+- Omit References completely by default unless I explicitly request them in my prompt.
+- Section headings MUST have the horizontal line underneath ([\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]) and bold small-caps (\scshape). Never remove the horizontal line.
+- The header must always include ALL my social links from the profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never skip any. Uniform domain format.
+- Use the LaTeX template from this guide exactly as given: do not change the preamble or the geometry margin (strictly 0.42in).
+- Read the job requirements first, then check them against my profile file, and only then build the CV.
+- Give me the LaTeX code as a file or canvas that I can open and download, never pasted inside the chat message.
 ```
 
 ## 5. Step 4: Give the target & choose output format
@@ -161,19 +157,28 @@ If you compile the LaTeX code on Overleaf yourself:
 
 ## 7. Step 6: Page Budget & Structure Preservation Rules
 
-1. **Page 1 is Always the Priority Target**:
-   If all content (even with References, if spacing allows naturally) can fit cleanly on **1 single page**, keep it on **1 Page**! Ignore the 2nd page entirely.
+1. **Page 1 is Always the Absolute Standard (100% 1-Page Default)**:
+   - Every standard CV MUST fit on **EXACTLY 1 A4 PAGE**.
+   - Page 1 MUST include ALL sections: Header, Professional Summary, Technical Skills, 4 Projects, Education, 2 Certifications, and Community & Content Experience.
+   - **NEVER generate a 2nd page by default.**
+   - **NEVER push Education, Certifications, or Experience to a 2nd page.**
+   - References are **OMITTED BY DEFAULT** and must NEVER be included unless the user explicitly requests them in chat or the JD mandates them.
 
 2. **NEVER Break the Visual Structure to Force 1 Page**:
    Under NO circumstances should you delete `\vspace`, reduce inter-project gaps to 0, or glue project titles directly under previous `Technologies:` lines just to force everything onto 1 page.
    - The Project separator gap (`\vspace{4.5pt plus 1pt minus 1pt}`) after each project's `Technologies:` line is **STRICTLY MANDATORY**.
    - Section titles, bullet spacing, and project separation must maintain their clean, professional visual structure.
 
-3. **2nd Page is Strictly an Optional Fallback**:
+3. **2nd Page is Strictly an Optional Fallback (Only when References are explicitly requested)**:
    The 2nd page is an optional fallback that should **ONLY** be created when:
-   - Content is genuinely too long (e.g. dense projects + experience + references included), AND
-   - It is physically impossible to keep on 1 page without breaking the layout structure or stripping out `\vspace`.
-   When a 2nd page is created, distribute the sections cleanly across both pages (Page 1: Header, Summary, Skills, Projects; Page 2: Education, Certifications, Community & Content Experience, References) so that both pages look balanced, intentional, and readable.
+   - The user explicitly requested References (or JD mandates them), AND
+   - The candidate content + References physically cannot fit on 1 page without breaking the layout structure or stripping out `\vspace`.
+   - **If references are NOT requested, a 2nd page is strictly forbidden.**
+
+4. **Section Headings & Preamble Rules**:
+   - Every section heading MUST have a 0.5pt horizontal line underneath:
+     `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]`
+   - NEVER omit `[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]`! Section headings must always be bold small-caps (`\scshape`) with the underline.
 
 4. **References Layout:** Format in two side-by-side columns using `minipage[t]{0.48\textwidth}` with `\hfill` and clickable email links.
 
