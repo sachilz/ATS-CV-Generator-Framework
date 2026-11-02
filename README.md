@@ -54,7 +54,7 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
   - **Option 1: LaTeX Code only** (for Overleaf / local compilation)
   - **Option 2: PDF only** (compiled, download-ready PDF)
   - **Option 3: Both** (LaTeX code + compiled PDF)
-- **💼 Evidence-Based Professional Summary:** Replaces empty corporate buzzwords with tangible achievements, GPA, leadership roles, and hands-on tooling.
+- **💼 100% JD-Matched Professional Summary:** Weaves verified credentials (GPA, student ambassadorship) and hands-on tooling with the employer's exact criteria (such as *problem-solving and analytical skills*, *eagerness to learn, adapt, and take initiative*) to maximize ATS keyword scores.
 - **🎨 Visual Hierarchy & Clean Typography:** Uses Latin Modern typography, `\large` bold small-caps section headings, distinct project separations (`\vspace{5pt}`), and uniform domain link styling.
 - **🔒 Privacy First:** Integrated `.gitignore` ensures your personal contact information (phone number, email, references) never gets accidentally committed to public repositories.
 

@@ -426,7 +426,7 @@ Politely conclude the session:
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-[Craft an evidence-based summary (strictly 3 to 4 lines). BANNED FILLERS: "Motivated", "Passionate", "Interested in". Lead with credentials: "IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from info.md] with hands-on experience [building/deploying systems using JD tech stack]...". End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
+[Craft an evidence-based summary (strictly 3 to 4 lines). Lead with credentials: "IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from info.md] with hands-on experience [building/deploying systems using JD tech stack]...". WEAVE IN MANDATORY JD KEYWORDS: Ingest exact keywords from the JD's 'What We're Looking For' (e.g. problem-solving and analytical skills, eagerness to learn, adapt, and take initiative). End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────
