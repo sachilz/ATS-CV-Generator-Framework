@@ -26,14 +26,21 @@
   - **STRICT HALT**: Stop and wait for the user to select their preferred option (unless the user already specified their choice alongside their JD).
 - **GATE 4 (When user chooses Option 1, 2, or 3)**:
   - ✅ **ACTION**: Generate and deliver the CV strictly according to the selected format!
-  - 🛑 **STRICT PRE-COMPILATION AUDIT FOR CLAUDE & CHATGPT**:
-    1. **Strictly 1 Page Fit**: All 7 sections (Header, Summary, Skills, 4 Projects, Education, 2 Certifications, Community Experience) MUST fit on Page 1. Never add `\newpage`!
-    2. **Omit References by Default**: DO NOT include `\section{References}` unless the user explicitly requested it in their prompt!
-    3. **Exact Preamble & Mandatory Section Underline**: You MUST copy the exact LaTeX preamble verbatim:
+  - 🛑 **STRICT PRE-COMPILATION AUDIT FOR CLAUDE & CHATGPT (ZERO-HALLUCINATION RULES)**:
+    1. **Strictly 1 Page Fit & Balanced Vertical Fill**: All 7 sections (Header, Summary, Skills, 4 Projects, Education, 2 Certifications, Community Experience) MUST fit on Page 1. Fill the page cleanly from top to bottom (NO huge blank space at the bottom!). Never add `\newpage`!
+    2. **Job Title Sub-Header is MANDATORY**: Directly under the candidate name, you MUST include the exact target Job Title from the JD: `{\small \textbf{[Exact Job Title from JD]}}\\[1.5pt]`. Never omit the subtitle!
+    3. **JD-Matched Summary (NEVER Blindly Copy Default Summary)**: Do NOT just copy the baseline summary from `info.md`. You MUST dynamically craft the 3–4 line summary matching the employer's tech stack (e.g. MERN, React, Node.js) and the JD's exact criteria (e.g. problem-solving, analytical skills, eagerness to learn, initiative) combined with verified GPA.
+    4. **LaTeX Structure Integrity (STRICTLY BANNED: Raw Hyphens `-` and Pipes `|`)**:
+       - ⛔ NEVER use raw hyphens (`-`) for list bullets. You MUST use standard LaTeX `\begin{itemize} \item ... \end{itemize}` for Skills, Projects, Certifications, and Experience.
+       - ⛔ NEVER use pipes (`|`) for dates. All dates MUST be right-aligned using `\hfill \textbf{[Dates]}`.
+       - Technical Skills MUST include all categories including `Currently Learning` and `Spoken Languages`.
+    5. **Omit References by Default**: DO NOT include `\section{References}` unless the user explicitly requested it in their prompt.
+    6. **Exact Preamble & Mandatory Section Underline**: You MUST copy the exact LaTeX preamble verbatim:
        `\usepackage[margin=0.42in]{geometry}`
        `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]`
+       `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}`
        Every section heading MUST have the horizontal rule (`\rule{\linewidth}{0.5pt}`) underneath and bold small-caps (`\scshape`).
-    4. **No Chat Clutter**: Deliver the CV directly without automatic ATS keyword essays in chat.
+    7. **No Chat Clutter**: Deliver the CV directly without automatic ATS keyword essays in chat.
 
 ---
 
@@ -141,12 +148,19 @@ Once the target Job Description (JD) and output format are confirmed:
       - ⛔ **MANDATORY SMALL CAPS**: Section titles MUST be in bold small-caps (`\scshape`).
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
     - **Section order (ALL 7 SECTIONS FIT ON PAGE 1)**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience. (References section is completely excluded by default; include ONLY if explicitly requested by user in chat).
-   - **Professional Summary (Evidence-Based & JD Tech-Stack Matched)**:
-     - **STRICT PROHIBITION ON FILLER BUZZWORDS**: NEVER use empty filler phrases such as *"Motivated"*, *"Passionate"*, *"Hardworking"*, *"Interested in..."*, *"Aspiring"*, or *"Eager to learn"*. Recruiters consider these meaningless fluff.
-     - **Lead with Tangible Evidence & Academic Standing**: Start directly with verified credentials and identity from `info.md` (e.g., *"IT undergraduate ([GPA] GPA) and [Key Role from info.md] with hands-on experience..."*)
-     - **Name the Employer's Exact Tech Stack from the JD**: Explicitly identify and name the specific technologies, architectural patterns, and tools required by the target Job Description that match `info.md` (e.g., Docker, Kubernetes, AWS, Terraform, CI/CD pipelines, Spring Boot, React, or Python/RAG).
-     - **State the Exact Target Job Title & Technical Value**: End by stating the exact job title from the JD and the concrete engineering value the candidate delivers (e.g., *"Seeking a [Exact Job Title from JD] position to architect resilient deployment pipelines and automate cloud-native infrastructure."*).
-     - **Keep Strictly to 3 to 4 Lines**: Must remain tight, factual, and impactful (3 to 4 lines maximum in the PDF) so it preserves the vertical page budget.
+    - **Professional Summary (Evidence-Based, Dynamic JD-Matched & Project-Grounded)**:
+      - **Dual-Track Summary Strategy (Strictly 3 to 4 lines)**:
+        - **TRACK 1 (When Detailed JD is Provided)**:
+          1. **Lead with Verified Credentials**: Start directly with academic standing and leadership from `info.md` (e.g., *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*).
+          2. **Inject JD Tech Stack**: Explicitly name the tools and frameworks requested in the JD that match `info.md` (e.g., MERN stack, MongoDB, Express.js, React, Node.js, HTML, CSS, JavaScript, Spring Boot, Docker, AWS, etc.).
+          3. **Inject Mandatory JD Competency Keywords**: Ingest exact behavioral/competency keywords from the JD's *'What We're Looking For'* or *'Requirements'* (e.g., *problem-solving and analytical skills*, *eagerness to learn, adapt and take initiative*, *collaborative team environment*). This guarantees 100% ATS keyword matching against both technical and behavioral filters.
+          4. **Target Job Title**: Conclude stating the exact target job title from the JD and the value delivered.
+        - **TRACK 2 (When JD is General, Minimal, or for Career Fairs / Open Roles)**:
+          1. **Ground in Candidate's Actual Projects & Experience**: If the JD lacks detailed keywords, construct the summary directly from the candidate's strongest projects and community experience in `info.md`.
+          2. **Highlight Core Practical Capabilities**: Emphasize hands-on architecture demonstrated across the 4 selected projects (e.g., multi-tier containerized deployments, declarative Jenkins CI/CD pipelines with DevSecOps quality gates, microservices, or RAG AI systems).
+          3. **Highlight Community & Impact**: Reference verified leadership (Microsoft Student Ambassador) and technical writing/content creation (12K+ views on Linux/cloud guides).
+          4. **State Career Target**: Conclude targeting the desired internship/graduate domain (e.g. Software Engineering or DevOps).
+      - **Length**: Strictly 3 to 4 lines in the compiled PDF (never 2 lines, never 5 lines) to maintain perfect vertical page budgeting.
    - **Technical Skills**:
      - 5 to 7 concise category lines.
      - Each category must fit on **one line** in the PDF.

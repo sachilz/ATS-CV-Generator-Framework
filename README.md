@@ -185,7 +185,11 @@ Here is the target Job Description (JD) I am applying for:
 [PASTE FULL JOB DESCRIPTION TEXT OR DETAILS HERE]
 
 Please analyze this JD and match my profile facts against its requirements. Ask me for my preferred output format (1: LaTeX Code only, 2: PDF only, 3: Both) before generating the CV.
-Remember: The CV must strictly fit on ONE single A4 page (all 7 sections on Page 1, omit references unless I explicitly ask, and use the exact LaTeX preamble with section underline rules).
+Remember:
+- Include the exact target Job Title as subtitle under candidate name.
+- Dynamically adapt the Professional Summary to match the JD's tech stack and criteria (e.g. problem-solving, analytical skills, eagerness to learn).
+- Use proper LaTeX environments (\hfill for dates, \begin{itemize}\item for all lists; NO raw hyphens or pipes).
+- Strictly 1 A4 page (all 7 sections on Page 1, fill page vertically with no large blank bottom gap, omit references unless requested, exact LaTeX preamble with section underline rules).
 ```
 
 ### Message 3: (Optional) Verification Audit Response

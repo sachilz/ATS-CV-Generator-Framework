@@ -21,7 +21,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 
 Create one text or Markdown file with every fact about you. The AI must only use what is written there, which stops it from inventing anything. Use these headings:
 
-1. Personal and contact details: name, email, phone, city and country, LinkedIn, GitHub, portfolio, Medium, YouTube. Also write your professional summary here (3 to 4 lines); the CV copies it exactly as written.
+1. Personal and contact details: name, email, phone, city and country, LinkedIn, GitHub, portfolio, Medium, YouTube. Also write your baseline professional summary here (3 to 4 lines); for each specific job, the AI dynamically adapts this summary to match the target Job Description (tech stack and requested criteria) while strictly preserving your verified facts and credentials.
 2. Education: degree, university, dates, GPA, relevant coursework. Also your A/L school, year, stream and result.
 3. Technical skills, grouped by category (languages, front-end, back-end, databases, CI/CD, containers, cloud, security tools).
 4. Projects: title, GitHub link, technologies, and 1 factual key point (the description) for each one.
@@ -78,7 +78,10 @@ a career fair"), do this in order:
 Never claim the CV guarantees an interview or ATS success.
 
 Strict rules:
-- The CV must fit on exactly ONE page. All sections (Header, Summary, Skills, 4 Projects, Education, 2 Certificates, Experience) MUST be on that single page. Never produce a second page.
+- The CV must fit on exactly ONE page. All sections (Header, Summary, Skills, 4 Projects, Education, 2 Certificates, Experience) MUST be on that single page. Never produce a second page. Fill the page cleanly with no large empty space at the bottom.
+- Subtitle: Directly under my name, include the exact target Job Title from the JD as {\small \textbf{[Exact Job Title]}}\\[1.5pt].
+- Professional Summary: Adapt the 3-4 line summary to match the target JD's tech stack and requested criteria (e.g. problem-solving, analytical skills, eagerness to learn), never just copy the default summary.
+- LaTeX syntax: NEVER use raw hyphens (-) for bullets or pipes (|) for dates. Dates MUST use \hfill \textbf{...}. Use \begin{itemize}\item...\end{itemize} for all lists.
 - Omit References completely by default unless I explicitly request them in my prompt.
 - Section headings MUST have the horizontal line underneath ([\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]) and bold small-caps (\scshape). Never remove the horizontal line.
 - The header must always include ALL my social links from the profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never skip any. Uniform domain format.
@@ -132,7 +135,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
-**Professional summary (Evidence-based & 100% JD-Matched).** Lead with concrete evidence from your profile file (GPA, student ambassadorship, hands-on projects) combined with the employer's exact tech stack and requirements. **Mandatory JD Keyword Ingestion:** When the Job Description lists specific criteria in "What We're Looking For" or "Requirements" (such as *problem-solving and analytical skills*, *eagerness to learn, adapt, and take initiative*, *web fundamentals*), weave those exact keywords and phrases directly into the summary alongside your verified tech stack. This guarantees 100% ATS keyword matching against both technical and behavioral filters. Keep to strictly 3 to 4 lines.
+**Professional summary (Evidence-based & 100% JD-Matched).** Lead with concrete evidence from your profile file (GPA, student ambassadorship, hands-on projects) combined with the employer's exact tech stack and requirements. **Mandatory JD Keyword Ingestion:** When the Job Description lists specific criteria in "What We're Looking For" or "Requirements" (such as *problem-solving and analytical skills*, *eagerness to learn, adapt, and take initiative*, *web fundamentals*), weave those exact keywords and phrases directly into the summary alongside your verified tech stack. This guarantees 100% ATS keyword matching against both technical and behavioral filters. **General Roles / Career Fair Fallback:** If the target role lacks detailed JD keywords, ground the summary directly in the core architectural accomplishments of your 4 selected projects and community leadership from your profile file. Keep to strictly 3 to 4 lines.
 
 **Colors.** Define both colors at the very top of the CV file, right after the packages. Use linkblue for every link and techblue only for the technology tags:
 
