@@ -48,7 +48,7 @@ This system bridges the gap between **raw career facts** and **ATS-tailored, sin
 - **🎯 Dynamic Job Description (JD) Matching:**
   - Extracts the exact target Job Title from the posting and injects it into the subtitle and summary.
   - Automatically identifies and highlights the employer's tech stack.
-  - Selects the **top 4 most relevant projects** from your profile.
+  - Selects and orders the **top 4 projects by descending JD relevance** (Strongest direct matches first, followed by complementary engineering depth).
   - Selects strictly the **2 strongest certifications** relevant to the opening.
 - **🎛️ 3 Output Formats (User Choice):**
   - **Option 1: LaTeX Code only** (for Overleaf / local compilation)

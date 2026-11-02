@@ -103,7 +103,7 @@ Once the target Job Description (JD) and output format are confirmed:
 
 1. **Analyze the JD internally**:
    - Identify target role, essential technical skills, preferred tools, and ATS keywords.
-   - Cross-reference with `info.md` to pick the **4 best-matching projects**.
+   - Cross-reference with `info.md` to pick the **4 best-matching projects** and rank them strictly in descending order of JD relevance: Project 1 (Strongest direct match to target role/stack), Project 2 (Second strongest direct match), Project 3 (Core domain match), and Project 4 (Strongest complementary engineering project).
    - Select strictly the **2 strongest certifications** directly relevant to the JD (keeping it to 2 is essential for 1-page fit).
    - Align the **Technical Skills** to prioritize technologies demanded by the JD that exist in `info.md`, along with the core tools from the 4 selected projects.
 
@@ -158,7 +158,7 @@ Once the target Job Description (JD) and output format are confirmed:
         - **TRACK 2 (When JD is General, Minimal, or for Career Fairs / Open Roles)**:
           1. **Ground in Candidate's Actual Projects & Experience**: If the JD lacks detailed keywords, construct the summary directly from the candidate's strongest projects and community experience in `info.md`.
           2. **Highlight Core Practical Capabilities**: Emphasize hands-on architecture demonstrated across the 4 selected projects (e.g., multi-tier containerized deployments, declarative Jenkins CI/CD pipelines with DevSecOps quality gates, microservices, or RAG AI systems).
-          3. **Highlight Community & Impact**: Reference verified leadership (Microsoft Student Ambassador) and technical writing/content creation (12K+ views on Linux/cloud guides).
+          3. **Highlight Community & Impact**: Reference verified leadership (Microsoft Student Ambassador) and technical writing/content creation (Medium and YouTube tutorials).
           4. **State Career Target**: Conclude targeting the desired internship/graduate domain (e.g. Software Engineering or DevOps).
       - **Length**: Strictly 3 to 4 lines in the compiled PDF (never 2 lines, never 5 lines) to maintain perfect vertical page budgeting.
    - **Technical Skills**:
