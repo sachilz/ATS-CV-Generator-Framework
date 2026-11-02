@@ -75,11 +75,8 @@ Personal_CV_Generator/
 ├── CV_Guidelines/                 # Design & typography specifications
 │   └── cv_guide.md                # Base LaTeX template, spacing knobs, and rules
 │
-├── Instructions/                  # Master CV generator instructions
-│   └── instruction.md             # Master system prompt for Claude (Artifacts) & ChatGPT
-│
-└── Verification_Instructions/     # Recruiter & ATS inspection framework
-    └── verification_instruction.md # Hyper-critical 4-section audit instructions & report format
+└── Instructions/                  # Master CV generator & built-in audit instructions
+    └── instruction.md             # Master system prompt for Claude (Artifacts) & ChatGPT
 ```
 
 ---
@@ -107,9 +104,10 @@ flowchart TD
     K --> M
     L --> M
 
-    M -.-> N{"Run Recruiter Audit?"}
-    N -- Yes --> O["5. Recruiter & ATS Verification Audit\n(Verification_Instructions/verification_instruction.md)"]
+    M --> N{"Prompt: Verify CV?\n(1. Yes / 2. No)"}
+    N -- "1: Yes" --> O["5. Built-in Recruiter & ATS Verification Audit"]
     O --> P["📊 4-Section Recruiter & ATS Audit Report"]
+    N -- "2: No" --> Q["✅ Process Complete (Ready to Apply)"]
 ```
 
 ---
@@ -155,14 +153,16 @@ The AI will ask for your preferred output format:
 
 Reply with **1**, **2**, or **3**, and the AI will deliver your CV directly without chat clutter or review essays!
 
-### Step 5: (Optional) Run the Recruiter & ATS Verification Audit
-Once your CV is generated, if you want a ruthless evaluation of how your CV stacks up against the JD:
-1. Provide `Verification_Instructions/verification_instruction.md` (or reply **"Review my CV"**).
-2. The AI adopts the persona of a Senior Recruiter & Hiring Manager reviewing 200+ resumes weekly and delivers a **4-section audit report**:
-   - **ATS Score & Compatibility (1–100 Rating & Missing Keywords)**
-   - **Strengths & Weaknesses (Top 3 of each)**
-   - **Bullet Point Optimization (Duty-based vs Achievement-based Before/After rewrites)**
-   - **Red Flags & Recruiter Screening Verdict (Pass / Warning / Rejection)**
+### Step 5: (Optional) Verify Your CV (1: Yes / 2: No)
+Once your CV is delivered, the AI will ask:
+> *"Would you like me to verify (check) your CV with a Hyper-Critical Recruiter & ATS Verification Audit against your target Job Description? (1. Yes / 2. No)"*
+
+- Reply **1** or **Yes** to receive a ruthless **4-section audit report**:
+  - **ATS Score & Compatibility (1–100 Rating & Missing Keywords)**
+  - **Strengths & Weaknesses (Top 3 of each from Hiring Manager scan)**
+  - **Bullet Point Optimization (Duty-based vs Achievement-based Before/After rewrites)**
+  - **Red Flags & Recruiter Screening Check (Pass / Warning / Rejection)**
+- Reply **2** or **No** to finish immediately!
 
 ---
 
@@ -171,7 +171,7 @@ Once your CV is generated, if you want a ruthless evaluation of how your CV stac
 ### Message 1: System Initialization
 ```text
 I have attached three files:
-1. instruction.md (Execution rules and workflow)
+1. instruction.md (Execution rules, workflow, and built-in verification audit)
 2. cv_guide.md (Layout, LaTeX template, and typography constraints)
 3. info.md (My verified personal profile data)
 
@@ -188,15 +188,11 @@ Please analyze this JD and match my profile facts against its requirements. Ask 
 Remember: The CV must strictly fit on ONE single A4 page (all 7 sections on Page 1, omit references unless I explicitly ask, and use the exact LaTeX preamble with section underline rules).
 ```
 
-### Message 3: (Optional) Hyper-Critical Recruiter & ATS Audit
+### Message 3: (Optional) Verification Audit Response
 ```text
-Act as an expert recruiter and hiring manager who reviews 200+ resumes weekly. Using Verification_Instructions/verification_instruction.md, perform a hyper-critical CV Review on my generated CV against the target Job Description with these 4 sections:
-
-1. ATS Score & Compatibility (Rate 1-100 on JD match, list missing keywords and skills)
-2. Strengths & Weaknesses (Best parts for this role vs what needs immediate rewriting)
-3. Bullet Point Optimization (Review bullets: duty-based vs achievement-based; rewrite 3 bullets for stronger impact)
-4. Red Flags (Identify gaps, confusing language, or formatting issues that would cause rejection)
+1
 ```
+*(Reply **1** or **Yes** when the AI asks if you want your CV verified, or **2** / **No** to finish).*
 
 ---
 

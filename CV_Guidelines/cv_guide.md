@@ -106,7 +106,7 @@ The AI will then ask for your preferred output format (LaTeX Code only, PDF only
    - Option 2: PDF only (compiled ready-to-use PDF)
    - Option 3: Both (LaTeX code + compiled PDF)
 4. Confirm your choice (1, 2, or 3), and the AI builds and delivers your tailored CV directly without chat clutter or review essays.
-5. (Optional) If you want a hyper-critical recruiter scan and ATS keyword audit, reply "Review my CV" or upload `Verification_Instructions/verification_instruction.md` to get the comprehensive 4-section Recruiter & ATS Audit Report.
+5. The AI will prompt you to choose whether to verify (check) your CV: reply **1** (Yes) to get the built-in 4-section Recruiter & ATS Audit Report, or **2** (No) to finish.
 
 **CV content rules.** Every CV must follow these:
 
