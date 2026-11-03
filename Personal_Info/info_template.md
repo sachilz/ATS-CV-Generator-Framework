@@ -112,9 +112,9 @@ Technologies: [List 6 to 8 core technologies used]
 
 ---
 
-## 8. Certifications and Training
+## 8. Courses and Certifications
 
-*(List your verified course certifications and credentials. The AI will pick strictly the 2 most relevant certificates for the target role to guarantee a clean 1-page fit.)*
+*(List your verified course certifications and credentials. When generating the CV, the AI formats this section as `\section{Courses and Certifications}`, combining related beginner courses from the same provider and date that align with the JD and the 4 selected projects into single high-impact bullet lines with right-aligned dates & providers: `\item Combined Titles \hfill \textbf{Mon YYYY -- Provider}`.)*
 
 | Certificate Name | Issuing Organization | Completion Date |
 |---|---|---|

@@ -27,7 +27,7 @@
 - **GATE 4 (When user chooses Option 1, 2, or 3)**:
   - ✅ **ACTION**: Generate and deliver the CV strictly according to the selected format!
   - 🛑 **STRICT PRE-COMPILATION AUDIT FOR CLAUDE & CHATGPT (ZERO-HALLUCINATION RULES)**:
-    1. **Strictly 1 Page Fit & Balanced Vertical Fill**: All 7 sections (Header, Summary, Skills, 4 Projects, Education, 2 Certifications, Community Experience) MUST fit on Page 1. Fill the page cleanly from top to bottom (NO huge blank space at the bottom!). Never add `\newpage`!
+    1. **Strictly 1 Page Fit & Balanced Vertical Fill**: All 7 sections (Header, Summary, Skills, 4 Projects, Education, Courses and Certifications, Community Experience) MUST fit on Page 1. Fill the page cleanly from top to bottom (NO huge blank space at the bottom!). Never add `\newpage`!
     2. **Job Title Sub-Header is MANDATORY**: Directly under the candidate name, you MUST include the exact target Job Title from the JD: `{\small \textbf{[Exact Job Title from JD]}}\\[1.5pt]`. Never omit the subtitle!
     3. **JD-Matched Summary (Strictly Single Continuous Paragraph — NO Linebreaks)**:
        - Do NOT just copy the baseline summary from `info.md`. Dynamically craft a 3–4 line summary matching the employer's tech stack and JD criteria (e.g., problem-solving, analytical skills, eagerness to learn) combined with verified GPA.
@@ -41,7 +41,7 @@
          - NEVER put `| GitHub` next to project titles. Project titles MUST use `\textbf{[Title]} \hfill \ghlink{[URL]}`.
          - NEVER put dates inside parentheses in section titles. All dates MUST be right-aligned using `\hfill \textbf{[Dates]}`.
        - ⛔ **NO DELETION OF `\begin{itemize}` BULLETS**: All lists (Skills, Projects, Certifications, Community Experience) MUST strictly use LaTeX `\begin{itemize} \item ... \end{itemize}`. NEVER replace bullets with raw symbols (`•`, `—`, `·`) or plain paragraphs.
-       - ⛔ **DO NOT RENAME SECTIONS**: Use exact names: `\section{Projects}` (NEVER "Selected Projects"), `\section{Community \& Content Experience}` (NEVER "Community & Leadership").
+       - ⛔ **DO NOT RENAME SECTIONS**: Use exact names: `\section{Projects}` (NEVER "Selected Projects"), `\section{Courses and Certifications}` (NEVER "Certifications and Training" or other variations), `\section{Community \& Content Experience}` (NEVER "Community & Leadership").
        - 📏 **Balanced Vertical Distribution (NO Giant Blank Bottom Margin)**: When following the base template faithfully (all categories on separate `\item` lines, `\vspace{4.5pt}` project gaps, full experience items), the CV naturally fills Page 1 top-to-bottom with balanced margins. Never squish everything into the top half!
 
 
@@ -116,7 +116,7 @@ Once the target Job Description (JD) and output format are confirmed:
 1. **Analyze the JD internally**:
    - Identify target role, essential technical skills, preferred tools, and ATS keywords.
    - Cross-reference with `info.md` to pick the **4 best-matching projects** and rank them strictly in descending order of JD relevance: Project 1 (Strongest direct match to target role/stack), Project 2 (Second strongest direct match), Project 3 (Core domain match), and Project 4 (Strongest complementary engineering project).
-   - Select strictly the **2 strongest certifications** directly relevant to the JD (keeping it to 2 is essential for 1-page fit).
+   - Select and dynamically combine courses/certifications matching BOTH the target JD AND the tech stack of the 4 selected projects. If multiple related beginner courses share the same provider and completion date (e.g. KodeKloud Feb 2026 courses or SLIIT Stages I & II), group and combine them into a single high-impact bullet line (e.g. `AWS, Terraform, Docker, Kubernetes, Jenkins Pipelines with Hands-On Labs \hfill \textbf{Feb 2026 -- KodeKloud}`). Keep to 2 to 4 clean lines total to guarantee 1-page fit.
    - Align the **Technical Skills** to prioritize technologies demanded by the JD that exist in `info.md`, along with the core tools from the 4 selected projects.
 
 2. **Strict Standing Rules for the CV**:
@@ -134,7 +134,7 @@ Once the target Job Description (JD) and output format are confirmed:
           3. Technical Skills (5 to 7 category lines, 1 line each)
           4. Projects (strictly 4 projects, 1 bullet point each, 1-line technologies with techblue)
           5. Education (University degree + High school line)
-          6. Certifications and Training (strictly 2 most relevant certificates)
+          6. Courses and Certifications (2 to 4 high-impact combined lines, right-aligned dates & providers)
           7. Community & Content Experience (all roles)
         - ⛔ **ABSOLUTE PROHIBITION**: NEVER generate a 2nd page by default. NEVER push Education, Certifications, or Community & Content Experience to a 2nd page! The entire CV must be complete on Page 1.
       - 🚫 **REFERENCES RULE (DEFAULT: COMPLETELY OMITTED)**:
@@ -159,7 +159,7 @@ Once the target Job Description (JD) and output format are confirmed:
       - ⛔ **MANDATORY HORIZONTAL LINE**: The `[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]` draws a clean 0.5pt horizontal line under every section title. **NEVER OMIT THIS LINE!** If a section heading has no horizontal line underneath, it is a direct guideline violation.
       - ⛔ **MANDATORY SMALL CAPS**: Section titles MUST be in bold small-caps (`\scshape`).
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
-    - **Section order (ALL 7 SECTIONS FIT ON PAGE 1)**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience. (References section is completely excluded by default; include ONLY if explicitly requested by user in chat).
+    - **Section order (ALL 7 SECTIONS FIT ON PAGE 1)**: Header → Professional Summary → Technical Skills → Projects → Education → Courses and Certifications → Community & Content Experience. (References section is completely excluded by default; include ONLY if explicitly requested by user in chat).
     - **Professional Summary (Evidence-Based, Dynamic JD-Matched & Project-Grounded)**:
        - 🛑 **STRICT MANDATE: SINGLE CONTINUOUS PARAGRAPH (ZERO MANUAL LINE BREAKS)**:
          - The summary MUST be written as **one single, unbroken continuous paragraph** of prose without bullet points or keypoint-style sentence breaks.
@@ -193,7 +193,13 @@ Once the target Job Description (JD) and output format are confirmed:
      - **Technologies line (STRICTLY ONE LINE ONLY)**: `Technologies: \textcolor{techblue}{...}` with **6 to 8 tags**. Must stretch across towards the right margin (under the GitHub link) but **MUST NEVER WRAP TO A SECOND LINE**.
      - **Project spacing**: Add `\vspace{3.5pt}` (or 3–4pt) immediately after each `Technologies:` line for projects 1, 2, and 3. Do NOT add space after the last project.
    - **Education**: Degree dates as `Mon YYYY -- Mon YYYY (expected)`. Show degree, faculty, relevant coursework, and GPA. For secondary / high school qualification, show `\textbf{[Secondary Qualification]}, [School Name] \hfill \textbf{[Year]}` on a single line. **STRICT RULE: NEVER include secondary examination grades / results on the CV.** A strong university GPA stands proudly on its own; listing secondary school grades weakens the candidate profile and wastes vertical space.
-   - **Certifications and Training**: Strictly include the **2 strongest certificates** directly relevant to the JD. Limiting to 2 certificates is critical to guarantee the 1-page fit.
+   - **Courses and Certifications (Name as `\section{Courses and Certifications}`)**:
+      - **Relevance**: Select and combine courses matching BOTH the target Job Description (JD) AND the tech stack of the 4 selected projects.
+      - **Smart Course Grouping**: Multiple beginner courses completed under the same provider and date (e.g. KodeKloud Feb 2026 courses, or SLIIT AI/ML Stages I & II) MUST be combined into cohesive, high-impact single bullet lines:
+        - `\item AWS, Terraform, Docker, Kubernetes, Jenkins Pipelines with Hands-On Labs \hfill \textbf{Feb 2026 -- KodeKloud}`
+        - `\item AI/ML Engineer, Stage I,II \hfill \textbf{Feb 2025 -- SLIIT}`
+        - `\item Microsoft Get started developing agents in Microsoft Foundry Skill \hfill \textbf{Sep 2026 -- Microsoft}`
+      - **Format**: Each line has the combined course title on the left and the date + provider right-aligned in bold using `\hfill \textbf{[Mon YYYY] -- [Provider]}`. Keep to 2 to 4 clean lines total. NEVER merge onto one line with pipes `|`.
    - **Community & Content Experience Section (Name as `\section{Community \& Content Experience}`)**:
      - Include **100% OF ALL ROLES** listed under Experience and Community in `info.md` (e.g., Microsoft Student Ambassador, YouTube Content Creator, Technical Writer, Club/Society members).
      - **NEVER omit or drop any role.** Undergraduates do not have full-time corporate jobs yet, so every experience entry is essential.
@@ -523,12 +529,12 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 % NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 
-%% ── CERTIFICATIONS AND TRAINING (2–3 strongest, matching JD) ──────────
-\section{Certifications and Training}
+%% ── COURSES AND CERTIFICATIONS (Matching JD & Project Stacks) ──────────
+\section{Courses and Certifications}
 {\small
 \begin{itemize}
-  \item [Course/Certificate Name], [Issuer] ([Mon YYYY])
-  \item [Course/Certificate Name], [Issuer] ([Mon YYYY])
+  \item [Combined Course/Certificate Title matching JD & Projects] \hfill \textbf{[Mon YYYY] -- [Provider]}
+  \item [Combined Course/Certificate Title matching JD & Projects] \hfill \textbf{[Mon YYYY] -- [Provider]}
 \end{itemize}
 }
 
@@ -596,7 +602,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 - [ ] All header social links use strictly uniform domain format (`linkedin.com/in/...`, `github.com/...`, `medium.com/@...`, `youtube.com/@...` — never bare names like "NextOps" or "sachilz").
 - [ ] Professional Summary is evidence-based (leads with GPA/credentials, names employer's stack, contains zero filler like "motivated" or "interested in", targets exact JD title).
 - [ ] Project descriptions copied **exactly** from `info.md` (1 bullet per project).
-- [ ] Strictly **2 certificates** chosen for JD relevance (prevents 2nd page overflow).
+- [ ] Section named `\section{Courses and Certifications}` with 2 to 4 combined lines matching JD and 4 projects, with right-aligned dates & providers (`\hfill \textbf{Date -- Provider}`).
 - [ ] Technology tags colored with `techblue`, links colored with `linkblue`.
 - [ ] Each Technologies line fits on **strictly ONE single line** (never wraps to a 2nd line, extends up to the GitHub text margin).
 - [ ] `\vspace{5pt}` present **immediately** after Technologies lines for projects 1, 2, and 3.

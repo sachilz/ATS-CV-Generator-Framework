@@ -213,6 +213,7 @@ The LaTeX engine is calibrated to maximize readability, maintain 100% equal marg
 | **Section Spacing** | `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` | Auto-calibrated elastic glue spacing; LaTeX compresses or stretches dynamically. |
 | **Project Separators** | Mandatory `\vspace{4.5pt plus 1pt minus 1pt}` | Enforces clean breathing space between consecutive projects; never removed. |
 | **Technologies Lines** | Strictly 1 line per project (e.g. 6 to 8 tags) | Styled with `\textcolor{techblue}{...}`; never wraps to a 2nd line. |
+| **Courses & Certifications** | `\item Combined Titles \hfill \textbf{[Date] - [Provider]}` | `\section{Courses and Certifications}`; groups related beginner courses from same issuer/date matching JD & projects. |
 | **Experience Heading** | `\section{Community \& Content Experience}` | Transparent and honest for undergraduates; builds recruiter trust. |
 | **Bullet Points** | `itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt` | Compact, highly readable list spacing. |
 

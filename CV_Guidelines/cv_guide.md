@@ -10,7 +10,7 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Margins: STRICT FIXED CONSTANT `\usepackage[margin=0.42in]{geometry}` (Top = Bottom = Left = Right = 0.42in). Never change this margin value under any circumstances across different CVs.
 - Latin Modern font (the classic LaTeX look), 10 pt body text with 9 pt content blocks.
 - No tables, photos, icons, skill bars, graphics or colored backgrounds.
-- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Certifications and Training, Community & Content Experience. (All 7 sections fit on exactly 1 page. References are excluded by default).
+- Section order: Header, Professional Summary, Technical Skills, Projects, Education, Courses and Certifications, Community & Content Experience. (All 7 sections fit on exactly 1 page. References are excluded by default).
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/username`, `github.com/username`, `portfolio.com`, `medium.com/@username`, `youtube.com/@channel`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
@@ -27,7 +27,7 @@ Create one text or Markdown file with every fact about you. The AI must only use
 3. Technical skills, grouped by category (languages, front-end, back-end, databases, CI/CD, containers, cloud, security tools).
 4. Projects: title, GitHub link, technologies, and 1 factual key point (the description) for each one.
 5. Experience and community: role, organization, dates, what you really do. Include every club and society you belong to, with your role and a short description.
-6. Certifications and training: name, issuer, date. Label course certificates honestly as "Certifications and Training".
+6. Courses and certifications: course name, issuer, date. Label as "Courses and Certifications". Combine multiple related beginner courses from the same date/provider into cohesive lines.
 7. Your standing rules (see Step 3).
 
 Honesty rules for this file:
@@ -116,7 +116,7 @@ The AI will then ask for your preferred output format (LaTeX Code only, PDF only
 
 - **Strictly 4 projects (Ranked in Descending Order of JD Relevance & Strength).** Always show exactly 4 projects, ordered strictly from highest relevance to lowest: Project 1 (Strongest direct match to the target JD role and core tech stack), Project 2 (Second strongest direct match), Project 3 (Core domain match), and Project 4 (Strongest complementary engineering project from the remainder). Copy each project description exactly as written in your profile file (1 key point each).
 - **Skills align with both the JD and the projects.** Keep the Technical Skills section simple and easy to read, with 5 to 7 short category lines. Prioritize and include every skill mentioned in the Job Description (JD) that exists in your profile file, along with the core tools and languages used in the 4 chosen projects. Leave out minor, unrelated tools so the section stays clean. Update the skills whenever the target role or the 4 projects change.
-- **Strictly 2 certificates only.** Show strictly the 2 strongest certificates directly relevant to the target role. Limiting to 2 certificates is essential to prevent the CV from overflowing to a 2nd page.
+- **Courses and Certifications (Combine related courses & align with JD + Projects).** Name this section `\section{Courses and Certifications}`. Select courses matching BOTH the target Job Description (JD) and the tech stack of your 4 selected projects. If multiple related beginner courses share the same issuer and completion date (e.g. KodeKloud Feb 2026 courses or SLIIT Stages I & II), group and combine them into single cohesive bullet lines: e.g. `\item AWS, Terraform, Docker, Kubernetes, Jenkins Pipelines with Hands-On Labs \hfill \textbf{Feb 2026 -- KodeKloud}`. Right-align the date and provider in bold using `\hfill \textbf{Mon YYYY -- Provider}`. Keep to 2 to 4 clean lines total. Never merge certificates on one line with pipes `|`.
 - **Experience Heading: `\section{Community \& Content Experience}` & Include ALL roles.** Name this section `\section{Community \& Content Experience}` (escaped as `\&` in LaTeX). Because undergraduates do not have corporate industry jobs yet, labeling student ambassador roles and YouTube channels as "Professional Experience" can look dishonest to recruiters. "Community & Content Experience" is 100% transparent and respected. You MUST include **EVERY SINGLE ROLE** listed in the candidate profile's Experience and Community section (Student Ambassador, YouTube, Medium, Clubs). NEVER omit, filter, or drop any role. Right-align Credly badges. Use `\vspace{3.5pt plus 1pt minus 1pt}` between entries.
 - **Education.** Show your university degree (dates, GPA, coursework) and your secondary / high school (qualification name, school name, and year only). **STRICT RULE: Do NOT include secondary school results or grades on the CV.** The candidate's university GPA stands on its own, and listing secondary grades weakens the candidate profile and wastes vertical space.
 - **One page.** All of this must still fit on exactly one page.
@@ -297,10 +297,12 @@ Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
 % NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 
-\section{Certifications and Training}
+\section{Courses and Certifications}
 {\small
 \begin{itemize}
-\item Course name, Issuer (Mon YYYY)
+\item Microsoft Get started developing agents in Microsoft Foundry Skill \hfill \textbf{Sep 2026 -- Microsoft}
+\item AI/ML Engineer, Stage I,II \hfill \textbf{Feb 2025 -- SLIIT}
+\item AWS, Terraform, Docker, Kubernetes, Jenkins Pipelines with Hands-On Labs \hfill \textbf{Feb 2026 -- KodeKloud}
 \end{itemize}
 }
 
