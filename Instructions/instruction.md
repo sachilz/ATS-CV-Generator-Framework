@@ -33,10 +33,19 @@
        - Do NOT just copy the baseline summary from `info.md`. Dynamically craft a 3–4 line summary matching the employer's tech stack and JD criteria (e.g., problem-solving, analytical skills, eagerness to learn) combined with verified GPA.
        - ⛔ **ABSOLUTE PROHIBITION ON MANUAL LINE BREAKS (`\\` or `\newline`)**: The summary MUST be written as a **single unbroken, continuous paragraph of running prose**. NEVER insert `\\`, `\newline`, or blank lines between sentences. Never format it as disconnected keypoint-like lines.
        - 📏 **Uniform Justified Text Flow**: Writing it as continuous text lets LaTeX automatically justify each line to the exact same width (`same-length lines`) cleanly filling 3 to 4 lines.
-    4. **LaTeX Structure Integrity (STRICTLY BANNED: Raw Hyphens `-` and Pipes `|`)**:
-       - ⛔ NEVER use raw hyphens (`-`) for list bullets. You MUST use standard LaTeX `\begin{itemize} \item ... \end{itemize}` for Skills, Projects, Certifications, and Experience.
-       - ⛔ NEVER use pipes (`|`) for dates. All dates MUST be right-aligned using `\hfill \textbf{[Dates]}`.
-       - Technical Skills MUST include all categories including `Currently Learning` and `Spoken Languages`.
+    4. **LaTeX Structural Integrity & Zero-Improvisation Mandate (STRICTLY BANNED COMPRESSION HACKS & PIPES `|`)**:
+       - ⛔ **NEVER IMPROVISE OR DEVIATE FROM THE BASE LATEX SKELETON**: You MUST strictly use the exact Base LaTeX Template provided below. Under NO circumstances should you rewrite, simplify, or invent your own layout.
+       - ⛔ **NO PIPE `|` MERGING OF CATEGORIES OR SECTIONS**:
+         - NEVER combine two technical skills categories on one line with `|` (e.g., `Languages: ... | Frontend: ...` or `Databases: ... | Version Control: ...` is STRICTLY FORBIDDEN). Each category MUST be its own separate `\item` in `\begin{itemize}`.
+         - NEVER combine certifications on a single line with `|` (e.g., `• Cert 1 | • Cert 2` is STRICTLY FORBIDDEN). Each certification MUST be its own separate `\item`.
+         - NEVER put `| GitHub` next to project titles. Project titles MUST use `\textbf{[Title]} \hfill \ghlink{[URL]}`.
+         - NEVER put dates inside parentheses in section titles. All dates MUST be right-aligned using `\hfill \textbf{[Dates]}`.
+       - ⛔ **NO DELETION OF `\begin{itemize}` BULLETS**: All lists (Skills, Projects, Certifications, Community Experience) MUST strictly use LaTeX `\begin{itemize} \item ... \end{itemize}`. NEVER replace bullets with raw symbols (`•`, `—`, `·`) or plain paragraphs.
+       - ⛔ **DO NOT RENAME SECTIONS**: Use exact names: `\section{Projects}` (NEVER "Selected Projects"), `\section{Community \& Content Experience}` (NEVER "Community & Leadership").
+       - 📏 **Balanced Vertical Distribution (NO Giant Blank Bottom Margin)**: When following the base template faithfully (all categories on separate `\item` lines, `\vspace{4.5pt}` project gaps, full experience items), the CV naturally fills Page 1 top-to-bottom with balanced margins. Never squish everything into the top half!
+
+
+
     5. **Omit References by Default**: DO NOT include `\section{References}` unless the user explicitly requested it in their prompt.
     6. **Exact Preamble & Mandatory Section Underline**: You MUST copy the exact LaTeX preamble verbatim:
        `\usepackage[margin=0.42in]{geometry}`

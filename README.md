@@ -188,7 +188,7 @@ Please analyze this JD and match my profile facts against its requirements. Ask 
 Remember:
 - Include the exact target Job Title as subtitle under candidate name.
 - Dynamically adapt the Professional Summary to match the JD's tech stack and criteria (e.g. problem-solving, analytical skills, eagerness to learn). MUST be a single continuous paragraph (strictly 3-4 justified lines) with NO manual line breaks (\\ or \newline).
-- Use proper LaTeX environments (\hfill for dates, \begin{itemize}\item for all lists; NO raw hyphens or pipes).
+- Follow the Base LaTeX Template strictly: each skill category & certificate MUST be its own separate \item line (NEVER merge with pipes '|'), dates MUST use \hfill \textbf{...} (never in parentheses), project titles MUST use \hfill \ghlink{...} (never '| GitHub'), section MUST be named 'Projects' (never 'Selected Projects'). Do not strip \begin{itemize} bullets. Fill the page vertically with no large blank gap at bottom.
 - Strictly 1 A4 page (all 7 sections on Page 1, fill page vertically with no large blank bottom gap, omit references unless requested, exact LaTeX preamble with section underline rules).
 ```
 

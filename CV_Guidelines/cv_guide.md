@@ -14,7 +14,8 @@ The goal is a CV that is clean, easy to scan in 10 to 20 seconds, and readable b
 - Section headings in bold small capitals with a thin line underneath.
 - The header must always show every social link from your profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Strictly uniform URL formatting: all links must display their clean domain/URL path (e.g. `linkedin.com/in/username`, `github.com/username`, `portfolio.com`, `medium.com/@username`, `youtube.com/@channel`) — never bare usernames or plain channel text like "NextOps" or "sachilz". Each link is blue and the label in front stays black.
 - Each project has a bold title, a blue "GitHub" link on the right (no underline), the project description copied exactly from your profile file (1 key point each), and a "Technologies:" line (no italics) whose technology tags are colored with techblue.
-- Dates aligned to the right edge of the page.
+- Dates aligned to the right edge of the page using `\hfill \textbf{...}` (never in parentheses).
+- Structural integrity: NEVER compress skills or certificates onto single lines with pipes `|`. NEVER remove `\begin{itemize}` bullets. The CV must fill the entire single page vertically with zero massive blank space at the bottom.
 - Only relevant content for the target job. Leave out weak or unrelated items.
 
 ## 2. Step 1: Write your profile file (your source of truth)
@@ -81,7 +82,7 @@ Strict rules:
 - The CV must fit on exactly ONE page. All sections (Header, Summary, Skills, 4 Projects, Education, 2 Certificates, Experience) MUST be on that single page. Never produce a second page. Fill the page cleanly with no large empty space at the bottom.
 - Subtitle: Directly under my name, include the exact target Job Title from the JD as {\small \textbf{[Exact Job Title]}}\\[1.5pt].
 - Professional Summary: Adapt the 3-4 line summary to match the target JD's tech stack and requested criteria (e.g. problem-solving, analytical skills, eagerness to learn), never just copy the default summary. MUST BE WRITTEN AS A SINGLE CONTINUOUS PARAGRAPH with NO manual line breaks (\\ or \newline). Let LaTeX automatically justify the text evenly to the margins (same-length lines).
-- LaTeX syntax: NEVER use raw hyphens (-) for bullets or pipes (|) for dates. Dates MUST use \hfill \textbf{...}. Use \begin{itemize}\item...\end{itemize} for all lists.
+- LaTeX syntax & structure: Use the Base LaTeX Template strictly without improvising or stripping bullets. NEVER merge categories or certificates with pipes (|) (e.g. NEVER combine Languages | Frontend or Cert 1 | Cert 2). Each category/certificate MUST be its own separate \item. Never put "| GitHub" next to titles (use \hfill \ghlink{...}). Dates MUST use \hfill \textbf{...} (never in parentheses). Never change \section{Projects} to "Selected Projects". Always use \begin{itemize}\item...\end{itemize} for all lists. This ensures the page fills vertically with no giant bottom whitespace.
 - Omit References completely by default unless I explicitly request them in my prompt.
 - Section headings MUST have the horizontal line underneath ([\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]) and bold small-caps (\scshape). Never remove the horizontal line.
 - The header must always include ALL my social links from the profile file: LinkedIn, GitHub, Portfolio, Medium and YouTube. Never skip any. Uniform domain format.
