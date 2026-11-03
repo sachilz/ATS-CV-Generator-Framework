@@ -29,7 +29,10 @@
   - 🛑 **STRICT PRE-COMPILATION AUDIT FOR CLAUDE & CHATGPT (ZERO-HALLUCINATION RULES)**:
     1. **Strictly 1 Page Fit & Balanced Vertical Fill**: All 7 sections (Header, Summary, Skills, 4 Projects, Education, 2 Certifications, Community Experience) MUST fit on Page 1. Fill the page cleanly from top to bottom (NO huge blank space at the bottom!). Never add `\newpage`!
     2. **Job Title Sub-Header is MANDATORY**: Directly under the candidate name, you MUST include the exact target Job Title from the JD: `{\small \textbf{[Exact Job Title from JD]}}\\[1.5pt]`. Never omit the subtitle!
-    3. **JD-Matched Summary (NEVER Blindly Copy Default Summary)**: Do NOT just copy the baseline summary from `info.md`. You MUST dynamically craft the 3–4 line summary matching the employer's tech stack (e.g. MERN, React, Node.js) and the JD's exact criteria (e.g. problem-solving, analytical skills, eagerness to learn, initiative) combined with verified GPA.
+    3. **JD-Matched Summary (Strictly Single Continuous Paragraph — NO Linebreaks)**:
+       - Do NOT just copy the baseline summary from `info.md`. Dynamically craft a 3–4 line summary matching the employer's tech stack and JD criteria (e.g., problem-solving, analytical skills, eagerness to learn) combined with verified GPA.
+       - ⛔ **ABSOLUTE PROHIBITION ON MANUAL LINE BREAKS (`\\` or `\newline`)**: The summary MUST be written as a **single unbroken, continuous paragraph of running prose**. NEVER insert `\\`, `\newline`, or blank lines between sentences. Never format it as disconnected keypoint-like lines.
+       - 📏 **Uniform Justified Text Flow**: Writing it as continuous text lets LaTeX automatically justify each line to the exact same width (`same-length lines`) cleanly filling 3 to 4 lines.
     4. **LaTeX Structure Integrity (STRICTLY BANNED: Raw Hyphens `-` and Pipes `|`)**:
        - ⛔ NEVER use raw hyphens (`-`) for list bullets. You MUST use standard LaTeX `\begin{itemize} \item ... \end{itemize}` for Skills, Projects, Certifications, and Experience.
        - ⛔ NEVER use pipes (`|`) for dates. All dates MUST be right-aligned using `\hfill \textbf{[Dates]}`.
@@ -149,6 +152,17 @@ Once the target Job Description (JD) and output format are confirmed:
    - **Font**: Latin Modern (`\usepackage{lmodern}`, 10pt body text).
     - **Section order (ALL 7 SECTIONS FIT ON PAGE 1)**: Header → Professional Summary → Technical Skills → Projects → Education → Certifications and Training → Community & Content Experience. (References section is completely excluded by default; include ONLY if explicitly requested by user in chat).
     - **Professional Summary (Evidence-Based, Dynamic JD-Matched & Project-Grounded)**:
+       - 🛑 **STRICT MANDATE: SINGLE CONTINUOUS PARAGRAPH (ZERO MANUAL LINE BREAKS)**:
+         - The summary MUST be written as **one single, unbroken continuous paragraph** of prose without bullet points or keypoint-style sentence breaks.
+         - ⛔ **ABSOLUTE PROHIBITION ON MANUAL LINE BREAKS**: NEVER use `\\`, `\newline`, `\hfill\break`, or blank lines inside `\section{Professional Summary}`.
+         - 📏 **Uniform Justified Text Flow (Same-Length Lines)**: Do not prematurely terminate sentences onto new lines. Write continuous flowing sentences so LaTeX's typesetting engine automatically justifies every line to the full text width (`same-length lines`), creating a neat, rectangular block of 3 to 4 lines.
+         - 💡 **Correct Example**:
+           ```latex
+           \section{Professional Summary}
+           {\small
+           BSc (Hons) Information Technology undergraduate (3.52/4.0 GPA) and Microsoft Student Ambassador with working knowledge of the MERN stack (MongoDB, Express.js, React, Node.js) and web fundamentals in HTML, CSS and JavaScript, applied across full-stack projects containerized with Docker and deployed on AWS through Jenkins pipelines. Brings strong problem-solving and analytical skills, and shows eagerness to learn, adapt and take initiative through 800+ annual GitHub contributions across 50+ repositories and published technical engineering guides. Targeting the Software Development Intern -- MERN Stack role at SI Labs.
+           }
+           ```
       - **Dual-Track Summary Strategy (Strictly 3 to 4 lines)**:
         - **TRACK 1 (When Detailed JD is Provided)**:
           1. **Lead with Verified Credentials**: Start directly with academic standing and leadership from `info.md` (e.g., *"IT undergraduate (3.52 GPA) and Microsoft Learn Student Ambassador with hands-on experience..."*).
@@ -440,7 +454,8 @@ Politely conclude the session:
 %% ── PROFESSIONAL SUMMARY ──────────────────────────────────────────────
 \section{Professional Summary}
 {\small
-[Craft an evidence-based summary (strictly 3 to 4 lines). Lead with credentials: "IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from info.md] with hands-on experience [building/deploying systems using JD tech stack]...". WEAVE IN MANDATORY JD KEYWORDS: Ingest exact keywords from the JD's 'What We're Looking For' (e.g. problem-solving and analytical skills, eagerness to learn, adapt, and take initiative). End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
+% STRICT MANDATE: Write as ONE single, continuous paragraph (strictly 3 to 4 lines). NEVER insert \\ or \newline line breaks! Text must flow naturally so LaTeX automatically justifies every line evenly to the margins.
+[Craft an evidence-based summary as a single unbroken paragraph (strictly 3 to 4 lines). Lead with credentials: "IT undergraduate ([GPA] GPA) and [Key Role / Ambassadorship from info.md] with hands-on experience [building/deploying systems using JD tech stack]...". WEAVE IN MANDATORY JD KEYWORDS: Ingest exact keywords from the JD's 'What We're Looking For' (e.g. problem-solving and analytical skills, eagerness to learn, adapt, and take initiative). End with: "Seeking a [Exact Target Job Title from JD] position to [deliver concrete technical value matching JD]."]
 }
 
 %% ── TECHNICAL SKILLS ──────────────────────────────────────────────────

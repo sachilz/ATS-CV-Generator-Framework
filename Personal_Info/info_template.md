@@ -25,7 +25,7 @@
 
 ## 2. Professional Summary
 
-> [Write a factual, evidence-based summary in strictly 3 to 4 lines. Do NOT use generic filler words like "Motivated", "Passionate", or "Interested in...". Lead directly with your credentials (e.g., "IT undergraduate ([GPA] GPA) and [Leadership/Community Role] with hands-on experience building and deploying [Core Tech Stack]..."). End with your target role and the technical value you bring.]
+> [Write a factual, evidence-based summary in strictly 3 to 4 lines as a single continuous paragraph without line breaks or bullets. Do NOT use generic filler words like "Motivated", "Passionate", or "Interested in...". Lead directly with your credentials (e.g., "IT undergraduate ([GPA] GPA) and [Leadership/Community Role] with hands-on experience building and deploying [Core Tech Stack]..."). End with your target role and the technical value you bring.]
 
 ---
 

@@ -187,7 +187,7 @@ Here is the target Job Description (JD) I am applying for:
 Please analyze this JD and match my profile facts against its requirements. Ask me for my preferred output format (1: LaTeX Code only, 2: PDF only, 3: Both) before generating the CV.
 Remember:
 - Include the exact target Job Title as subtitle under candidate name.
-- Dynamically adapt the Professional Summary to match the JD's tech stack and criteria (e.g. problem-solving, analytical skills, eagerness to learn).
+- Dynamically adapt the Professional Summary to match the JD's tech stack and criteria (e.g. problem-solving, analytical skills, eagerness to learn). MUST be a single continuous paragraph (strictly 3-4 justified lines) with NO manual line breaks (\\ or \newline).
 - Use proper LaTeX environments (\hfill for dates, \begin{itemize}\item for all lists; NO raw hyphens or pipes).
 - Strictly 1 A4 page (all 7 sections on Page 1, fill page vertically with no large blank bottom gap, omit references unless requested, exact LaTeX preamble with section underline rules).
 ```
@@ -208,6 +208,7 @@ The LaTeX engine is calibrated to maximize readability, maintain 100% equal marg
 |---|---|---|
 | **Preamble Geometry** | `\usepackage[margin=0.42in]{geometry}` | Strictly constant 0.42in margins on all 4 sides; provides optimal vertical real estate. |
 | **Candidate Name** | `{\LARGE\bfseries\MakeUppercase{...}}\\[1.5pt]` | Prominent visual anchor; locked 1.5pt spacing prevents awkward vertical gaps. |
+| **Professional Summary** | Single continuous paragraph (strictly 3 to 4 lines) | Zero `\\` or `\newline` breaks; LaTeX automatically justifies every line evenly to full text width. |
 | **Section Headings** | `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}` | 12pt Bold Small Caps with a clean horizontal rule (`\rule{\linewidth}{0.5pt}`). |
 | **Section Spacing** | `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` | Auto-calibrated elastic glue spacing; LaTeX compresses or stretches dynamically. |
 | **Project Separators** | Mandatory `\vspace{4.5pt plus 1pt minus 1pt}` | Enforces clean breathing space between consecutive projects; never removed. |
