@@ -438,8 +438,8 @@ Politely conclude the session:
 > When outputting LaTeX code, you MUST copy the exact preamble below character-for-character.
 > - `\usepackage[margin=0.42in]{geometry}` — STRICT 0.42in margin on all 4 sides. NEVER change to 0.5in, 0.75in, or 1in!
 > - `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]` — MANDATORY horizontal line (`\rule{\linewidth}{0.5pt}`) and bold small-caps (`\scshape`) under EVERY section heading. NEVER omit this line!
-> - `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` — MANDATORY tuned vertical elastic spacing.
-> - `\setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}` — MANDATORY compact list spacing.
+> - `\titlespacing*{\section}{0pt}{5.5pt plus 1pt minus 1pt}{2pt}` — MANDATORY tuned vertical elastic spacing.
+> - `\setlist[itemize]{leftmargin=1.2em,itemsep=0.8pt plus 0.3pt minus 0.3pt,topsep=1.2pt plus 0.3pt minus 0.3pt,parsep=0pt,partopsep=0pt}` — MANDATORY compact list spacing.
 
 ```latex
 \documentclass[10pt,a4paper]{article}
@@ -461,9 +461,9 @@ Politely conclude the session:
 \raggedbottom
 \titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}
   [\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\titlespacing*{\section}{0pt}{5.5pt plus 1pt minus 1pt}{2pt} % AUTO-CALIBRATED 1-PAGE SECTION SPACING
 \setlist[itemize]
-  {leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
+  {leftmargin=1.2em,itemsep=0.8pt plus 0.3pt minus 0.3pt,topsep=1.2pt plus 0.3pt minus 0.3pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 \begin{document}
 

@@ -134,7 +134,7 @@ Technologies: \textcolor{techblue}{Tool, Tool, Tool}
 
 **Skills layout.** Every skills category goes on its own bullet line, one below the other. "Currently Learning" and "Spoken Languages" are two separate lines and must never be joined on one line. Keep each category line short enough to fit on one or two lines.
 
-**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
+**Auto-calibrated section spacing.** Use `\titlespacing*{\section}{0pt}{5.5pt plus 1pt minus 1pt}{2pt}` with `\usepackage[margin=0.42in]{geometry}`. This tuned calibration guarantees that 4 projects (with full 1-bullet descriptions), technical skills, education, certifications, and all 4 experience roles fit strictly on ONE single A4 page with 100% equal margins on all 4 sides, without any page overflow.
 
 **Professional summary (Evidence-based & 100% JD-Matched — Strictly Single Continuous Paragraph).** Lead with concrete evidence from your profile file (GPA, student ambassadorship, hands-on projects) combined with the employer's exact tech stack and requirements. **Mandatory Single Paragraph Rule:** The summary MUST be written as a single, unbroken continuous paragraph of prose (strictly 3 to 4 lines). **NEVER insert manual line breaks (`\\` or `\newline`)** or write keypoint-like separate sentences. Let LaTeX's paragraph engine naturally justify every line to the full text width (`same-length lines`). **Mandatory JD Keyword Ingestion:** When the Job Description lists specific criteria in "What We're Looking For" or "Requirements" (such as *problem-solving and analytical skills*, *eagerness to learn, adapt, and take initiative*, *web fundamentals*), weave those exact keywords and phrases directly into the summary alongside your verified tech stack. This guarantees 100% ATS keyword matching against both technical and behavioral filters. **General Roles / Career Fair Fallback:** If the target role lacks detailed JD keywords, ground the summary directly in the core architectural accomplishments of your 4 selected projects and community leadership from your profile file. Keep to strictly 3 to 4 lines.
 
@@ -239,8 +239,8 @@ Paste this into a blank Overleaf project, replace the placeholder text, and pres
 \setlength{\parskip}{0pt}
 \raggedbottom
 \titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-4.5pt}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
-\setlist[itemize]{leftmargin=1.2em,itemsep=1.2pt plus 0.4pt minus 0.4pt,topsep=1.5pt plus 0.5pt minus 0.5pt,parsep=0pt,partopsep=0pt}
+\titlespacing*{\section}{0pt}{5.5pt plus 1pt minus 1pt}{2pt}   % AUTO-CALIBRATED 1-PAGE SECTION SPACING
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.8pt plus 0.3pt minus 0.3pt,topsep=1.2pt plus 0.3pt minus 0.3pt,parsep=0pt,partopsep=0pt}
 \newcommand{\ghlink}[1]{\href{#1}{\textcolor{linkblue}{GitHub}}}
 
 \begin{document}

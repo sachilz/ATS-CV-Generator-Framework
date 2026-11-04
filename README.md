@@ -216,7 +216,7 @@ The LaTeX engine is calibrated to maximize readability, maintain 100% equal marg
 | **Candidate Name** | `{\LARGE\bfseries\MakeUppercase{...}}\\[1.5pt]` | Prominent visual anchor; locked 1.5pt spacing prevents awkward vertical gaps. |
 | **Professional Summary** | Single continuous paragraph (strictly 3 to 4 lines) | Zero `\\` or `\newline` breaks; LaTeX automatically justifies every line evenly to full text width. |
 | **Section Headings** | `\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}` | 12pt Bold Small Caps with a clean horizontal rule (`\rule{\linewidth}{0.5pt}`). |
-| **Section Spacing** | `\titlespacing*{\section}{0pt}{6.5pt plus 1.5pt minus 1pt}{2.2pt}` | Auto-calibrated elastic glue spacing; LaTeX compresses or stretches dynamically. |
+| **Section Spacing** | `\titlespacing*{\section}{0pt}{5.5pt plus 1pt minus 1pt}{2pt}` | Auto-calibrated elastic glue spacing; LaTeX compresses or stretches dynamically. |
 | **Project Separators** | Mandatory `\vspace{4.5pt plus 1pt minus 1pt}` | Enforces clean breathing space between consecutive projects; never removed. |
 | **Technologies Lines** | Strictly 1 line per project (e.g. 6 to 8 tags) | Styled with `\textcolor{techblue}{...}`; never wraps to a 2nd line. |
 | **Courses & Certifications** | `\item Combined Titles \hfill \textbf{[Date] - [Provider]}` | `\section{Courses and Certifications}`; groups related beginner courses from same issuer/date matching JD & projects. |
@@ -242,9 +242,10 @@ Only the blank template ([`Personal_Info/info_template.md`](Personal_Info/info_t
 
 ### Q1: What if the generated CV spills over onto a 2nd page?
 The spacing engine is designed so that a standard profile with 4 projects, 2 certificates, skills, education, and experience fits on 1 page. If an overflow occurs:
-1. **Check the Technologies lines:** Ensure each project's `Technologies:` line hasn't wrapped onto a 2nd line.
-2. **Summary length:** Ensure the Professional Summary is strictly 3 to 4 lines.
-3. **Certifications count:** Keep strictly to the 2 most relevant certificates.
+1. **Check for Dropped Preamble (Page Numbers '1' & '2'):** If page numbers appear or section titles lack the thin horizontal line, the AI dropped the preamble! Default LaTeX adds ~150pt of uncalibrated whitespace. Remind the AI: *"Use the exact preamble with \pagestyle{empty}, titlesec, and enumitem"*.
+2. **Check the Technologies lines:** Ensure each project's `Technologies:` line hasn't wrapped onto a 2nd line.
+3. **Summary length:** Ensure the Professional Summary is strictly 3 to 4 lines.
+
 4. **Project count:** Keep strictly to 4 projects.
 
 ### Q2: Can I include References?
