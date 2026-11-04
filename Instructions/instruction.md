@@ -33,8 +33,18 @@
        - Do NOT just copy the baseline summary from `info.md`. Dynamically craft a 3–4 line summary matching the employer's tech stack and JD criteria (e.g., problem-solving, analytical skills, eagerness to learn) combined with verified GPA.
        - ⛔ **ABSOLUTE PROHIBITION ON MANUAL LINE BREAKS (`\\` or `\newline`)**: The summary MUST be written as a **single unbroken, continuous paragraph of running prose**. NEVER insert `\\`, `\newline`, or blank lines between sentences. Never format it as disconnected keypoint-like lines.
        - 📏 **Uniform Justified Text Flow**: Writing it as continuous text lets LaTeX automatically justify each line to the exact same width (`same-length lines`) cleanly filling 3 to 4 lines.
-    4. **LaTeX Structural Integrity & Zero-Improvisation Mandate (STRICTLY BANNED COMPRESSION HACKS & PIPES `|`)**:
+    4. **LaTeX Structural Integrity & Zero-Improvisation Mandate (STRICTLY BANNED LAYOUT ERRORS)**:
        - ⛔ **NEVER IMPROVISE OR DEVIATE FROM THE BASE LATEX SKELETON**: You MUST strictly use the exact Base LaTeX Template provided below. Under NO circumstances should you rewrite, simplify, or invent your own layout.
+       - ⛔ **NO PROJECT TITLE CONCATENATION**: Every `Technologies:` line MUST end with `\par` followed by `\vspace{4.5pt plus 1pt minus 1pt}` and a blank line before `\noindent\textbf{[Next Project Title]} \hfill \ghlink{...}`. NEVER let the next project title attach to the previous `Technologies:` line!
+       - ⛔ **NO STRIPPING OF COMMUNITY EXPERIENCE DESCRIPTIONS**: Every single role in `Community & Content Experience` MUST include its full `\begin{itemize}\item [Description] \hfill \ghlink/Credly \end{itemize}`. NEVER reduce experience to a bare list of titles without descriptions!
+       - ⛔ **NO MERGING OF SKILLS (CURRENTLY LEARNING & SPOKEN LANGUAGES)**:
+         - NEVER combine two technical skills categories on one line with `|` or spaces.
+         - `Currently Learning:` and `Spoken Languages:` MUST each be their own separate `\item` bullets on distinct lines.
+       - ⛔ **EDUCATION ACCURACY (NO LINE OVERFLOW & PROPER GPA ALIGNMENT)**:
+         - Line 1 MUST only contain: `\textbf{[Degree]}, [University] \hfill \textbf{[Dates]}\\` (Do NOT add `Faculty` to Line 1 or the date will wrap onto a new line!).
+         - Line 2 MUST contain: `[Faculty]. Coursework: [Courses] \hfill GPA: [GPA]\\[2pt]`. GPA is ALWAYS right-aligned!
+         - Line 3 MUST contain: `\textbf{G.C.E. Advanced Level}, [School] \hfill \textbf{Feb 2022}`.
+       - ⛔ **ZERO ACADEMIC YEAR HALLUCINATION**: NEVER invent "Fourth-year", "Third-year", or "Final-year" in the Professional Summary. Always write `IT undergraduate (3.52 GPA)...`.
        - ⛔ **NO PIPE `|` MERGING OF CATEGORIES OR SECTIONS**:
          - NEVER combine two technical skills categories on one line with `|` (e.g., `Languages: ... | Frontend: ...` or `Databases: ... | Version Control: ...` is STRICTLY FORBIDDEN). Each category MUST be its own separate `\item` in `\begin{itemize}`.
          - NEVER combine certifications on a single line with `|` (e.g., `• Cert 1 | • Cert 2` is STRICTLY FORBIDDEN). Each certification MUST be its own separate `\item`.
@@ -493,7 +503,7 @@ Politely conclude the session:
 \begin{itemize}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
-Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
+Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}\par
 \vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 2 ──
@@ -501,7 +511,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 \begin{itemize}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
-Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
+Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}\par
 \vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 3 ──
@@ -509,7 +519,7 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 \begin{itemize}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
-Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
+Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}\par
 \vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP
 
 % ── PROJECT 4 ──
@@ -517,15 +527,16 @@ Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 l
 \begin{itemize}
   \item [Description copied exactly from info.md — 1 key point]
 \end{itemize}
-Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}
+Technologies: \textcolor{techblue}{[6 to 8 core technology tags — strictly 1 line]}\par
 }
 
 %% ── EDUCATION ─────────────────────────────────────────────────────────
 \section{Education}
 {\small
 \textbf{[Degree Name]}, [University / Institution] \hfill \textbf{[Start Mon YYYY] -- [End Mon YYYY] (expected)}\\
+% MANDATORY: Keep Faculty on Line 2! (Never merge Faculty to Line 1 or the date will wrap to a new line!).
 [Faculty]. Coursework: [Relevant Courses] \hfill GPA: [GPA / Scale]\\[2pt]
-\textbf{[Secondary / School Qualification]}, [School Name] \hfill \textbf{[Year]}
+\textbf{G.C.E. Advanced Level}, [School Name] \hfill \textbf{Feb 2022}
 % NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 

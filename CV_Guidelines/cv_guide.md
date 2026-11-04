@@ -278,22 +278,22 @@ Craft an evidence-based summary as a single unbroken paragraph (strictly 3 to 4 
 \item Action verb + what you built + tools + specific result.
 % 1 key point per project, so no second item
 \end{itemize}
-Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
+Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}\par
 
 \vspace{4.5pt plus 1pt minus 1pt}  % PROJECT GAP KNOB
-\textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
+\noindent\textbf{Project Name Two} \hfill \ghlink{https://github.com/you/project-two}
 \begin{itemize}
 \item Action verb + what you built + tools + specific result.
 % 1 key point per project, so no second item
 \end{itemize}
-Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}
+Technologies: \textcolor{techblue}{Tool, Tool, Tool, Tool}\par
 }
 
 \section{Education}
 {\small
 \textbf{BSc (Hons) in Your Degree}, Your University \hfill \textbf{Mon YYYY -- Mon YYYY (expected)}\\
 Faculty. Coursework: Course, Course, Course \hfill GPA: X.XX/4.0\\[2pt]
-\textbf{G.C.E. Advanced Level}, Your School \hfill \textbf{YYYY}
+\textbf{G.C.E. Advanced Level}, Your School \hfill \textbf{Feb 2022}
 % NOTE: Never include A/L grades ('CCC' / 'Passed with 3 C passes') as they detract from a strong university GPA.
 }
 
